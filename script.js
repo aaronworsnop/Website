@@ -312,6 +312,33 @@ function doDarkMode() {
     }
 }
 
+// Contact pane
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    // Get form data
+    var formData = new FormData(this);
+
+    // Create AJAX request
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'mail.php', true);
+
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // Success and clear form
+        alert('Email sent successfully!');
+        document.getElementById('contact-form').reset();
+      } else {
+        // Error
+        alert('An error occurred while sending the email.');
+      }
+    };
+
+    // Send AJAX request with form data
+    xhr.send(formData);
+  });
+
+
 /* Currently working on:
  * - Currently, no one knows how to use the website. I need to add a tooltip for the domains
  * - Give the mobile site a navbar, darkmode and contact can be seperate. Also needs tooltip for
