@@ -314,12 +314,10 @@ function doDarkMode() {
 
 /* Currently working on:
  * - Currently, no one knows how to use the website. I need to add a tooltip for the domains
- * - Give the mobile site a navbar and remove domains
+ * - Give the mobile site a navbar, darkmode and contact can be seperate. Also needs tooltip for
+ * - opening the navexpander
  * 
- * - make dark background loop properly, lessen the exposure, maybe slow it down
  * - Animations for the domains need to be more smooth (tuning)
- * - Idle animation for the domains
- * - Make text smaller
  * 
  * - Right domains are so glitchy
  * -
