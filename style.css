@@ -620,6 +620,11 @@ input[type="checkbox"].toggle:checked + label::after {
   transform: scaleX(1);
 }
 
+.submit-sending {
+  opacity: 0.1;
+  pointer-events: none;
+}
+
 .contact-content-input-submit {
   display: flex;
   justify-content: flex-end;

@@ -316,6 +316,11 @@ function doDarkMode() {
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
+    // disable submit button
+    var submitButton = this.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.classList.add('submit-sending');
+
     // Get form data
     var formData = new FormData(this);
 
@@ -324,19 +329,23 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     xhr.open('POST', 'mail.php', true);
 
     xhr.onload = function() {
-      if (xhr.status === 200) {
-        // Success and clear form
-        alert('Email sent successfully!');
-        document.getElementById('contact-form').reset();
-      } else {
-        // Error
-        alert('An error occurred while sending the email.');
-      }
+        if (xhr.status === 200) {
+            // Success and clear form
+            alert('Email sent successfully!');
+          document.getElementById('contact-form').reset();
+        } else {
+            // Error
+            alert('An error occurred with the contact pane. Please email me directly instead.');
+        }
+        
+        // re-enable submit button
+        submitButton.disabled = false;
+        submitButton.classList.remove('submit-sending');
     };
 
     // Send AJAX request with form data
     xhr.send(formData);
-  });
+});
 
 
 /* Currently working on:
