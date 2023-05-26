@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#747e8a">
+    <title>aaronworsnop</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body onload="leftScroll(), rightScroll()">
+    <!-- Menu -->
+    <div class="menu">
+      <a class="unselectable"><h3 class="menu-item" onclick="openContactPane()">Contact</h3></a>
+      <h3 class="unselectable">/ /</h3>
+      <a class="unselectable" href=""><h3 class="menu-item">Portfolio</h3></a>
+      <h3 class="unselectable">/ /</h3>
+      <a class="unselectable" href=""><h3 class="menu-item">Experience</h3></a>
+      <h3 class="unselectable">/ /</h3>
+      <a class="unselectable" href="resume.html" target="_blank"><h3 class="menu-item">Résumé</h3></a>
+      <h2 class="hero glitch layers" data-text="近設計"><span>近設計</span></h2>
+
+      <div class="dark-mode">
+        <input type="checkbox" id="dark-mode" class="toggle" onclick="doDarkMode()">
+        <label for="dark-mode" class="unselectable">Dark Mode</label>
+      </div>
+    </div>
+
+    <!-- Left dots -->
+    <div class="dot-triangle-left"></div>
+
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <!-- Background -->
+    <div class="landing-screen">
+      <video autoplay muted loop id="background-video">
+        <source class="landing-video" src="vid/Background.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      <h1 class="landing-screen-title unselectable">aaronworsnop</h1>
+    </div>
+
+    <!-- Domains -->
+    <div class="landing-text unselectable">
+      <div class="landing-domains-left" onscroll="leftScroll()">
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1 class="desktop github">github.com/</h1>
+        <h1 class="desktop linkedin">linkedin.com/in/</h1>
+        <h1 class="desktop youtube">youtube.com/c/</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+      </div>
+      <div>
+        <h1 style="opacity: 0; position: relative;" class="landing-screen-title">aaronworsnop</h1>
+      </div>
+      <div class="landing-domains-right" onscroll="rightScroll()">
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1 class="desktop in-focus com">.com</h1>
+        <h1 class="desktop gmail">@gmail.com</h1>
+        <h1 class="desktop business-gmail">business@gm...</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+      </div>
+    </div>
+
+    <a href="aaronworsnop.com" target="_blank" class="current-domain">
+      <h3 class="current-domain-link">Take me there</h3>
+      <?xml version="1.0" encoding="UTF-8"?><svg class="link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:13px;}</style></defs><path class="svg" d="m154.12,95.91v62.15c0,10.25-8.31,18.57-18.57,18.57H41.94c-10.25,0-18.57-8.31-18.57-18.57v-93.61c0-10.25,8.31-18.57,18.57-18.57h62.15"/><line class="svg" x1="176.62" y1="23.38" x2="176.62" y2="73.4"/><line class="svg" x1="83.47" y1="116.53" x2="176.62" y2="23.38"/><line class="svg" x1="126.6" y1="23.38" x2="176.62" y2="23.38"/></svg>
+    </a>
+
+    <!-- Right dots -->
+    <div class="dots-right">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="dot-triangle-right"></div>
+
+    <!-- Contact pane -->
+    <div class="contact-background" onclick="closeContactPane()"></div>
+
+    <div class="contact-glass">
+      <div class="contact-close-button" onclick="closeContactPane()"></div>
+      <div class="contact-title">Placeholder (Contact Pane/aaronworsnop.com)</div>
+      <div class="contact-title-bar"></div>
+
+      <div class="contact-content">
+        <div class="contact-content-title">
+          <h1>Let's connect.</h1>
+        </div>
+
+        <form action="mail.php" method="POST">
+
+          <!--First & Last Name-->
+          <div class="contact-content-row">
+            <div class="contact-content-input">
+              <input name="firstName" type="text" required>
+              <div class="contact-content-input-underline"></div>
+              <label class="unselectable">First Name</label>
+            </div>
+            <div class="contact-content-input">
+              <input name="lastName" type="text" required>
+              <div class="contact-content-input-underline"></div>
+              <label class="unselectable">Last Name</label>
+            </div>
+          </div>
+
+          <!--Email & Website-->
+          <div class="contact-content-row">
+            <div class="contact-content-input">
+              <input name="email" type="Email text" id="email" required autocomplete="off">
+              <div class="contact-content-input-underline"></div>
+              <label class="unselectable">Email Address</label>
+            </div>
+            <div class="contact-content-input">
+              <input name="subject" type="text" required>
+              <div class="contact-content-input-underline"></div>
+              <label class="unselectable">Subject</label>
+            </div>
+          </div>
+          <!--Message Area-->
+          <div class="contact-content-row contact-content-textarea">
+            <div class="contact-content-input">
+              <textarea name="message" required placeholder="Say hello, ask a question or just let me know you're dropping by. I'm all ears so let's get the conversation started."></textarea>
+              <div class="contact-content-input-underline"></div>
+              <label class="unselectable">Message</label>
+            </div>
+          </div>
+          <!--Submit button-->
+          <div class="contact-content-row" >
+            <div class="contact-content-input contact-content-input-submit">
+              <button class="contact-content-submit-button" type="submit">
+                Send
+                <?xml version="1.0" encoding="UTF-8"?><svg class="contact-send" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs></defs><path class="svg" d="m34.25,115.37l-16.33,33.91c-5.76,11.97,6.29,24.73,18.57,19.66l139.49-57.58c10.14-4.19,10.14-18.54,0-22.73L36.48,31.05c-12.28-5.07-24.33,7.69-18.57,19.66l19.46,35.31c3.05,5.54,8.71,9.16,15.02,9.61l61.37,4.37"/></svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- DOM needs to load before script-->
+    <script src="script.js"></script>
+  </body>
+
+</html>
