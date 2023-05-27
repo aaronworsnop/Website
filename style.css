@@ -153,7 +153,21 @@ input[type="checkbox"].toggle:checked + label::after {
   margin-right: 12rem;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+  h3 {
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  }
+
+  .menu {
+    padding: 0.5rem 3rem;
+  }
+
+  .dark-mode {
+    margin-right: 5rem;
+  }
+}
+
+@media (max-width: 763px) {
   .menu {
     display: none;
   }
@@ -292,7 +306,13 @@ input[type="checkbox"].toggle:checked + label::after {
   z-index: -1;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 763px) {
   .landing-screen-title {
     font-size: 9vw;
     font-weight: 500;
@@ -368,7 +388,7 @@ input[type="checkbox"].toggle:checked + label::after {
   top: calc(50%);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .dots {
     display: none;
   }

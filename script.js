@@ -358,7 +358,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
  * - Give the mobile site a navbar, darkmode and contact can be seperate. Also needs tooltip for
  * - opening the navexpander
  * 
+ * - Going from dark mode to light mode shows button, really ugly
+ * 
  * - Change contact form sizing
+ * - contact form clamp (min, vw, current size).
+ * - Figure out how to make text box take up a certain percentage of the screen, rather
+ *   than the current, specified size. This way send button doesn't get pushed off.
  * - Create custom and clean (apple like) scrollbar for contact form text
  * 
  * - Animations for the domains need to be more smooth (tuning)
