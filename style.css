@@ -66,6 +66,10 @@ a {
 
 /* DARK MODE */
 
+.dark-mode-label {
+  font-size: 1.05rem;
+}
+
 input[type="checkbox"].toggle {
   opacity: 0;
   position: absolute;
@@ -155,7 +159,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
 @media (max-width: 1100px) {
   h3 {
-    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    font-size: clamp(0.9rem, 1.5vw, 0.95rem);
   }
 
   .menu {
@@ -163,7 +167,11 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 
   .dark-mode {
-    margin-right: 5rem;
+    margin-right: 5.5rem;
+  }
+
+  .dark-mode-label {
+    font-size: clamp(0.9rem, 1.5vw, 0.95rem);
   }
 }
 
@@ -309,6 +317,13 @@ input[type="checkbox"].toggle:checked + label::after {
 @media (max-width: 1100px) {
   h1 {
     font-size: 4vw;
+  }
+
+  .current-domain {
+    scale: 0.9;
+    opacity: 1;
+
+    pointer-events: none;
   }
 }
 
@@ -683,7 +698,22 @@ input[type="checkbox"].toggle:checked + label::after {
   height: 2rem;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+  .contact-content {
+    padding-top: 1rem;
+    padding-left: clamp(2.5rem, 6vw, 4rem);
+    padding-right: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .contact-content-submit-button {
+    opacity: 1;
+    scale: 0.9;
+
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 763px) {
   .contact-glass {
     z-index: 2;
     height: 70vh;
@@ -692,10 +722,6 @@ input[type="checkbox"].toggle:checked + label::after {
 
     border-radius: 1.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .contact-title {
-    display: none;
   }
 
   .contact-content {
@@ -709,10 +735,9 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .contact-content-submit-button {
     opacity: 1;
-  }
+    scale: 0.9;
 
-  .contact-content-submit-button:hover {
-    transform: none;
+    pointer-events: none;
   }
 
   @keyframes animate-glass-in {

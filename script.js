@@ -357,11 +357,13 @@ document.getElementById('contact-form').addEventListener('submit', function(even
  * - Currently, no one knows how to use the website. I need to add a tooltip for the domains
  * - Give the mobile site a navbar, darkmode and contact can be seperate. Also needs tooltip for
  * - opening the navexpander
+ * - Mobile landing-title is too low, needs to be higher by a little bit to be centered (maybe menu)
+ *   will offset this optical illusion
  * 
  * - Going from dark mode to light mode shows button, really ugly
  * 
- * - Change contact form sizing
- * - contact form clamp (min, vw, current size).
+ * - contact form clamp for text (min, vw, current size). Notice how the title scales, don't forget
+ *   the "window text" (Contact pane)
  * - Figure out how to make text box take up a certain percentage of the screen, rather
  *   than the current, specified size. This way send button doesn't get pushed off.
  * - Create custom and clean (apple like) scrollbar for contact form text
