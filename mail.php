@@ -27,7 +27,7 @@ $mailTo = "aaronworsnopbusiness@gmail.com";
 $mailSubject = $subject;
 
 //mail message
-$mailMessage = "<h1>".$subject.": ".$firstName." ".$lastName."</h1>\r\n\r\n";
+$mailMessage = "<h2>Contact Form Message:</h2>\r\n\r\n";
 $mailMessage .= "<p>".$message."</p>\r\n\r\n";
 
 // Sanitize and validate email address

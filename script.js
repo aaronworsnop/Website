@@ -336,9 +336,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         } else {
             var errorMessage = 'An error occurred with the contact pane. Please email me directly instead.';
             if (xhr.status === 500) {
-                errorMessage = 'Internal server error. Please try again later.';
+                errorMessage = 'Internal server error. Please try again later or email me directly instead.';
             } else if (xhr.status === 400) {
-                errorMessage = 'Bad request. Please check your form inputs.';
+                errorMessage = 'Bad request. Please check the contact pane and ensure you entered your details correctly.';
             }
             // Display error message to the user
             alert(errorMessage);
@@ -357,6 +357,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
  * - Currently, no one knows how to use the website. I need to add a tooltip for the domains
  * - Give the mobile site a navbar, darkmode and contact can be seperate. Also needs tooltip for
  * - opening the navexpander
+ * 
+ * - Change contact form sizing
+ * - Create custom and clean (apple like) scrollbar for contact form text
  * 
  * - Animations for the domains need to be more smooth (tuning)
  * 
