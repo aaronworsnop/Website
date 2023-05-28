@@ -21,6 +21,7 @@ html {
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
+  display: none;
 }
 
 body {
@@ -157,7 +158,7 @@ input[type="checkbox"].toggle:checked + label::after {
   margin-right: 12rem;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   h3 {
     font-size: clamp(0.9rem, 1.5vw, 0.95rem);
   }
@@ -175,7 +176,7 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 }
 
-@media (max-width: 763px) {
+@media (max-width: 1000px) {
   .menu {
     display: none;
   }
@@ -314,7 +315,7 @@ input[type="checkbox"].toggle:checked + label::after {
   z-index: -1;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   h1 {
     font-size: 4vw;
   }
@@ -322,12 +323,14 @@ input[type="checkbox"].toggle:checked + label::after {
   .current-domain {
     scale: 0.9;
     opacity: 1;
+  }
 
-    pointer-events: none;
+  .current-domain:hover {
+    transform: none;
   }
 }
 
-@media (max-width: 763px) {
+@media (max-width: 1000px) {
   .landing-screen-title {
     font-size: 9vw;
     font-weight: 500;
@@ -403,7 +406,7 @@ input[type="checkbox"].toggle:checked + label::after {
   top: calc(50%);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .dots {
     display: none;
   }
@@ -441,7 +444,7 @@ input[type="checkbox"].toggle:checked + label::after {
   transform: translate(-50%, 100vh);
 
   width: 80vw;
-  height: 85vh;
+  min-height: 85vh;
 
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(0.75rem);
@@ -481,7 +484,7 @@ input[type="checkbox"].toggle:checked + label::after {
 }
 
 .contact-close-button {
-  margin: 2rem 0 2rem 2rem ;
+  margin: 2rem 0 2rem 2rem;
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
@@ -698,7 +701,7 @@ input[type="checkbox"].toggle:checked + label::after {
   height: 2rem;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .contact-content {
     padding-top: 1rem;
     padding-left: clamp(2.5rem, 6vw, 4rem);
@@ -708,15 +711,17 @@ input[type="checkbox"].toggle:checked + label::after {
   .contact-content-submit-button {
     opacity: 1;
     scale: 0.9;
+  }
 
-    pointer-events: none;
+  .contact-content-submit-button:hover {
+    transform: none;
   }
 }
 
-@media (max-width: 763px) {
+@media (max-width: 1000px) {
   .contact-glass {
     z-index: 2;
-    height: 70vh;
+    max-height: 70vh;
     bottom: 50%;
     transform: translate(-50%, 150vh);
 
@@ -725,7 +730,82 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 
   .contact-content {
+    padding-top: 1rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+
+  .contact-close-button {
+    margin: 3rem 0 3rem 3rem;
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  
+  .contact-close-button::before {
+    width: 1.75rem;
+    height: 1.75rem;
+    left: 6rem;
+  }
+  
+  .contact-close-button::after {
+    width: 1.75rem;
+    height: 1.75rem;
+    left: 9rem;
+  }
+
+  .contact-title {
+    font-size: 3rem;
+    margin: 0.35rem auto 0 auto;
+  }
+
+  .contact-content {
     padding: 1rem 2.5rem 0 2.5rem;
+  }
+
+  .contact-content-title h1 {
+    font-size: 4.5rem;
+  }
+
+  .contact-content-row {
+    flex-direction: column;
+    padding: 0;
+    gap: 7rem;
+    margin-top: 7rem;
+  }
+
+  .textarea-margin {
+    margin-top: 10rem;
+  }
+
+  .contact-content-input label {
+    bottom: -2.5rem;
+    font-size: 3rem;
+  }
+
+  .contact-content-textarea label {
+    bottom: 2rem;
+  }
+
+  .contact-content-textarea textarea {
+    font-size: 3rem;
+  }
+
+  .contact-content-input input {
+    font-size: 3rem;
+    height: 250%;
+  }
+
+  .contact-content-input input:focus ~ label,
+  .contact-content-input input:valid ~ label {
+    transform: translateY(-4rem);
+    color: white;
+    font-size: 2.25rem;
+  } 
+
+  .contact-content-textarea textarea:focus ~label,
+  .contact-content-textarea textarea:valid ~label {
+    color: white;
+    font-size: 2.25rem;
   }
 
   .contact-content-input-submit {
@@ -735,9 +815,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .contact-content-submit-button {
     opacity: 1;
-    scale: 0.9;
-
-    pointer-events: none;
+    scale: 1.75;
   }
 
   @keyframes animate-glass-in {
