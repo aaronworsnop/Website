@@ -334,6 +334,7 @@ input[type="checkbox"].toggle:checked + label::after {
   .landing-screen-title {
     font-size: 9vw;
     font-weight: 500;
+    padding-bottom: 5vh;
   }
 
   .landing-text {
@@ -433,6 +434,7 @@ input[type="checkbox"].toggle:checked + label::after {
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 2;
 
   background-color: transparent;
 }
@@ -737,25 +739,25 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .contact-close-button {
     margin: 3rem 0 3rem 3rem;
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 3vw;
+    height: 3vw;
   }
   
   .contact-close-button::before {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 3vw;
+    height: 3vw;
     left: 6rem;
   }
   
   .contact-close-button::after {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 3vw;
+    height: 3vw;
     left: 9rem;
   }
 
   .contact-title {
-    font-size: 3rem;
-    margin: 0.35rem auto 0 auto;
+    font-size: 4.5vw;
+    margin: 0.8vw auto 0 auto;
   }
 
   .contact-content {
@@ -763,7 +765,7 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 
   .contact-content-title h1 {
-    font-size: 4.5rem;
+    font-size: 7.25vw;
   }
 
   .contact-content-row {
@@ -779,7 +781,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .contact-content-input label {
     bottom: -2.5rem;
-    font-size: 3rem;
+    font-size: 5.5vw;
   }
 
   .contact-content-textarea label {
@@ -787,11 +789,11 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 
   .contact-content-textarea textarea {
-    font-size: 3rem;
+    font-size: 5.5vw;
   }
 
   .contact-content-input input {
-    font-size: 3rem;
+    font-size: 5.5vw;
     height: 250%;
   }
 
@@ -799,13 +801,13 @@ input[type="checkbox"].toggle:checked + label::after {
   .contact-content-input input:valid ~ label {
     transform: translateY(-4rem);
     color: white;
-    font-size: 2.25rem;
+    font-size: 4vw;
   } 
 
   .contact-content-textarea textarea:focus ~label,
   .contact-content-textarea textarea:valid ~label {
     color: white;
-    font-size: 2.25rem;
+    font-size: 4vw;
   }
 
   .contact-content-input-submit {
@@ -834,6 +836,43 @@ input[type="checkbox"].toggle:checked + label::after {
     100% {
       transform: translate(-50%, 150vh);
     }
+  }
+}
+
+/* MOBILE NAV */
+
+.nav {
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  height: auto;
+  width: 100%;
+  padding: 3rem 0;
+
+  font-size: 2rem;
+
+  background-color: rgba(116, 126, 138, 0.7);
+}
+
+.nav-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+
+  color: white;
+}
+
+.nav-resume-icon {
+  width: 4rem;
+}
+
+@media (min-width: 1000px) {
+  .nav {
+    display: none;
   }
 }
 
