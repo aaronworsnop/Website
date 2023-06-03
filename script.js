@@ -381,7 +381,6 @@ function toggleLinks() {
     
 }
 
-
 /* Currently working on:
  * - Currently, no one knows how to use the website. I need to add a tooltip for the domains
  * - Can scroll on ipad portrait for some reason
