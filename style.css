@@ -198,14 +198,6 @@ input[type="checkbox"].toggle:checked + label::after {
   z-index: -1000;
 }
 
-.landing-screen-title {
-  font-weight: 300;
-  color: white;
-
-  position: fixed;
-  z-index: 0;
-}
-
 .landing-screen {
   width: 100vw;
   height: 100vh;
@@ -214,6 +206,14 @@ input[type="checkbox"].toggle:checked + label::after {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.landing-screen-title {
+  font-weight: 300;
+  color: white;
+
+  position: fixed;
+  z-index: 0;
 }
 
 .landing-text {
@@ -335,6 +335,10 @@ input[type="checkbox"].toggle:checked + label::after {
     font-size: 9vw;
     font-weight: 500;
     padding-bottom: 5vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 0;
   }
 
   .landing-text {
@@ -466,7 +470,7 @@ input[type="checkbox"].toggle:checked + label::after {
   animation: animate-glass-out 0.5s cubic-bezier(.57,.02,.62,.28) forwards;
 }
 
-/* animate-out animation with keyframs for swiping down*/
+/* animate-out animation with keyframes for swiping down*/
 @keyframes animate-glass-out {
   0% {
     transform: translate(-50%, 0);
@@ -886,6 +890,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
 .mobile-link {
   width: 13vw;
+  opacity: 0;
 }
 
 .mobile-link-icon {
@@ -907,6 +912,37 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 }
 
+.link-appear {
+  animation: link-appear 0.4s ease forwards;
+}
+
+@keyframes link-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.link-disappear {
+  animation: link-disappear 0.4s ease forwards;
+}
+
+@keyframes link-disappear {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
 
 /* EXPERIMENTS */
 .hero {

@@ -352,6 +352,29 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     xhr.send(formData);
 });
 
+function toggleLinks() {
+    const resume = document.querySelector(".link-git");
+    const contact = document.querySelector(".link-in");
+    const links = document.querySelector(".link-tube");
+
+    if (resume.classList.contains("link-appear")) {
+        resume.classList.remove("link-appear");
+        resume.classList.add("link-disappear");
+        contact.classList.remove("link-appear");
+        contact.classList.add("link-disappear");
+        links.classList.remove("link-appear");
+        links.classList.add("link-disappear");
+    } else {
+        resume.classList.remove("link-disappear");
+        resume.classList.add("link-appear");
+        contact.classList.remove("link-disappear");
+        contact.classList.add("link-appear");
+        links.classList.remove("link-disappear");
+        links.classList.add("link-appear");
+    }
+    
+}
+
 
 /* Currently working on:
  * - Currently, no one knows how to use the website. I need to add a tooltip for the domains
