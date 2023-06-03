@@ -357,6 +357,8 @@ function toggleLinks() {
     const contact = document.querySelector(".link-in");
     const links = document.querySelector(".link-tube");
 
+    const title = document.querySelector(".landing-screen-title");
+
     if (resume.classList.contains("link-appear")) {
         resume.classList.remove("link-appear");
         resume.classList.add("link-disappear");
@@ -364,6 +366,8 @@ function toggleLinks() {
         contact.classList.add("link-disappear");
         links.classList.remove("link-appear");
         links.classList.add("link-disappear");
+        title.classList.remove("title-down");
+        title.classList.add("title-up");
     } else {
         resume.classList.remove("link-disappear");
         resume.classList.add("link-appear");
@@ -371,6 +375,8 @@ function toggleLinks() {
         contact.classList.add("link-appear");
         links.classList.remove("link-disappear");
         links.classList.add("link-appear");
+        title.classList.remove("title-up");
+        title.classList.add("title-down");
     }
     
 }

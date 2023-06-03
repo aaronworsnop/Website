@@ -332,7 +332,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
 @media (max-width: 1000px) {
   .landing-screen-title {
-    font-size: 9vw;
+    font-size: 10vw;
     font-weight: 500;
     padding-bottom: 5vh;
     left: 50%;
@@ -919,12 +919,16 @@ input[type="checkbox"].toggle:checked + label::after {
 @keyframes link-appear {
   0% {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-150%);
+  }
+
+  20% {
+    opacity: 0;
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-50%);
   }
 }
 
@@ -935,12 +939,44 @@ input[type="checkbox"].toggle:checked + label::after {
 @keyframes link-disappear {
   0% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-50%);
+  }
+
+  50% {
+    opacity: 0;
   }
 
   100% {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-150%);
+  }
+}
+
+.title-up {
+  animation: title-up 0.4s ease forwards;
+}
+
+@keyframes title-up {
+  0% {
+    transform: translate(-50%, -130%);
+  }
+
+  100% {
+    transform: translate(-50%, -100%);
+  }
+}
+
+.title-down {
+  animation: title-down 0.4s ease forwards;
+}
+
+@keyframes title-down {
+  0% {
+    transform: translate(-50%, -100%);
+  }
+
+  100% {
+    transform: translate(-50%, -130%);
   }
 }
 
