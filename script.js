@@ -353,6 +353,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 });
 
 function toggleLinks() {
+    const allLinks = document.querySelector(".mobile-link");
     const resume = document.querySelector(".link-git");
     const contact = document.querySelector(".link-in");
     const links = document.querySelector(".link-tube");
@@ -387,8 +388,6 @@ function toggleLinks() {
  * 
  * - Going from dark mode to light mode shows button, really ugly
  * 
- * - contact form clamp for text (min, vw, current size). Notice how the title scales, don't forget
- *   the "window text" (Contact pane)
  * - Figure out how to make text box take up a certain percentage of the screen, rather
  *   than the current, specified size. This way send button doesn't get pushed off.
  * - Create custom and clean (apple like) scrollbar for contact form text
@@ -399,12 +398,4 @@ function toggleLinks() {
  * - Maybe change to no blur for performance
  * -
  * - Cookie for remembering dark mode
- * - Tic tac toe game on a portfolio card
- * - Use javascript to "animate" the contact-title in the contact form with "Let's connect.", "Reach out", 
- * "Send me a message", "Say hi" etc. Kinda like the type writer effect I have on the stream.
- * -
- * - Console font for code
- * 
- * - Portfolio needs to include prettiest designs made at finergy (the better ones are good, April organic posts koura,
- * new landing page images, merx, etc.)
 */

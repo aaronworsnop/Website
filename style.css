@@ -914,6 +914,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
 .link-appear {
   animation: link-appear 0.4s ease forwards;
+  pointer-events: all;
 }
 
 @keyframes link-appear {
@@ -934,6 +935,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
 .link-disappear {
   animation: link-disappear 0.4s ease forwards;
+  pointer-events: none;
 }
 
 @keyframes link-disappear {
