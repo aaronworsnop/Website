@@ -449,10 +449,14 @@ input[type="checkbox"].toggle:checked + label::after {
   min-height: 85vh;
 
   background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(0.75rem);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+  -moz-filter-backdrop-filter: blur(1rem);
+  -o-filter-backdrop-filter: blur(1rem);
+  -ms-filter-backdrop-filter: blur(1rem);
 
   border-radius: 2rem 2rem 0 0;
-  box-shadow: 0 0 2rem rgb(0, 0, 0, 0.1);
+  box-shadow: 0 0 2rem rgb(0, 0, 0, 0.125);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 0;
@@ -723,11 +727,11 @@ input[type="checkbox"].toggle:checked + label::after {
 @media (max-width: 1000px) {
   .contact-glass {
     z-index: 2;
-    max-height: 70vh;
+    max-height: 70dvh;
     bottom: 50%;
     transform: translate(-50%, 150vh);
 
-    border-radius: 1.5rem;
+    border-radius: 3.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
@@ -739,25 +743,21 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .contact-close-button {
     margin: 3rem 0 3rem 3rem;
-    width: 3vw;
-    height: 3vw;
+    width: 4vw;
+    height: 4vw;
   }
   
   .contact-close-button::before {
-    width: 3vw;
-    height: 3vw;
-    left: 6rem;
+    content: none;
   }
   
   .contact-close-button::after {
-    width: 3vw;
-    height: 3vw;
-    left: 9rem;
+    content: none;
   }
 
   .contact-title {
     font-size: 4.5vw;
-    margin: 0.8vw auto 0 auto;
+    margin: 1vw auto 0 auto;
   }
 
   .contact-content {
@@ -817,7 +817,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .contact-content-submit-button {
     opacity: 1;
-    scale: 1.75;
+    scale: 2.1;
   }
 
   @keyframes animate-glass-in {
@@ -849,12 +849,16 @@ input[type="checkbox"].toggle:checked + label::after {
   justify-content: space-evenly;
 
   height: auto;
-  width: 100%;
+  width: calc(100% - 10rem);
   padding: 3rem 0;
+  margin: 5rem;
+  border-radius: 3rem;
+
+  box-shadow: 0 0 2rem rgb(0, 0, 0, 0.2);
 
   font-size: 2rem;
 
-  background-color: rgba(116, 126, 138, 0.7);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .nav-item {
@@ -870,8 +874,35 @@ input[type="checkbox"].toggle:checked + label::after {
   width: 4rem;
 }
 
+.mobile-links {
+  display: flex;
+  gap: 8vw;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.mobile-link {
+  width: 13vw;
+}
+
+.mobile-link-icon {
+  fill: white;
+}
+
+/* only appear in mobile view */
 @media (min-width: 1000px) {
   .nav {
+    display: none;
+  }
+
+  .mobile-links {
+    display: none;
+  }
+
+  .mobile-link {
     display: none;
   }
 }

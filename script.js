@@ -355,10 +355,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
 /* Currently working on:
  * - Currently, no one knows how to use the website. I need to add a tooltip for the domains
- * - Give the mobile site a navbar, darkmode and contact can be seperate. Also needs tooltip for
- * - opening the navexpander
- * - Mobile landing-title is too low, needs to be higher by a little bit to be centered (maybe menu)
- *   will offset this optical illusion
+ * - Can scroll on ipad portrait for some reason
  * 
  * - Going from dark mode to light mode shows button, really ugly
  * 
@@ -371,16 +368,14 @@ document.getElementById('contact-form').addEventListener('submit', function(even
  * - Animations for the domains need to be more smooth (tuning)
  * 
  * - Right domains are so glitchy
+ * - Maybe change to no blur for performance
  * -
- * - PHP for sending email from content section
  * - Cookie for remembering dark mode
  * - Tic tac toe game on a portfolio card
  * - Use javascript to "animate" the contact-title in the contact form with "Let's connect.", "Reach out", 
  * "Send me a message", "Say hi" etc. Kinda like the type writer effect I have on the stream.
  * -
  * - Console font for code
- * - Mobile load "Hey, I know it's convenient to use your phone, but this experience is best on desktop;
- * And I wouldn't want anything but the best for you, my friend" or something like that. More formal?
  * 
  * - Portfolio needs to include prettiest designs made at finergy (the better ones are good, April organic posts koura,
  * new landing page images, merx, etc.)
