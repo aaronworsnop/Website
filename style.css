@@ -438,19 +438,21 @@ input[type="checkbox"].toggle:checked + label::after {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
 
   background-color: transparent;
 }
 
 .contact-glass {
+  display: flex; 
+  flex-direction: column;
+
   position: fixed;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 100vh);
 
   width: 80vw;
-  min-height: 85vh;
+  height: 85vh;
 
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(1rem);
@@ -499,6 +501,7 @@ input[type="checkbox"].toggle:checked + label::after {
   height: 1rem;
   border-radius: 50%;
   background-color: white;
+  flex-shrink: 0;
 
   cursor: pointer;
 }
@@ -524,9 +527,9 @@ input[type="checkbox"].toggle:checked + label::after {
 }
 
 .contact-title-bar {
-  position: absolute;
   width: 100%;
   height: 1px;
+  flex-shrink: 0;
 
   /* gradient */
   background: linear-gradient(
@@ -549,7 +552,9 @@ input[type="checkbox"].toggle:checked + label::after {
 }
 
 .contact-content {
-  padding: 3rem 6rem 0 6rem;
+  padding: 3rem 6rem 3rem 6rem;
+  overflow-y: auto;
+  flex-grow: 1;
 }
 
 .contact-content-title h1{
@@ -729,9 +734,13 @@ input[type="checkbox"].toggle:checked + label::after {
 }
 
 @media (max-width: 1000px) {
+  .contact-background {
+    z-index: 2;
+  }
+
   .contact-glass {
     z-index: 2;
-    max-height: 70dvh;
+    height: 82dvh;
     bottom: 50%;
     transform: translate(-50%, 150vh);
 
@@ -740,9 +749,7 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 
   .contact-content {
-    padding-top: 1rem;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+    padding: 1rem 5rem 7rem 5rem;
   }
 
   .contact-close-button {
@@ -761,11 +768,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .contact-title {
     font-size: 4.5vw;
-    margin: 1vw auto 0 auto;
-  }
-
-  .contact-content {
-    padding: 1rem 2.5rem 0 2.5rem;
+    margin: 1.3vw auto 0 auto;
   }
 
   .contact-content-title h1 {

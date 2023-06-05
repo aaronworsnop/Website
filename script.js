@@ -1,5 +1,9 @@
 // Left and right domains scrolling
 
+function onload() {
+    document.getElementById('background-video').play();
+}
+
 function leftScroll() {
     const triangleLeft = document.querySelector(".dot-triangle-left")
     const leftDomainScroll = document.querySelector(".landing-domains-left").scrollTop;
@@ -285,7 +289,7 @@ function openContactPane() {
 
 function darken() {
     document.querySelector("#background-video").src = "vid/Dark Background Better.mp4";
-    document.querySelector("#background-video").style.opacity = "0.5";
+    document.querySelector("#background-video").style.opacity = "0.6";
 }
 
 function lighten() {
@@ -302,13 +306,13 @@ function doDarkMode() {
 
         document.querySelector("body").style.backgroundColor = "black";
         document.querySelector("#background-video").style.opacity = "0";
-        setTimeout(darken, 600);
+        setTimeout(darken, 300);
     }
 
     if (!isChecked) {
-        document.querySelector("body").style.backgroundColor = "white";
+        document.querySelector("body").style.backgroundColor = "black";
         document.querySelector("#background-video").style.opacity = "0";
-        setTimeout(lighten, 500);
+        setTimeout(lighten, 400);
     }
 }
 
@@ -383,6 +387,7 @@ function toggleLinks() {
 }
 
 /* Currently working on:
+ * - Don't need transition for dark mode anymore
  * - Currently, no one knows how to use the website. I need to add a tooltip for the domains
  * - Can scroll on ipad portrait for some reason
  * 
@@ -398,4 +403,7 @@ function toggleLinks() {
  * - Maybe change to no blur for performance
  * -
  * - Cookie for remembering dark mode
+ * 
+ * - Custom error pages, very simple. Maybe literally just a black screen
+ *  white text saying a huge "404" or "500" with tiny "error" on top of the numbers
 */
