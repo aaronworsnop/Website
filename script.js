@@ -269,6 +269,13 @@ function mouseMoveRight(e) {
     }
 }
 
+function keyPress (e) {
+    if(e.key === "Escape") {
+        closeContactPane();
+        console.log("Esc pressed");
+    }
+}
+
 function closeContactPane() {
     const contactForm = document.querySelector(".contact-glass");
     const contactBackground = document.querySelector(".contact-background");
@@ -277,7 +284,11 @@ function closeContactPane() {
     contactBackground.style.display = "none";
 }
 
-function openContactPane() {
+function openContactPane(element) {
+    if (element.classList.contains("nav-item")) {
+        var textarea = document.querySelector('.contact-content-textarea textarea[name="message"]');
+        textarea.placeholder = "Let's start a conversation.";
+    }
     const contactForm = document.querySelector(".contact-glass");
     const contactBackground = document.querySelector(".contact-background");
     contactForm.classList.add("animate-glass-in");

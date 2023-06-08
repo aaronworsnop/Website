@@ -554,6 +554,7 @@ input[type="checkbox"].toggle:checked + label::after {
 .contact-content {
   padding: 3rem 6rem 3rem 6rem;
   overflow-y: auto;
+  overflow-x: hidden;
   flex-grow: 1;
 }
 
@@ -791,12 +792,17 @@ input[type="checkbox"].toggle:checked + label::after {
     font-size: 5.5vw;
   }
 
+  .contact-content-textarea {
+    height: 20dvh;
+  }
+
   .contact-content-textarea label {
     bottom: 2rem;
   }
 
   .contact-content-textarea textarea {
     font-size: 5.5vw;
+    height: 20dvh;
   }
 
   .contact-content-input input {
