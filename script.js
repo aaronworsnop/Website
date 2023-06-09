@@ -17,7 +17,7 @@ function onload() {
     // User hasn't scrolled before
     if (storedHasUsedDomains === null) {
         document.querySelector(".tooltip").style.display = "block";
-        const top = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom;
+        const top = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom + 100;
         const left = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.75;
         document.querySelector(".tooltip").style.top = top + "px";
         document.querySelector(".tooltip").style.left = left + "px";
