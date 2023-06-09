@@ -158,6 +158,14 @@ input[type="checkbox"].toggle:checked + label::after {
   margin-right: 12rem;
 }
 
+.dark-mode-icon {
+  display: none;
+}
+
+.dark-mode-mobile {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   h3 {
     font-size: clamp(0.9rem, 1.5vw, 0.95rem);
@@ -178,7 +186,30 @@ input[type="checkbox"].toggle:checked + label::after {
 
 @media (max-width: 1000px) {
   .menu {
+    z-index: 1;
+  }
+  .menu .unselectable{
     display: none;
+  }
+
+  .dark-mode {
+    display: none;
+  }
+
+  .dark-mode-icon {
+    display: block;
+    height: 5rem;
+    margin-top: 4rem;
+    margin-left: auto;
+    opacity: 1;
+  }
+  
+  .dark-mode-mobile {
+    display: block;
+    scale: 2.5;
+    margin-left: 3.25rem;
+    margin-top: 4rem;
+    margin-right: 16vw;
   }
 }
 
@@ -718,6 +749,10 @@ input[type="checkbox"].toggle:checked + label::after {
   pointer-events: none;
 }
 
+.contact-content-email-links {
+  display: none;
+}
+
 .contact-content-input-submit {
   display: flex;
   justify-content: flex-end;
@@ -871,6 +906,24 @@ input[type="checkbox"].toggle:checked + label::after {
   .contact-content-submit-button {
     opacity: 1;
     scale: 2.1;
+  }
+
+  .contact-content-email-links {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 4.2rem;
+  }
+
+  .contact-content-email-links a {
+    color: white;
+    opacity: 0.6;
+
+    text-decoration: none;
+    text-decoration: underline;
+
+    font-size: 5vw;
+    font-weight: 200;
   }
 
   @keyframes animate-glass-in {

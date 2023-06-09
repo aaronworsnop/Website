@@ -24,11 +24,17 @@
       <a class="unselectable" href="comingSoon" target="_blank"><h3 class="menu-item">Experience</h3></a>
       <h3 class="unselectable">/ /</h3>
       <a class="unselectable" href="resume" target="_blank"><h3 class="menu-item">Résumé</h3></a>
-      <h2 class="hero glitch layers" data-text="近設計"><span>近設計</span></h2>
+      <h2 class="unselectable hero glitch layers" data-text="近設計"><span>近設計</span></h2>
 
       <div class="dark-mode">
-        <input type="checkbox" id="dark-mode" class="toggle" onclick="doDarkMode()">
+        <input type="checkbox" id="dark-mode" class="toggle" onclick="doDarkMode(this)">
         <label for="dark-mode" class="unselectable dark-mode-label">Dark Mode</label>
+      </div>
+
+      <?xml version="1.0" encoding="UTF-8"?><svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path class="svg" d="m85.5,21.79c4.7-.88,9.56-1.34,14.52-1.34,43.26,0,78.33,35.07,78.33,78.33s-35.07,78.33-78.33,78.33c-36.53,0-67.22-25.01-75.89-58.84m0,0c10.69,11.05,25.67,17.92,42.26,17.92,32.47,0,58.79-26.32,58.79-58.79,0-25.78-16.59-47.68-39.68-55.61"/></svg>
+      <div class="dark-mode-mobile">
+        <input type="checkbox" id="dark-mode-mobile" class="toggle" onclick="doDarkMode(this)">
+        <label for="dark-mode-mobile" class="unselectable dark-mode-label"></label>
       </div>
     </div>
 
@@ -61,7 +67,7 @@
 
     <!-- Background -->
     <div class="landing-screen">
-      <video autoplay="" loop="" muted="" id="background-video">
+      <video playsinline autoplay muted loop id="background-video">
         <source class="landing-video" src="vid/Background.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
       </video>
@@ -156,7 +162,7 @@
             </div>
           </div>
 
-          <!--Email & Website-->
+          <!--Email & Subject-->
           <div class="contact-content-row">
             <div class="contact-content-input">
               <input name="email" type="Email text" id="email" required autocomplete="off">
@@ -169,6 +175,7 @@
               <label class="unselectable">Subject</label>
             </div>
           </div>
+
           <!--Message Area-->
           <div class="contact-content-row contact-content-textarea textarea-margin">
             <div class="contact-content-input">
@@ -177,6 +184,7 @@
               <label class="unselectable">Message</label>
             </div>
           </div>
+
           <!--Submit button-->
           <div class="contact-content-row" >
             <div class="contact-content-input contact-content-input-submit">
@@ -187,6 +195,11 @@
             </div>
           </div>
         </form>
+        
+        <!--Mobile email link-->
+        <div class="contact-content-email-links">
+          <a href="mailto:aaronworsnopbusiness@gmail.com">Or email me directly</a>
+        </div>
       </div>
     </div>
 

@@ -7,6 +7,7 @@ function onload() {
     // User uses dark mode
     if (storedSiteMode == "dark") {
         document.querySelector("#dark-mode").checked = true;
+        document.querySelector("#dark-mode-mobile").checked = true;
         
         // Dark mode
         document.querySelector("body").style.backgroundColor = "black";
@@ -359,8 +360,8 @@ function lighten() {
     setCookie("siteMode", "light", 365); 
 }
 
-function doDarkMode() {
-    const isChecked = document.querySelector("#dark-mode").checked;
+function doDarkMode(element) {
+    const isChecked = element.checked;
 
     // Change the background video to dark mode
     if (isChecked) {
