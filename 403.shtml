@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#747e8a">
+    <title>coming soon...</title>
+    <link rel="stylesheet" href="style.css">
+  
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  </head>
+  
+  <body style="animation: gradientAnimation 10s ease infinite; background: linear-gradient(to right, #150426, #000000 80%) fixed; background-position: bottom;">
+    <div class="unselectable" style="height: 100dvh; width: 100dvw; display: flex; justify-content: center; align-items: center;">
+      <div>
+        <h3 style="margin: 0; font-size: clamp(1rem, 5vw, 2.5rem);">error</h3>
+        <h1 class="hero glitch layers" style="padding: 0; margin: 0; color: white; font-weight: 600; font-size: clamp(2.5rem, 9vw, 6rem); filter: drop-shadow(0 1px 20px);" data-text="403">
+          <span id="original-text">403</span><span id="underscore">_</span>
+        </h1>
+      </div>
+    </div>
+  
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var originalTextElement = document.getElementById('original-text');
+        var underscoreElement = document.getElementById('underscore');
+      
+        setInterval(function() {
+          underscoreElement.style.visibility = (underscoreElement.style.visibility === 'hidden') ? 'visible' : 'hidden';
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
