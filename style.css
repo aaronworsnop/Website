@@ -250,6 +250,41 @@ input[type="checkbox"].toggle:checked + label::after {
   cursor: grab;
 }
 
+.tooltip {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  opacity: 0.5;
+
+  width: 3rem;
+  animation: animate-tooltip 2.5s ease-in-out forwards;
+}
+
+@keyframes animate-tooltip {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(50%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+}
+
+@keyframes animate-tooltip-out {
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
 .desktop {
   scroll-snap-align: center;
   color: white;
@@ -347,6 +382,10 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .current-domain {
     display: none;
+  }
+
+  .tooltip {
+    display: none!important;
   }
 }
 
@@ -793,7 +832,7 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 
   .contact-content-textarea {
-    height: 20dvh;
+    height: 15dvh;
   }
 
   .contact-content-textarea label {
@@ -802,7 +841,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .contact-content-textarea textarea {
     font-size: 5.5vw;
-    height: 20dvh;
+    height: 15dvh;
   }
 
   .contact-content-input input {
@@ -826,6 +865,7 @@ input[type="checkbox"].toggle:checked + label::after {
   .contact-content-input-submit {
     display: flex; 
     justify-content: center;
+    margin-bottom: 2rem;
   }
 
   .contact-content-submit-button {

@@ -1,8 +1,57 @@
-// Left and right domains scrolling
-
+var leftScrollCount = 0;
+    
 function onload() {
+    // Play video
     document.getElementById('background-video').play();
+
+    // User uses dark mode
+    if (storedSiteMode == "dark") {
+        document.querySelector("#dark-mode").checked = true;
+        
+        // Dark mode
+        document.querySelector("body").style.backgroundColor = "black";
+        document.querySelector("#background-video").style.opacity = "0";
+        darken();
+    }
+
+    // User hasn't scrolled before
+    if (storedHasUsedDomains === null) {
+        document.querySelector(".tooltip").style.display = "block";
+        const top = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom;
+        const left = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.75;
+        document.querySelector(".tooltip").style.top = top + "px";
+        document.querySelector(".tooltip").style.left = left + "px";
+    }
 }
+
+// Keyboard listners
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeContactPane()
+    }
+});
+
+// Tooltip animation
+
+document.querySelector('.tooltip').addEventListener('animationend', function(event) {
+    if (event.animationName === 'animate-tooltip') {
+        if (leftScrollCount > 10) {
+            document.querySelector(".tooltip").style.animation = "animate-tooltip-out 0.3s ease-out forwards";
+        } else {
+            // Reset the animation by temporarily setting it to "none"
+            document.querySelector(".tooltip").style.animation = "none";
+      
+            // Delay the reapplication of the animation by a short duration
+            setTimeout(function() {
+                document.querySelector(".tooltip").style.animation = "animate-tooltip 2.5s ease-in-out forwards";
+            }, 10);
+        }
+    }
+});
+
+
+// Left and right domains scrolling
 
 function leftScroll() {
     const triangleLeft = document.querySelector(".dot-triangle-left")
@@ -57,6 +106,13 @@ function leftScroll() {
     // Setting the current domain
     document.querySelector(".current-domain").href = "https://" + document.querySelector(".in-focus").innerHTML + "aaronworsnop";
 
+    // User knows how to scroll domains cookie
+    leftScrollCount++;
+    
+    if (storedHasUsedDomains == "true" && leftScrollCount > 10) {
+    } else if (storedHasUsedDomains != "true" && leftScrollCount > 10) {
+        setCookie("hasUsedDomains", "true", 30);
+    }
 }
 
 function rightScroll() {
@@ -267,14 +323,7 @@ function mouseMoveRight(e) {
         const walkY = (y - startY) * 1;
         scrollAreaRight.scrollTop = scrollTop - walkY;
     }
-}
-
-function keyPress (e) {
-    if(e.key === "Escape") {
-        closeContactPane();
-        console.log("Esc pressed");
-    }
-}
+} 
 
 function closeContactPane() {
     const contactForm = document.querySelector(".contact-glass");
@@ -301,11 +350,13 @@ function openContactPane(element) {
 function darken() {
     document.querySelector("#background-video").src = "vid/Dark Background Better.mp4";
     document.querySelector("#background-video").style.opacity = "0.6";
+    setCookie("siteMode", "dark", 365); 
 }
 
 function lighten() {
     document.querySelector("#background-video").src = "vid/Background.mp4";
     document.querySelector("#background-video").style.opacity = "1";
+    setCookie("siteMode", "light", 365); 
 }
 
 function doDarkMode() {
@@ -397,6 +448,35 @@ function toggleLinks() {
     
 }
 
+// Cookies
+
+// set cookie
+function setCookie(name, value, daysToExpire) {
+    var expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + daysToExpire);
+    var cookieValue = encodeURIComponent(value) + "; expires=" + expirationDate.toUTCString();
+    document.cookie = name + "=" + cookieValue;
+}
+  
+// get cookie
+    function getCookie(name) {
+    var cookieName = name + "=";
+    var cookieArray = document.cookie.split(';');
+    for (var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i].trim();
+        if (cookie.indexOf(cookieName) === 0) {
+            return decodeURIComponent(cookie.substring(cookieName.length));
+        }
+    }
+    return null;
+}
+
+// retrieve the values from cookies
+var storedSiteMode = getCookie("siteMode");
+var storedHasUsedDomains = getCookie("hasUsedDomains");
+  
+
+
 /* Currently working on:
  * - Don't need transition for dark mode anymore
  * - Currently, no one knows how to use the website. I need to add a tooltip for the domains
@@ -414,6 +494,7 @@ function toggleLinks() {
  * - Maybe change to no blur for performance
  * -
  * - Cookie for remembering dark mode
+ * - Separate scripts for domains, general functions (this file) and cookies
  * 
  * - Custom error pages, very simple. Maybe literally just a black screen
  *  white text saying a huge "404" or "500" with tiny "error" on top of the numbers
