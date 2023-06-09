@@ -349,13 +349,13 @@ function openContactPane(element) {
 // Dark mode
 
 function darken() {
-    document.querySelector("#background-video").src = "vid/Dark Background Better.mp4";
+    document.querySelector("#background-video").src = "vid/Dark Background 720.mp4";
     document.querySelector("#background-video").style.opacity = "0.6";
     setCookie("siteMode", "dark", 365); 
 }
 
 function lighten() {
-    document.querySelector("#background-video").src = "vid/Background.mp4";
+    document.querySelector("#background-video").src = "vid/Background 720.mp4";
     document.querySelector("#background-video").style.opacity = "1";
     setCookie("siteMode", "light", 365); 
 }
