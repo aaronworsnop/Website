@@ -1,4 +1,11 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'file/Exception.php';
+require 'file/PHPMailer.php';
+require 'file/SMTP.php';
 
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
@@ -20,33 +27,35 @@ $email = htmlspecialchars($email);
 $subject = htmlspecialchars($subject);
 $message = htmlspecialchars($message);
 
-//mail to
-$mailTo = "aaronworsnopbusiness@gmail.com";
+// Instantiate PHPMailer
+$mail = new PHPMailer(true);
 
-//mail subject
-$mailSubject = $subject;
+try {
+    // SMTP server settings
+    $mail->isSMTP();
+    $mail->Host = 'mail.aaronworsnop.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'me@aaronworsnop.com';
+    $mail->Password = 'PLACEHOLDER';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
 
-//mail message
-$mailMessage = "<h2>Contact Form Message:</h2>\r\n\r\n";
-$mailMessage .= "<p>".$message."</p>\r\n\r\n";
+    // Sender and recipient details
+    $mail->setFrom($email, $firstName . ' ' . $lastName);
+    $mail->addAddress('me@aaronworsnop.com');
 
-// Sanitize and validate email address
-$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    // Handle invalid email address
-    header("HTTP/1.1 400 Bad Request");
-    exit("Invalid email address.");
+    // Email subject and content
+    $mail->Subject = $subject;
+    $mail->isHTML(true);
+    $mail->Body = '<h2>Contact Form Message:</h2>' . '<p>' . $message . '</p>';
+
+    // Send the email
+    $mail->send();
+
+    // Redirect to home
+    header("Location: index.html");
+} catch (Exception $e) {
+    header("HTTP/1.1 500 Internal Server Error");
+    exit("Error sending email. Please try again later.");
 }
-
-//mail headers
-$mailHeader = "From:".$firstName." ".$lastName."<".$email.">\r\n";
-$mailHeader .= "Content-type: text/html; charset=UTF-8\r\n";
-$mailHeader .= "MIME-Version: 1.0\r\n";
-
-//send email
-mail($mailTo, $mailSubject, $mailMessage, $mailHeader);
-
-//redirect to home
-header("Location: index.html");
-
 ?>

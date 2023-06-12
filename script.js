@@ -1,9 +1,6 @@
 var leftScrollCount = 0;
     
 function onload() {
-    // Play video
-    document.getElementById('background-video').play();
-
     // User uses dark mode
     if (storedSiteMode == "dark") {
         document.querySelector("#dark-mode").checked = true;
@@ -18,7 +15,7 @@ function onload() {
     // User hasn't scrolled before
     if (storedHasUsedDomains === null) {
         document.querySelector(".tooltip").style.display = "block";
-        const top = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom + 100;
+        const top = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom + 15;
         const left = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.75;
         document.querySelector(".tooltip").style.top = top + "px";
         document.querySelector(".tooltip").style.left = left + "px";
@@ -349,15 +346,20 @@ function openContactPane(element) {
 // Dark mode
 
 function darken() {
-    document.querySelector("#background-video").src = "vid/Dark Background 720.mp4";
+    document.querySelector("#background-video").src = "vid/Dark Background.mp4";
     document.querySelector("#background-video").style.opacity = "0.6";
-    setCookie("siteMode", "dark", 365); 
+    setCookie("siteMode", "dark", 30); 
 }
 
 function lighten() {
-    document.querySelector("#background-video").src = "vid/Background 720.mp4";
-    document.querySelector("#background-video").style.opacity = "1";
-    setCookie("siteMode", "light", 365); 
+    const video = document.querySelector("#background-video");
+    video.src = "vid/Background.mp4";
+
+    video.addEventListener("canplaythrough", function() {
+        video.style.opacity = "1";
+    }, { once: true });
+
+    setCookie("siteMode", "light", 30); 
 }
 
 function doDarkMode(element) {
@@ -365,14 +367,10 @@ function doDarkMode(element) {
 
     // Change the background video to dark mode
     if (isChecked) {
-        // Set body colour to black
-
         document.querySelector("body").style.backgroundColor = "black";
         document.querySelector("#background-video").style.opacity = "0";
         setTimeout(darken, 300);
-    }
-
-    if (!isChecked) {
+    } else {
         document.querySelector("body").style.backgroundColor = "black";
         document.querySelector("#background-video").style.opacity = "0";
         setTimeout(lighten, 400);
@@ -475,8 +473,6 @@ function setCookie(name, value, daysToExpire) {
 // retrieve the values from cookies
 var storedSiteMode = getCookie("siteMode");
 var storedHasUsedDomains = getCookie("hasUsedDomains");
-  
-
 
 /* Currently working on:
  * - Don't need transition for dark mode anymore
