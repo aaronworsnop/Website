@@ -475,14 +475,9 @@ var storedSiteMode = getCookie("siteMode");
 var storedHasUsedDomains = getCookie("hasUsedDomains");
 
 /* Currently working on:
- * - Don't need transition for dark mode anymore
- * - Currently, no one knows how to use the website. I need to add a tooltip for the domains
- * - Can scroll on ipad portrait for some reason
+ * - keep track of mobile device with bool then load videos accordingly for performance
+    (capture once onload)
  * 
- * - Going from dark mode to light mode shows button, really ugly
- * 
- * - Figure out how to make text box take up a certain percentage of the screen, rather
- *   than the current, specified size. This way send button doesn't get pushed off.
  * - Create custom and clean (apple like) scrollbar for contact form text
  * 
  * - Animations for the domains need to be more smooth (tuning)
@@ -490,9 +485,5 @@ var storedHasUsedDomains = getCookie("hasUsedDomains");
  * - Right domains are so glitchy
  * - Maybe change to no blur for performance
  * -
- * - Cookie for remembering dark mode
  * - Separate scripts for domains, general functions (this file) and cookies
- * 
- * - Custom error pages, very simple. Maybe literally just a black screen
- *  white text saying a huge "404" or "500" with tiny "error" on top of the numbers
 */
