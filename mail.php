@@ -47,7 +47,7 @@ try {
     // Email subject and content
     $mail->Subject = $subject;
     $mail->isHTML(true);
-    $mail->Body = '<h2>Contact Form Message:</h2>' . '<p>' . $message . '</p>';
+    $mail->Body = '<h2>Contact Pane Message:</h2>' . '<p>' . $message . '</p>';
 
     // Send the email
     $mail->send();

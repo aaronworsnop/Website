@@ -294,7 +294,7 @@ function mouseLeave(e) {
             behavior: "smooth"
         });
 
-        // 0.5s after scrolling to desired position, reset scroll-snap
+        // After scrolling to desired position, reset scroll-snap
         setTimeout(function() {
             scrollAreaLeft.style.scrollSnapType = "y mandatory";
             scrollAreaRight.style.scrollSnapType = "y mandatory";
@@ -418,7 +418,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 });
 
 function toggleLinks() {
-    const allLinks = document.querySelector(".mobile-link");
     const resume = document.querySelector(".link-git");
     const contact = document.querySelector(".link-in");
     const links = document.querySelector(".link-tube");
@@ -482,7 +481,6 @@ var storedHasUsedDomains = getCookie("hasUsedDomains");
  * 
  * - Animations for the domains need to be more smooth (tuning)
  * 
- * - Right domains are so glitchy
  * - Maybe change to no blur for performance
  * -
  * - Separate scripts for domains, general functions (this file) and cookies
