@@ -1,0 +1,129 @@
+/* GENERAL */
+
+:root {
+  --almost-black:#141414;
+  --my-grey: #969696;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  caret-color: white;
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 30px;
+  }
+}
+
+body {
+  /* background: rgb(35,16,50);
+  background: linear-gradient(0deg, rgba(35,16,50,1) 0%, rgba(20,20,20,1) 100%); */
+
+  background-color: var(--almost-black);
+  
+  color: white;
+
+  margin: 0;
+  padding: 0;
+
+  min-height: 100dvh;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: white;
+}
+
+/* NAVIGATION */
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: -1px;
+  left: 0;
+
+  width: 100%;
+  height: 4.5rem;
+
+  background-color: var(--almost-black);
+  box-shadow: 0 2rem 2rem var(--almost-black);
+
+  z-index: 100;
+}
+
+.navigation h3 {
+  margin: 0 6rem;
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .navigation {
+    height: 6rem;
+  }
+
+  .navigation h3 {
+    margin: 0 3rem;
+  }
+}
+
+/* CONTENT */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  padding-top: 6rem;
+  margin: 0 6rem;
+  gap: 3rem;
+}
+
+.card {
+  padding: 1rem;
+
+  background-color: var(--my-grey);
+  border-radius: 1.5rem;
+  box-shadow: black 0 0 1rem;
+
+  transition: transform 0.3s cubic-bezier(.22,.38,.48,.98);
+
+  /* set transform origin */
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s cubic-bezier(.22,.38,.48,.98);
+
+  z-index: 2;
+}
+
+#card-welcome {
+  background: rgb(172,25,182);
+  background: linear-gradient(143deg, rgba(172,25,182,1) 0%, rgba(58,82,213,1) 100%);
+
+  box-shadow: rgba(113, 54, 198, .5) 0 0 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    padding-top: 8rem;
+    margin: 0 3rem;
+  }
+
+  .card:hover {
+    scale: none;
+  }
+}
