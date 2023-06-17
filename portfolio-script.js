@@ -19,3 +19,13 @@ function doDarkMode(element) {
 
     }
 }
+
+/**
+ * Make dark mode work
+ * Add more top padding to the grid area
+ * Cookies across the pages
+ * 
+ * Tune hover animation
+ * Might need more exciting background and look since home page is so epic
+ * 
+ */
