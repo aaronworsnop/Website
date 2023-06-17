@@ -3,6 +3,7 @@
 :root {
   --almost-black:#141414;
   --my-grey: #969696;
+  --almost-white: #d5dfe6;
 }
 
 html {
@@ -12,6 +13,7 @@ html {
   caret-color: white;
 }
 
+/* Don't know about this */ 
 @media (max-width: 1000px) {
   html {
     font-size: 30px;
@@ -53,14 +55,29 @@ h3 {
   height: 4.5rem;
 
   background-color: var(--almost-black);
-  box-shadow: 0 2rem 2rem var(--almost-black);
+  box-shadow: 0 2rem 1.5rem var(--almost-black);
 
   z-index: 100;
 }
 
-.navigation h3 {
+.navigation * {
   margin: 0 6rem;
-  width: 100%;
+  width: 100%
+}
+
+.navigation h3::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: white;
+
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: all 0.2s cubic-bezier(.2,.75,.62,.98);
+}
+
+.navigation h3:hover:after {
+  transform: scaleX(1);
 }
 
 @media (max-width: 1000px) {
@@ -71,6 +88,64 @@ h3 {
   .navigation h3 {
     margin: 0 3rem;
   }
+}
+
+/* DARK MODE */
+
+.dark-mode-label {
+  font-size: 1.05rem;
+}
+
+input[type="checkbox"].toggle {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  cursor: pointer;
+}
+
+input[type="checkbox"].toggle + label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+input[type="checkbox"].toggle + label:hover {
+  cursor: pointer;
+}
+
+input[type="checkbox"].toggle + label::before {
+  content: "";
+  width: 3.5rem;
+  height: 2rem;
+  background-color: var(--almost-black);
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+
+  transition: .2s ease-out;
+}
+
+input[type="checkbox"].toggle:checked + label::before {
+  background-color: white;
+}
+
+
+input[type="checkbox"].toggle + label::after {
+  position: absolute;
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: white;
+  border-radius: 1rem;
+  left: .215rem;
+
+  transition: .2s ease-out;
+}
+
+input[type="checkbox"].toggle:checked + label::after {
+  background-color: var(--almost-black);
+  transform: translateX(92.5%);
 }
 
 /* CONTENT */
@@ -89,7 +164,7 @@ h3 {
 
   background-color: var(--my-grey);
   border-radius: 1.5rem;
-  box-shadow: black 0 0 1rem;
+  box-shadow: black 0 0 1.5rem;
 
   transition: transform 0.3s cubic-bezier(.22,.38,.48,.98);
 
@@ -108,6 +183,14 @@ h3 {
   background: linear-gradient(143deg, rgba(172,25,182,1) 0%, rgba(58,82,213,1) 100%);
 
   box-shadow: rgba(113, 54, 198, .5) 0 0 1.5rem;
+}
+
+#card-leetcode {
+  background-color: #1a1a1a;
+}
+
+#card-leetcode h1 {
+  color: #ffa116;
 }
 
 @media (max-width: 1200px) {

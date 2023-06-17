@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="theme-color" content="#747e8a">
     <meta name="description" content="Aaron Worsnop's portfolio. My past design work, development work, achievements, facts and more.">
-    <title>portfolio</title>
+    <title>aaronworsnop | Portfolio</title>
 
     <!-- Links -->
     <link rel="stylesheet" href="portfolio-style.css">
@@ -21,8 +21,11 @@
     <div class="background">
       <div class="navigation">
         <h3>Back</h3>
-        <h3 style="text-align: center;">aaronworsnop | portfolio</h3>
-        <h3></h3>
+        <h3 style="text-align: center;">Portfolio</h3>
+        <div class="dark-mode">
+          <input type="checkbox" id="dark-mode" class="toggle" onclick="doDarkMode(this)">
+          <label for="dark-mode" class="unselectable dark-mode-label">Dark Mode</label>
+        </div>
       </div>
 
       <div class="card-grid">
@@ -31,8 +34,8 @@
           <h4>Feel free to look around...</h4>
         </div>
 
-        <div class="card" id="card-leetcode-statistics">
-          <h1>Card 1</h1>
+        <div class="card" id="card-leetcode">
+          <h1>Leetcode</h1>
           <div class="test" id="leetcode-statistics"></div>
         </div>
 
@@ -78,5 +81,6 @@
     </div>
     <!-- DOM needs to load before script-->
     <script src="leetcode-api.js"></script>
+    <script src="portfolio-script.js"></script>
   </body>
 </html>   
