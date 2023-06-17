@@ -3,7 +3,6 @@
 :root {
   --almost-black:#141414;
   --my-grey: #969696;
-  --almost-white: #d5dfe6;
 }
 
 html {
@@ -13,10 +12,9 @@ html {
   caret-color: white;
 }
 
-/* Don't know about this */ 
 @media (max-width: 1000px) {
   html {
-    font-size: 30px;
+    font-size: 32px;
   }
 }
 
@@ -34,10 +32,30 @@ body {
   min-height: 100dvh;
 }
 
+a {
+  text-decoration: none;
+}
+
 h3 {
   font-weight: 400;
   font-size: 1.05rem;
   color: white;
+}
+
+*.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.svg {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 13px;
 }
 
 /* NAVIGATION */
@@ -60,12 +78,17 @@ h3 {
   z-index: 100;
 }
 
-.navigation * {
-  margin: 0 6rem;
-  width: 100%
+.navigation-left {
+  display: flex;
+  gap: 1rem;
 }
 
-.navigation h3::after {
+.navigation-back {
+  margin-left: 6rem;
+  cursor: pointer;
+}
+
+.navigation-back::after {
   content: "";
   display: block;
   height: 2px;
@@ -76,21 +99,29 @@ h3 {
   transition: all 0.2s cubic-bezier(.2,.75,.62,.98);
 }
 
-.navigation h3:hover:after {
+.navigation-back:hover:after {
   transform: scaleX(1);
 }
 
 @media (max-width: 1000px) {
   .navigation {
-    height: 6rem;
+    height: 7rem;
   }
 
-  .navigation h3 {
+  .navigation-back {
     margin: 0 3rem;
+  }
+
+  .navigation-pc {
+    display: none;
   }
 }
 
 /* DARK MODE */
+
+.dark-mode {
+  margin-right: 6rem;
+}
 
 .dark-mode-label {
   font-size: 1.05rem;
@@ -146,6 +177,34 @@ input[type="checkbox"].toggle + label::after {
 input[type="checkbox"].toggle:checked + label::after {
   background-color: var(--almost-black);
   transform: translateX(92.5%);
+}
+
+.dark-mode-icon {
+  display: none;
+}
+
+.dark-mode-mobile {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .dark-mode {
+    display: none;
+  }
+
+  .dark-mode-icon {
+    display: block;
+    height: 2.5rem;
+    margin-left: auto;
+    margin-right: 1rem;
+    opacity: 1;
+  }
+  
+  .dark-mode-mobile {
+    display: block;
+    margin-right: 3rem;
+    transform: scale(1.25);
+  }
 }
 
 /* CONTENT */
@@ -207,6 +266,6 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 
   .card:hover {
-    scale: none;
+    transform: none;
   }
 }
