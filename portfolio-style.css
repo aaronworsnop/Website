@@ -215,7 +215,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
   padding-top: 6rem;
   margin: 0 6rem;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .card {
