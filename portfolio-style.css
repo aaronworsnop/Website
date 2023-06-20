@@ -242,10 +242,15 @@ input[type="checkbox"].toggle:checked + label::after {
   background: linear-gradient(143deg, rgba(172,25,182,1) 0%, rgba(58,82,213,1) 100%);
 
   box-shadow: rgba(113, 54, 198, .5) 0 0 1.5rem;
+
+  grid-column: 1/3;
 }
 
 #card-leetcode {
   background-color: #1a1a1a;
+
+  grid-column: 3;
+  grid-row: 1/3;
 }
 
 #card-leetcode h1 {

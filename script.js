@@ -480,6 +480,7 @@ var storedHasUsedDomains = getCookie("hasUsedDomains");
  * - Create custom and clean (apple like) scrollbar for contact form text
  * 
  * - Animations for the domains need to be more smooth (tuning)
+ * - Loading screen
  * 
  * - Maybe change to no blur for performance
  * -
