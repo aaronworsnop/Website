@@ -213,9 +213,9 @@ input[type="checkbox"].toggle:checked + label::after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  padding-top: 6rem;
+  padding-top: 7rem;
   margin: 0 6rem;
-  gap: 4rem;
+  gap: 3.5rem;
 }
 
 .card {
@@ -240,10 +240,17 @@ input[type="checkbox"].toggle:checked + label::after {
 #card-welcome {
   background: rgb(172,25,182);
   background: linear-gradient(143deg, rgba(172,25,182,1) 0%, rgba(58,82,213,1) 100%);
-
   box-shadow: rgba(113, 54, 198, .5) 0 0 1.5rem;
 
   grid-column: 1/3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#card-welcome h1 {
+  mix-blend-mode: overlay;
 }
 
 #card-leetcode {
@@ -266,11 +273,17 @@ input[type="checkbox"].toggle:checked + label::after {
 @media (max-width: 1000px) {
   .card-grid {
     grid-template-columns: 1fr;
-    padding-top: 8rem;
+    gap: 2rem;
+    padding-top: 9rem;
     margin: 0 3rem;
   }
 
   .card:hover {
     transform: none;
+  }
+
+  .card {
+    grid-column: 1!important;
+    grid-row: auto!important;
   }
 }
