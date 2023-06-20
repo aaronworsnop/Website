@@ -2,7 +2,7 @@ const leetcodeApi = 'https://leetcode-stats-api.herokuapp.com/Bobwayde';
 const statisticsElement = document.getElementById('leetcode-statistics');
 
 // Display "Retrieving data" message
-statisticsElement.innerHTML = '<p>Retrieving data...</p>';
+statisticsElement.innerHTML = '<h4>Retrieving statistics...</h4>';
 
 // Function to fetch statistics and handle retries
 const fetchStatistics = async () => {
@@ -18,10 +18,14 @@ const fetchStatistics = async () => {
 
             // Update statistics
             statisticsElement.innerHTML = `
-                <h4>Total Solved: ${totalSolved}</h4>
-                <h4>Easy Solved: ${easySolved}</h4>
-                <h4>Medium Solved: ${mediumSolved}</h4>
-                <h4>Hard Solved: ${hardSolved}</h4>
+                <div style="display: flex; gap: 2rem;">
+                    <div style="font-weight: 700; font-size: 10rem; background-color: red;">${totalSolved}</div>
+                    <div style="display: flex; flex-direction: column; justify-content: space-around; background-color: blue; height: 100%">
+                        <h4 style="color: #00b8a3">${easySolved}</h4>
+                        <h4 style="color: #ffc01e">${mediumSolved}</h4>
+                        <h4 style="color: #ee365b">${hardSolved}</h4>
+                    </div>
+                </div>
             `;
         } else {
             console.error('Failed to retrieve statistics:', data.message);

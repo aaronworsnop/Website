@@ -50,7 +50,7 @@ h3 {
 }
 
 h4 {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.5rem;
   margin: 0;
 }
@@ -239,15 +239,17 @@ input[type="checkbox"].toggle:checked + label::after {
   box-shadow: black 0 0 1.5rem;
 
   transition: transform 0.3s cubic-bezier(.22,.38,.48,.98);
-
-  /* set transform origin */
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
   transition: transform 0.3s cubic-bezier(.22,.38,.48,.98);
 
   z-index: 2;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
 }
 
 #card-welcome {
@@ -255,14 +257,17 @@ input[type="checkbox"].toggle:checked + label::after {
   background: linear-gradient(143deg, rgba(172,25,182,1) 0%, rgba(58,82,213,1) 100%);
   box-shadow: rgba(113, 54, 198, .5) 0 0 1.5rem;
 
-  grid-column: 1/3;
-
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+
+  height: 200px;
+
+  grid-column: 1/3;
 }
 
 #card-welcome h1 {
+  font-size: 6cqw;
   mix-blend-mode: overlay;
 }
 
@@ -298,5 +303,9 @@ input[type="checkbox"].toggle:checked + label::after {
   .card {
     grid-column: 1!important;
     grid-row: auto!important;
+  }
+
+  #card-welcome h1 {
+    font-size: 2.5rem;
   }
 }

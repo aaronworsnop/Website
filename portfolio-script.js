@@ -30,6 +30,10 @@ function doDarkMode(element) {
  * Tune hover animation
  * Might need more exciting background and look since home page is so epic
  * 
- * Might want exotic card sizes, span 2 rows for example
+ * Might want to dynamically set transform anchors for hover effects
+ * Fade in/out for API fetches and loading? For example leetcode statistics fade instead of
+ * just popping in
+ * 
+ * Maybe custom cursor on this page, across all pages? Like apples iPadOS cursor, moulds into the card.
  * 
  */
