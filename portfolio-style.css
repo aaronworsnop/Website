@@ -306,6 +306,6 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 
   #card-welcome h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
