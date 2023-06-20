@@ -29,6 +29,7 @@ function doDarkMode(element) {
  * 
  * Tune hover animation
  * Might need more exciting background and look since home page is so epic
+ * Change padding to margin for back button. Selecting the left of the back button counts as the button right now...
  * 
  * Might want to dynamically set transform anchors for hover effects
  * Fade in/out for API fetches and loading? For example leetcode statistics fade instead of

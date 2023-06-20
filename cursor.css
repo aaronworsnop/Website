@@ -1,0 +1,20 @@
+.cursor {
+  position: fixed;
+  background: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  z-index: 1000;
+
+  transition: transform 0.5s cubic-bezier(.22,.38,.48,.98),
+  opacity 0.2s cubic-bezier(.22,.38,.48,.98);
+  
+  user-select: none;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+.cursor.active {
+  opacity: 1;
+  transform: scale(3);
+}
