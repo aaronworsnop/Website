@@ -14,10 +14,17 @@ document.addEventListener("mousemove", (e) => {
     cursor.style.left = mouseX - 10 + "px";
     cursor.style.top = mouseY - 10 + "px";
 
-    // If the mouse HOVERS any element with the class "card", add the class "cursor-disappear" to the cursor
-    if (document.querySelector(".card:hover")) {
+    // Cursor disappears when hovering over disappearable elements
+    if (document.querySelector(".cursor-disappear-interactable:hover")) {
         cursor.classList.add("cursor-disappear");
     } else {
         cursor.classList.remove("cursor-disappear");
+    }
+
+    // Cursor highlights when hovering over highlightable elements
+    if (document.querySelector(".cursor-highlight-interactable:hover")) {
+        cursor.classList.add("cursor-highlight");
+    } else {
+        cursor.classList.remove("cursor-highlight");
     }
 });

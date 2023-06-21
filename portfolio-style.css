@@ -98,7 +98,7 @@ h4 {
 
 .navigation-back {
   margin-left: 6rem;
-  cursor: pointer;
+  cursor: none;
 }
 
 .navigation-back::after {
@@ -145,7 +145,6 @@ input[type="checkbox"].toggle {
   position: absolute;
   left: -9999px;
   top: -9999px;
-  cursor: pointer;
 }
 
 input[type="checkbox"].toggle + label {
@@ -153,10 +152,11 @@ input[type="checkbox"].toggle + label {
   display: flex;
   align-items: center;
   color: white;
+  cursor: none;
 }
 
 input[type="checkbox"].toggle + label:hover {
-  cursor: pointer;
+  cursor: none;
 }
 
 input[type="checkbox"].toggle + label::before {
