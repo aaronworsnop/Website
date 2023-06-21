@@ -98,7 +98,7 @@ h4 {
 
 .navigation-back {
   margin-left: 6rem;
-  cursor: none;
+  cursor: pointer;
 }
 
 .navigation-back::after {
@@ -234,6 +234,8 @@ input[type="checkbox"].toggle:checked + label::after {
 .card {
   padding: 1rem;
 
+  position: relative;
+
   background-color: var(--my-grey);
   border-radius: 1.5rem;
   box-shadow: black 0 0 1.5rem;
@@ -246,6 +248,27 @@ input[type="checkbox"].toggle:checked + label::after {
   transition: transform 0.3s cubic-bezier(.22,.38,.48,.98);
 
   z-index: 2;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.1), transparent 40%);
+  opacity: 0;
+
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+
+  transition: opacity 0.3s ease-out;
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card-title {
