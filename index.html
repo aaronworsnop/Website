@@ -8,6 +8,7 @@
 
     <!-- Links -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cursor.css"
     <link rel="manifest" href="manifest.json">
 
     <!-- Fonts -->
@@ -19,18 +20,21 @@
   </head>
 
   <body onload="onload(), leftScroll(), rightScroll()">
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
     <!-- Menu -->
     <div class="menu">
-      <a class="unselectable"><h3 class="menu-item" onclick="openContactPane(this)">Contact</h3></a>
+      <a class="unselectable"><h3 class="menu-item cursor-disappear-interactable" onclick="openContactPane(this)">Contact</h3></a>
       <h3 class="unselectable">/ /</h3>
-      <a class="unselectable" href="coming-soon" target="_blank"><h3 class="menu-item">Portfolio</h3></a>
+      <a class="unselectable" href="coming-soon" target="_blank"><h3 class="menu-item cursor-disappear-interactable">Portfolio</h3></a>
       <h3 class="unselectable">/ /</h3>
-      <a class="unselectable" href="coming-soon" target="_blank"><h3 class="menu-item">Experience</h3></a>
+      <a class="unselectable" href="coming-soon" target="_blank"><h3 class="menu-item cursor-disappear-interactable">Experience</h3></a>
       <h3 class="unselectable">/ /</h3>
-      <a class="unselectable" href="resume" target="_blank"><h3 class="menu-item">Résumé</h3></a>
+      <a class="unselectable" href="resume" target="_blank"><h3 class="menu-item cursor-disappear-interactable">Résumé</h3></a>
       <h2 class="unselectable hero glitch layers" data-text="近設計"><span>近設計</span></h2>
 
-      <div class="dark-mode">
+      <div class="dark-mode cursor-highlight-interactable">
         <input type="checkbox" id="dark-mode" class="toggle" onclick="doDarkMode(this)">
         <label for="dark-mode" class="unselectable dark-mode-label">Dark Mode</label>
       </div>
@@ -105,7 +109,7 @@
 
     <div class="tooltip"><?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><line class="svg" x1="100" y1="179.04" x2="57.56" y2="136.6"/><line class="svg" x1="100" y1="20.96" x2="100" y2="179.04"/><line class="svg" x1="142.44" y1="136.6" x2="100" y2="179.04"/></svg></div>
 
-    <a href="aaronworsnop.com" target="_blank" class="current-domain">
+    <a href="aaronworsnop.com" target="_blank" class="current-domain cursor-disappear-interactable">
       <h3 class="current-domain-link">Take me there</h3>
       <?xml version="1.0" encoding="UTF-8"?><svg class="link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:13px;}</style></defs><path class="svg" d="m154.12,95.91v62.15c0,10.25-8.31,18.57-18.57,18.57H41.94c-10.25,0-18.57-8.31-18.57-18.57v-93.61c0-10.25,8.31-18.57,18.57-18.57h62.15"/><line class="svg" x1="176.62" y1="23.38" x2="176.62" y2="73.4"/><line class="svg" x1="83.47" y1="116.53" x2="176.62" y2="23.38"/><line class="svg" x1="126.6" y1="23.38" x2="176.62" y2="23.38"/></svg>
     </a>
@@ -192,7 +196,7 @@
           <!--Submit button-->
           <div class="contact-content-row" >
             <div class="contact-content-input contact-content-input-submit">
-              <button class="contact-content-submit-button" type="submit">
+              <button class="contact-content-submit-button cursor-disappear-interactable" type="submit">
                 Send
                 <?xml version="1.0" encoding="UTF-8"?><svg class="contact-send" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs></defs><path class="svg" d="m34.25,115.37l-16.33,33.91c-5.76,11.97,6.29,24.73,18.57,19.66l139.49-57.58c10.14-4.19,10.14-18.54,0-22.73L36.48,31.05c-12.28-5.07-24.33,7.69-18.57,19.66l19.46,35.31c3.05,5.54,8.71,9.16,15.02,9.61l61.37,4.37"/></svg>
               </button>
@@ -232,6 +236,7 @@
 
     <!-- DOM to load before script-->
     <script src="script.js"></script>
+    <script src="cursor.js"></script>
   </body>
 
 </html>
