@@ -50,6 +50,5 @@ const handleOnMouseMove = (e) => {
  * Fade in/out for API fetches and loading? For example leetcode statistics fade instead of
  * just popping in
  * 
- * Maybe custom cursor on this page, across all pages? Like apples iPadOS cursor, moulds into the card.
- * 
+ * Could use mix-blend-mode: soft-light; for the radial gradient on the cards
  */
