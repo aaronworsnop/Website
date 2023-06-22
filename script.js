@@ -483,6 +483,9 @@ var storedHasUsedDomains = getCookie("hasUsedDomains");
  * - Loading screen
  * 
  * - Maybe change to no blur for performance
+ * - On high end machines (laptop) when gpu renders things the domain names go ugly. This
+ *   is not too much of a problem, except that they go back to looking nice when the mix-
+ *   blend-mode of the custom cursor hover is set.
  * -
  * - Separate scripts for domains, general functions (this file) and cookies
 */

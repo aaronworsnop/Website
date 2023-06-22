@@ -11,7 +11,8 @@ html, body {
   z-index: 1000;
 
   transition: transform 0.1s cubic-bezier(.22,.38,.48,.98),
-  opacity 0.1s cubic-bezier(.22,.38,.48,.98);
+  opacity 0.1s cubic-bezier(.22,.38,.48,.98),
+  width 0.1s cubic-bezier(.22,.38,.48,.98);
   
   user-select: none;
   pointer-events: none;
@@ -27,4 +28,11 @@ html, body {
   opacity: 1;
   transform: scale(2);
   mix-blend-mode: difference;
+}
+
+.cursor-caret {
+  opacity: 1;
+  width: 2px;
+  border-radius: 0%;
+  transform: translateX(10px);
 }

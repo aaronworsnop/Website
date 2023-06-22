@@ -27,4 +27,11 @@ document.addEventListener("mousemove", (e) => {
     } else {
         cursor.classList.remove("cursor-highlight");
     }
+
+    // Cursor turns into a caret when hovering over a textbox
+    if (document.querySelector(".cursor-caret-interactable:hover")) {
+        cursor.classList.add("cursor-caret");
+    } else {
+        cursor.classList.remove("cursor-caret");
+    }
 });
