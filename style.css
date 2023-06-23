@@ -52,7 +52,7 @@ h3 {
 
 a {
   text-decoration: none;
-  cursor: pointer;
+  cursor: none;
 }
 
 input, textarea{
@@ -150,6 +150,10 @@ input[type="checkbox"].toggle:checked + label::after {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.menu-item {
+  cursor: pointer;
 }
 
 .menu-item::after {
