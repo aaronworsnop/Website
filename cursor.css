@@ -36,3 +36,9 @@ html, body {
   border-radius: 0%;
   transform: translateX(10px);
 }
+
+@media (max-width: 1000px) {
+  .cursor {
+    display: none;
+  }
+}
