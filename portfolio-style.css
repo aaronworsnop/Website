@@ -232,7 +232,7 @@ input[type="checkbox"].toggle:checked + label::after {
 }
 
 .card {
-  padding: 1rem;
+  padding: 2rem;
 
   position: relative;
 
