@@ -283,7 +283,6 @@ input[type="checkbox"].toggle:checked + label::after {
   height: 40vh;
   scroll-snap-type: y mandatory;
   
-  cursor: grab;
   position: relative;
 }
 
@@ -295,8 +294,6 @@ input[type="checkbox"].toggle:checked + label::after {
   overflow-y: auto;
   height: 40vh;
   scroll-snap-type: y mandatory;
-
-  cursor: grab;
 }
 
 .tooltip {

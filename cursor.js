@@ -34,4 +34,18 @@ document.addEventListener("mousemove", (e) => {
     } else {
         cursor.classList.remove("cursor-caret");
     }
+
+    // Cursor turns enlarges when hovering over enlargable elements
+    if (document.querySelector(".cursor-enlarge-interactable:hover")) {
+        cursor.classList.add("cursor-enlarge");
+    } else {
+        cursor.classList.remove("cursor-enlarge");
+    }
+
+    // Cursor "presses" when pressing and hovering over pressable elements
+    if (document.querySelector(".cursor-pressed-interactable:hover")) {
+        cursor.classList.add("cursor-enlarge-pressed");
+    } else {
+        cursor.classList.remove("cursor-enlarge-pressed");
+    }
 });

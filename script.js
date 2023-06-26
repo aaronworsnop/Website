@@ -200,7 +200,7 @@ function mouseIsDownLeft(e) {
     scrollAreaLeft.style.scrollSnapType = "none";
 
     // set cursor to grabbing
-    scrollAreaLeft.style.cursor = "grabbing";
+    scrollAreaLeft.classList.add("cursor-pressed-interactable");
 }
 
 function mouseIsDownRight(e) {
@@ -212,7 +212,7 @@ function mouseIsDownRight(e) {
     scrollAreaRight.style.scrollSnapType = "none";
 
     // set cursor to grabbing
-    scrollAreaRight.style.cursor = "grabbing";
+    scrollAreaRight.classList.add("cursor-pressed-interactable");
 }
 
 function mouseUp(e) {
@@ -257,8 +257,8 @@ function mouseUp(e) {
       
 
     // Resetting the cursor
-    scrollAreaLeft.style.cursor = "grab";
-    scrollAreaRight.style.cursor = "grab";
+    scrollAreaLeft.classList.remove("cursor-pressed-interactable");
+    scrollAreaRight.classList.remove("cursor-pressed-interactable");
 }
 
 function mouseLeave(e) {
@@ -300,7 +300,10 @@ function mouseLeave(e) {
             scrollAreaRight.style.scrollSnapType = "y mandatory";
         }, 175);
     }
-    
+
+    // Resetting the cursor
+    scrollAreaLeft.classList.remove("cursor-pressed-interactable");
+    scrollAreaRight.classList.remove("cursor-pressed-interactable");
 }
 
 function mouseMoveLeft(e) {

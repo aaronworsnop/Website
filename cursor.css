@@ -30,6 +30,16 @@ html, body {
   mix-blend-mode: difference;
 }
 
+.cursor-enlarge {
+  opacity: 0.3;
+  transform: scale(2);
+}
+
+.cursor-enlarge-pressed {
+  opacity: 0.4!important;
+  transform: scale(1.5)!important;
+}
+
 .cursor-caret {
   opacity: 1;
   width: 2px;
