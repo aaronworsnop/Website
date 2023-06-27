@@ -36,8 +36,8 @@ html, body {
 }
 
 .cursor-enlarge-pressed {
-  opacity: 0.4!important;
-  transform: scale(1.5)!important;
+  opacity: 0.4 !important;
+  transform: scale(1.5) !important;
 }
 
 .cursor-caret {
