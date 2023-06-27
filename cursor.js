@@ -11,8 +11,7 @@ document.addEventListener("mousemove", (e) => {
     mouseY = e.clientY;
 
     // Update the cursor position
-    cursor.style.left = mouseX - 10 + "px";
-    cursor.style.top = mouseY - 10 + "px";
+    updateCursorPosition();
 
     // Cursor disappears when hovering over disappearable elements
     if (document.querySelector(".cursor-disappear-interactable:hover")) {
@@ -49,3 +48,8 @@ document.addEventListener("mousemove", (e) => {
         cursor.classList.remove("cursor-enlarge-pressed");
     }
 });
+
+function updateCursorPosition() {
+    cursor.style.left = mouseX - 10 + "px";
+    cursor.style.top = mouseY - 10 + "px";
+}
