@@ -1,4 +1,8 @@
 function onload() {
+    // retrieve the values from cookies
+    var storedSiteMode = getCookie("siteMode");
+    console.log(storedSiteMode);
+
     // User uses dark mode
     if (storedSiteMode == "dark") {
         document.querySelector("#dark-mode").checked = true;
@@ -7,6 +11,7 @@ function onload() {
         // Dark mode
         document.querySelector("body").style.backgroundColor = "var(--almost-black)";
         document.querySelector(".navigation").style.backgroundColor = "var(--almost-black)";
+        document.querySelector(".navigation").style.boxShadow = "0 2rem 1.5rem var(--almost-black)";
     }
 }
 
@@ -18,11 +23,15 @@ function doDarkMode(element) {
         document.querySelector("body").style.backgroundColor = "var(--almost-black)";
         document.querySelector(".navigation").style.backgroundColor = "var(--almost-black)";
         document.querySelector(".navigation").style.boxShadow = "0 2rem 1.5rem var(--almost-black)";
+
+        setCookie("siteMode", "dark", 30); 
     } else {
         // Light mode
         document.querySelector("body").style.backgroundColor = "#2b2e30";
         document.querySelector(".navigation").style.backgroundColor = "#747e8a";
         document.querySelector(".navigation").style.boxShadow = "0 0.5rem 1.5rem rgba(0, 0, 0, 0.6)";
+
+        setCookie("siteMode", "light", 30); 
     }
 }
 
@@ -39,6 +48,29 @@ const handleOnMouseMove = (e) => {
 
     target.style.setProperty('--mouse-x', `${ x }px`);
     target.style.setProperty('--mouse-y', `${ y }px`);
+}
+
+// Cookies
+
+// set cookie
+function setCookie(name, value, daysToExpire) {
+    var expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + daysToExpire);
+    var cookieValue = encodeURIComponent(value) + "; expires=" + expirationDate.toUTCString();
+    document.cookie = name + "=" + cookieValue;
+}
+  
+// get cookie
+    function getCookie(name) {
+    var cookieName = name + "=";
+    var cookieArray = document.cookie.split(';');
+    for (var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i].trim();
+        if (cookie.indexOf(cookieName) === 0) {
+            return decodeURIComponent(cookie.substring(cookieName.length));
+        }
+    }
+    return null;
 }
 
 /**
