@@ -85,11 +85,12 @@ h4 {
   height: 4.5rem;
 
   background-color: #747e8a;
-  box-shadow: 0 2rem 1.5rem var(--almost-black);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.6);
 
   z-index: 100;
 
-  transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out,
+  box-shadow 0.3s ease-out;
 }
 
 .navigation-left {

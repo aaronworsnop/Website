@@ -17,10 +17,12 @@ function doDarkMode(element) {
         // Dark mode
         document.querySelector("body").style.backgroundColor = "var(--almost-black)";
         document.querySelector(".navigation").style.backgroundColor = "var(--almost-black)";
+        document.querySelector(".navigation").style.boxShadow = "0 2rem 1.5rem var(--almost-black)";
     } else {
         // Light mode
         document.querySelector("body").style.backgroundColor = "#2b2e30";
         document.querySelector(".navigation").style.backgroundColor = "#747e8a";
+        document.querySelector(".navigation").style.boxShadow = "0 0.5rem 1.5rem rgba(0, 0, 0, 0.6)";
     }
 }
 
