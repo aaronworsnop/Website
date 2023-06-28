@@ -6,17 +6,21 @@ function onload() {
         
         // Dark mode
         document.querySelector("body").style.backgroundColor = "var(--almost-black)";
+        document.querySelector(".navigation").style.backgroundColor = "var(--almost-black)";
     }
 }
 
 function doDarkMode(element) {
     const isChecked = element.checked;
 
-    // Change the background video to dark mode
     if (isChecked) {
-
+        // Dark mode
+        document.querySelector("body").style.backgroundColor = "var(--almost-black)";
+        document.querySelector(".navigation").style.backgroundColor = "var(--almost-black)";
     } else {
-
+        // Light mode
+        document.querySelector("body").style.backgroundColor = "#2b2e30";
+        document.querySelector(".navigation").style.backgroundColor = "#747e8a";
     }
 }
 
