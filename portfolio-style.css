@@ -253,6 +253,23 @@ input[type="checkbox"].toggle:checked + label::after {
   z-index: 2;
 }
 
+.image-card {
+  padding: 0;
+}
+
+.image-card img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+
+  transition: opacity 0.3s ease-out;
+}
+
+.image-card:hover img {
+  opacity: 1;
+}
+
 .card::before {
   content: "";
   position: absolute;
@@ -330,6 +347,10 @@ input[type="checkbox"].toggle:checked + label::after {
   .card {
     grid-column: 1!important;
     grid-row: auto!important;
+  }
+
+  .image-card img {
+    opacity: 1;
   }
 
   #card-welcome h1 {
