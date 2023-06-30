@@ -253,23 +253,6 @@ input[type="checkbox"].toggle:checked + label::after {
   z-index: 2;
 }
 
-.image-card {
-  padding: 0;
-}
-
-.image-card img {
-  border-radius: inherit;
-  height: 100%;
-  width: 100%;
-  opacity: 0.8;
-
-  transition: opacity 0.3s ease-out;
-}
-
-.image-card:hover img {
-  opacity: 1;
-}
-
 .card::before {
   content: "";
   position: absolute;
@@ -296,6 +279,24 @@ input[type="checkbox"].toggle:checked + label::after {
   margin-bottom: 0.5rem;
 }
 
+.image-card {
+  background-color: black;
+
+  padding: 0;
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+  opacity: 0.8;
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-card:hover img {
+  opacity: 1;
+}
+
 #card-welcome {
   background: rgb(172,25,182);
   background: linear-gradient(143deg, rgba(172,25,182,1) 0%, rgba(58,82,213,1) 100%);
@@ -313,6 +314,12 @@ input[type="checkbox"].toggle:checked + label::after {
 #card-welcome h1 {
   font-size: 6cqw;
   mix-blend-mode: overlay;
+
+  transition: transform 0.3s ease-out;
+}
+
+#card-welcome:hover h1 {
+  transform: scale(1.05);
 }
 
 #card-leetcode {
@@ -349,11 +356,19 @@ input[type="checkbox"].toggle:checked + label::after {
     grid-row: auto!important;
   }
 
-  .image-card img {
+  .card:hover::before {
+    opacity: 0;
+  }
+
+  .image-card {
     opacity: 1;
   }
 
   #card-welcome h1 {
     font-size: 3rem;
+  }
+
+  #card-welcome:hover h1 {
+    transform: none;
   }
 }
