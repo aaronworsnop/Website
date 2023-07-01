@@ -300,14 +300,17 @@ input[type="checkbox"].toggle:checked + label::after {
   box-shadow: black 0 0 1.5rem;
 
   transition: opacity 0.3s ease-in-out,
-  transform 0.2s ease-out,
-  max-height 0.4s cubic-bezier(.94,.59,.48,.98);
+  transform 0.37s ease-in,
+  max-height 0.4s;
 }
 
 .image-card:hover img {
   opacity: 1;
   max-height: 1000px;
   transform: translateY(-25%);
+
+  transition: transform 0.2s ease-out,
+  max-height 0.4s cubic-bezier(.94,.59,.48,.98);
 }
 
 #card-welcome {
@@ -371,6 +374,11 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .image-card img {
     opacity: 0.9;
+    transition: transform 0.3s,
+    max-height 0.3s;
+  }
+
+  .image-card:hover img {
     transition: transform 0.3s,
     max-height 0.3s;
   }
