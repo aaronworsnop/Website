@@ -300,8 +300,8 @@ input[type="checkbox"].toggle:checked + label::after {
   box-shadow: black 0 0 1.5rem;
 
   transition: opacity 0.3s ease-in-out,
-  transform 0.3s cubic-bezier(.22,.38,.48,.98),
-  max-height 0.3s cubic-bezier(.22,.38,.48,.98);
+  transform 0.2s ease-out,
+  max-height 0.4s cubic-bezier(.94,.59,.48,.98);
 }
 
 .image-card:hover img {
@@ -369,8 +369,10 @@ input[type="checkbox"].toggle:checked + label::after {
     opacity: 0;
   }
 
-  .image-card {
-    opacity: 1;
+  .image-card img {
+    opacity: 0.9;
+    transition: transform 0.3s,
+    max-height 0.3s;
   }
 
   #card-welcome h1 {
