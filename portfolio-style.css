@@ -360,10 +360,6 @@ input[type="checkbox"].toggle:checked + label::after {
     margin: 0 3rem;
   }
 
-  .card:hover {
-    transform: none;
-  }
-
   .card {
     grid-column: 1!important;
     grid-row: auto!important;
@@ -379,9 +375,5 @@ input[type="checkbox"].toggle:checked + label::after {
 
   #card-welcome h1 {
     font-size: 3rem;
-  }
-
-  #card-welcome:hover h1 {
-    transform: none;
   }
 }
