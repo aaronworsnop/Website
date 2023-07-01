@@ -282,8 +282,11 @@ input[type="checkbox"].toggle:checked + label::after {
 .image-card {
   background-color: black;
 
+  box-shadow: none;
+
   padding: 0;
   height: 200px;
+  z-index: 2;
 }
 
 .image-card img {
@@ -294,6 +297,8 @@ input[type="checkbox"].toggle:checked + label::after {
   object-fit: cover;
   border-radius: inherit;
 
+  box-shadow: black 0 0 1.5rem;
+
   transition: opacity 0.3s ease-in-out,
   transform 0.3s cubic-bezier(.22,.38,.48,.98),
   max-height 0.3s cubic-bezier(.22,.38,.48,.98);
@@ -301,7 +306,7 @@ input[type="checkbox"].toggle:checked + label::after {
 
 .image-card:hover img {
   opacity: 1;
-  max-height: 500px;
+  max-height: 1000px;
   transform: translateY(-25%);
 }
 
