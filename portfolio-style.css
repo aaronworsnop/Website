@@ -283,18 +283,29 @@ input[type="checkbox"].toggle:checked + label::after {
   background-color: black;
 
   padding: 0;
-  overflow: hidden;
+  height: 200px;
 }
 
 .image-card img {
   width: 100%;
   opacity: 0.8;
+  border-radius: inherit;
 
-  transition: opacity 0.3s ease-in-out;
+  height: 200px;
+  object-fit: cover;
+
+  transition: opacity 0.3s ease-in-out,
+  height 0.3s ease-in-out;
+}
+
+.image-card:hover {
+  height: auto;
+  transform: translateY(-25%);
 }
 
 .image-card:hover img {
   opacity: 1;
+  height: auto;
 }
 
 #card-welcome {
