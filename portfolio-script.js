@@ -74,16 +74,13 @@ function setCookie(name, value, daysToExpire) {
 }
 
 /**
- * Make dark mode work
- * Cookies across the pages
- * When uploaded to live, check if navbar needs more or less height depending on matching the home page
-   for dark mode height
+ * Radial blur ipadOs mouse effect looks cut off on image-card s because the img is expanding, not the card. Need
+ * to find a way for the card to expand
  * 
  * Tune hover animation
  * Might need more exciting background and look since home page is so epic
  * Change padding to margin for back button. Selecting the left of the back button counts as the button right now...
  * 
- * Might want to dynamically set transform anchors for hover effects
  * Fade in/out for API fetches and loading? For example leetcode statistics fade instead of
  * just popping in
  * 
