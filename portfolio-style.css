@@ -266,7 +266,7 @@ input[type="checkbox"].toggle:checked + label::after {
   border-radius: inherit;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 10;
 
   transition: opacity 0.3s ease-out;
 }
@@ -280,13 +280,15 @@ input[type="checkbox"].toggle:checked + label::after {
 }
 
 .image-card {
-  background-color: black;
+  background-color: transparent;
 
   box-shadow: none;
 
   padding: 0;
   height: 200px;
   z-index: 2;
+  transition: z-index 0s 0.3s,
+  transform 0.3s cubic-bezier(.22,.38,.48,.98);
 }
 
 .image-card img {
@@ -302,6 +304,10 @@ input[type="checkbox"].toggle:checked + label::after {
   transition: opacity 0.3s ease-in-out,
   transform 0.3s,
   max-height 0.3s;
+}
+
+.image-card:hover {
+  z-index: 3;
 }
 
 .image-card:hover img {
@@ -369,8 +375,13 @@ input[type="checkbox"].toggle:checked + label::after {
     opacity: 0;
   }
 
+  .image-card {
+    height: 300px;
+  }
+
   .image-card img {
     opacity: 0.9;
+    max-height: 300px;
   }
 
   #card-welcome h1 {
