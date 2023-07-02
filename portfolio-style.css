@@ -371,13 +371,6 @@ input[type="checkbox"].toggle:checked + label::after {
 
   .image-card img {
     opacity: 0.9;
-    transition: transform 0.3s,
-    max-height 0.3s;
-  }
-
-  .image-card:hover img {
-    transition: transform 0.3s,
-    max-height 0.3s;
   }
 
   #card-welcome h1 {
