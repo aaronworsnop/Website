@@ -1,4 +1,4 @@
-const leetcodeApi = 'https://leetcode-stats-api.herokuapp.com/Bobwayde';
+const leetcodeApi = 'https://leetcode-stats-api.herokuapp.com/aaronworsnop';
 const statisticsElement = document.getElementById('leetcode-statistics');
 
 // Display "Retrieving data" message
