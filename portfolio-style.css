@@ -287,8 +287,7 @@ input[type="checkbox"].toggle:checked + label::after {
   padding: 0;
   height: 200px;
   z-index: 2;
-  transition: z-index 0s 0.3s,
-  transform 0.3s cubic-bezier(.22,.38,.48,.98);
+  transition: transform 0.3s cubic-bezier(.22,.38,.48,.98);
 }
 
 .image-card:hover {
