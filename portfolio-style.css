@@ -345,7 +345,6 @@ input[type="checkbox"].toggle:checked + label::after {
   background-color: #1a1a1a;
 
   grid-column: 3;
-  grid-row: 1/3;
 }
 
 #card-leetcode h1 {
