@@ -356,7 +356,25 @@ input[type="checkbox"].toggle:checked + label::after {
   background-image: url(img/portfolio/gdsc-1.jpg);
   background-size: cover;
 
+  position: relative;
+
   aspect-ratio: 1/1;
+
+  border: solid white 2px;
+}
+
+#card-gdsc::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(to top left, #32a350, rgba(255, 153, 150, 0), red), linear-gradient(to top right, #f3b605, rgba(255, 153, 150, 0), #4081ec);
+  filter: blur(1rem);
 }
 
 @media (max-width: 1200px) {
