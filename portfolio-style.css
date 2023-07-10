@@ -352,6 +352,13 @@ input[type="checkbox"].toggle:checked + label::after {
   color: #ffa116;
 }
 
+#card-gdsc {
+  background-image: url(img/portfolio/gdsc-1.jpg);
+  background-size: cover;
+
+  aspect-ratio: 1/1;
+}
+
 @media (max-width: 1200px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
