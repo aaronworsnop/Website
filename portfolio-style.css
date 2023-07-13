@@ -361,20 +361,11 @@ input[type="checkbox"].toggle:checked + label::after {
   aspect-ratio: 1/1;
 
   border: solid white 3px;
-}
-
-#card-gdsc::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1!important;
-
-  width: 100%;
-  height: 100%;
-
-  background: linear-gradient(to top left, #32a350, rgba(255, 153, 150, 0), red), linear-gradient(to top right, #f3b605, rgba(255, 153, 150, 0), #4081ec);
-  filter: blur(1rem);
+  box-shadow:
+    0 10px 20px -10px rgb(50, 163, 80),
+    0 -10px 20px -10px red,
+    10px 0 20px -10px rgb(28, 115, 255),
+    -10px 0 20px -10px rgb(243, 182, 5);
 }
 
 @media (max-width: 1200px) {
