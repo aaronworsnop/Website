@@ -356,16 +356,26 @@ input[type="checkbox"].toggle:checked + label::after {
   background-image: url(img/portfolio/gdsc-1.jpg);
   background-size: cover;
 
+
   position: relative;
 
   aspect-ratio: 1/1;
 
-  border: solid white 3px;
+  border: solid white 0.2rem;
   box-shadow:
-    0 10px 20px -10px rgb(50, 163, 80),
-    0 -10px 20px -10px red,
-    10px 0 20px -10px rgb(28, 115, 255),
-    -10px 0 20px -10px rgb(243, 182, 5);
+    0 10px 1rem -10px rgb(50, 163, 80),
+    0 -10px 1rem -10px red,
+    10px 0 1rem -10px rgb(28, 115, 255),
+    -10px 0 1rem -10px rgb(243, 182, 5);
+}
+
+#card-gdsc h1, #card-gdsc h4 {
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+  transition: opacity 0.3s ease-out;
+}
+
+#card-gdsc:hover h4 {
+  opacity: 0;
 }
 
 @media (max-width: 1200px) {
