@@ -82,14 +82,8 @@ function setCookie(name, value, daysToExpire) {
  * Radial blur ipadOs mouse effect looks cut off on image-card s because the img is expanding, not the card. Need
  * to find a way for the card to expand
  * 
- * Maybe too many things going on at once? The page is really laggy.
- * 
  * Tune hover animation
  * Might need more exciting background and look since home page is so epic
- * Change padding to margin for back button. Selecting the left of the back button counts as the button right now...
- * 
- * Fade in/out for API fetches and loading? For example leetcode statistics fade instead of
- * just popping in
  * 
  * Could use mix-blend-mode: soft-light; for the radial gradient on the cards
  */
