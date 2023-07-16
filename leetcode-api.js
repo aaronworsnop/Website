@@ -28,7 +28,7 @@ const fetchStatistics = async () => {
                 </div>
             `;
         } else {
-            console.error('Failed to retrieve statistics:', data.message);
+            console.error('Failed to retrieve LeetCode statistics...', data.message);
             // Retry after a delay (e.g., 3 seconds)
             setTimeout(fetchStatistics, 3000);
         }

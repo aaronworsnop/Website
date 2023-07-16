@@ -1,7 +1,6 @@
 function onload() {
     // retrieve the values from cookies
     var storedSiteMode = getCookie("siteMode");
-    console.log(storedSiteMode);
 
     // User uses dark mode
     if (storedSiteMode == "dark") {
