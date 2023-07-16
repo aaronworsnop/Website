@@ -295,6 +295,10 @@ input[type="checkbox"].toggle:checked + label::after {
   z-index: 3;
 }
 
+.image-card:hover::before {
+  opacity: 0;
+}
+
 .image-card img {
   width: 100%;
   max-height: 200px;
