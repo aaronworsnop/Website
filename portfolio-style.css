@@ -295,17 +295,12 @@ input[type="checkbox"].toggle:checked + label::after {
   transition: transform 0.3s cubic-bezier(.22,.38,.48,.98), z-index 0.3s 0.3s;
 }
 
-.card:hover .image-card {
-  z-index: 4;
-  transform: scale(1.08);
-  transition-delay: 0s, 0s; /* Reset the transition delay */
-}
-
 .image-card:hover {
   z-index: 3;
 }
 
 .image-card:hover::before {
+  /* No radial overlay on image-cards */
   opacity: 0;
 }
 
