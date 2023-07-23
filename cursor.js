@@ -10,17 +10,17 @@ document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 
-    // Hide the cursor if it is outside the window
-    checkEdgeDistance();
-
     // Update the cursor position
     updateCursorPosition();
 
-    // Update the cursor mode only if the cursor is not outside the window
-    if (!cursorOutsideWindow) {
-        updateCursorMode();
-    }
+    // Update the cursor mode
+    updateCursorMode();
 });
+
+// Cursor disappears when leaving the window
+document.onmouseout = function() {
+    cursor.classList.add("cursor-disappear");
+};
 
 function updateCursorPosition() {
     cursor.style.left = mouseX - 10 + "px";
@@ -61,25 +61,5 @@ function updateCursorMode() {
         cursor.classList.add("cursor-enlarge-pressed");
     } else {
         cursor.classList.remove("cursor-enlarge-pressed");
-    }
-}
-
-var cursorOutsideWindow = false;
-
-function checkEdgeDistance() {
-    const viewportHeight = window.innerHeight;
-
-    // Distance from the edge that the cursor should disappear
-    const edgeThreshold = 10;
-
-    // Check if the cursor is close to any edge
-    if (mouseY < edgeThreshold || mouseY > viewportHeight - edgeThreshold) {
-        cursorOutsideWindow = true;
-        // Hide the cursor
-        cursor.classList.add("cursor-disappear");
-    } else {
-        cursorOutsideWindow = false;
-        // Show the cursor
-        cursor.classList.remove("cursor-disappear");
     }
 }
