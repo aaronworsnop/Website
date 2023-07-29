@@ -12,11 +12,6 @@ function onload() {
         document.querySelector(".navigation").style.backgroundColor = "var(--almost-black)";
         document.querySelector(".navigation").style.boxShadow = "0 2rem 1.5rem var(--almost-black)";
     }
-
-    // User is on mobile
-    if (window.innerWidth <= 1000) {
-        document.querySelector("#card-gdsc h1").innerHTML = "GDSC";
-    }
 }
 
 function doDarkMode(element) {
