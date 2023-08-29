@@ -39,9 +39,9 @@ function doDarkMode(element) {
         background.style.opacity = "0";
 
         setTimeout(() => {
-            background.style.backgroundColor = "hsla(266,42%,47%,1)";
+            background.style.backgroundColor = "hsla(212,100%,96%,1)";
             navigation.style.borderBottom = "1px solid rgba(255, 255, 255, 0.5)";
-            background.style.background = "radial-gradient(at 96% 6%, hsla(289,63%,60%,1) 0px, transparent 50%), radial-gradient(at 21% 32%, hsla(281,60%,49%,1) 0px, transparent 50%), radial-gradient(at 82% 96%, hsla(189,76%,52%,1) 0px, transparent 50%), radial-gradient(at 26% 84%, hsla(296,52%,56%,1) 0px, transparent 50%), radial-gradient(at 71% 32%, hsla(204,68%,65%,1) 0px, transparent 50%), radial-gradient(at 5% 8%, hsla(220,52%,49%,1) 0px, transparent 50%)"
+            background.style.background = "radial-gradient(at 16% 84%, hsla(266,100%,78%,1) 0px, transparent 50%), radial-gradient(at 83% 0%, hsla(335,100%,68%,1) 0px, transparent 50%), radial-gradient(at 18% 9%, hsla(199,100%,70%,1) 0px, transparent 50%), radial-gradient(at 91% 72%, hsla(314,100%,84%,1) 0px, transparent 50%)"
                     }, 300);
 
         setTimeout(() => {
