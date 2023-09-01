@@ -321,6 +321,14 @@ input[type="checkbox"].toggle:checked + label::after {
   margin-bottom: 0.5rem;
 }
 
+.card .card-content {
+  transition: transform 0.3s ease-out;
+}
+
+.card:hover .card-content {
+  transform: scale(1.03);
+}
+
 .image-card {
   background-color: transparent;
 
