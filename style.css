@@ -304,7 +304,6 @@ input[type="checkbox"].toggle:checked + label::after {
 
   opacity: 0.5;
 
-  width: 3rem;
   animation: animate-tooltip 2.5s ease-in-out forwards;
 }
 
