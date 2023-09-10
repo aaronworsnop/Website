@@ -40,7 +40,7 @@ body {
 }
 
 h1 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 3.5vw;
 }
 
@@ -258,7 +258,7 @@ input[type="checkbox"].toggle:checked + label::after {
 }
 
 .landing-screen-title {
-  font-weight: 300;
+  font-weight: 400;
   color: white;
 
   position: fixed;
