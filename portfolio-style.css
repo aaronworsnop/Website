@@ -485,6 +485,14 @@ input[type="checkbox"].toggle:checked + label::after {
   grid-row: 4;
 }
 
+#card-strafe .card-content {
+  position: absolute;
+  color: var(--almost-black);
+  top: 0;
+  left: 0;
+  margin: 2rem;
+}
+
 @media (max-width: 1200px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
