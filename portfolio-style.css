@@ -493,6 +493,14 @@ input[type="checkbox"].toggle:checked + label::after {
   margin: 2rem;
 }
 
+#card-strafe h4 {
+  transition: opacity 0.3s ease-out;
+}
+
+#card-strafe:hover h4 {
+  opacity: 0;
+}
+
 @media (max-width: 1200px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
