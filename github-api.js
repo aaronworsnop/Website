@@ -12,20 +12,25 @@ const headers = {
 
 // Function to get the number of commits made yesterday
 async function getCommitsYesterday() {
-  try {
-    const response = await fetch(`${apiUrl}/search/commits?q=author:${username}+committer-date:${getYesterday()}&sort=committer-date&order=desc`, {
-      headers,
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+    try {
+      // Calculate the date for yesterday
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayISO = yesterday.toISOString().split('T')[0];
+  
+      const response = await fetch(`${apiUrl}/search/commits?q=author:${username}+committer-date:${yesterdayISO}&sort=committer-date&order=desc`, {
+        headers,
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      const commitCount = data.total_count;
+      console.log(`Commits made yesterday: ${commitCount}`);
+    } catch (error) {
+      console.error('Error fetching commit count:', error.message);
     }
-    const data = await response.json();
-    const commitCount = data.total_count;
-    console.log(`Commits made yesterday: ${commitCount}`);
-  } catch (error) {
-    console.error('Error fetching commit count:', error.message);
   }
-}
 
 // Function to get the number of repositories
 async function getRepositoryCount() {
@@ -61,7 +66,7 @@ async function getPullRequestCount() {
 
 // Function to get the total number of commits made
 async function getTotalCommitCount() {
-  try {
+    try {
     const response = await fetch(`${apiUrl}/users/${username}/repos?per_page=1000`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -88,10 +93,11 @@ async function getTotalCommitCount() {
 
 // Function to get the date of yesterday in ISO format (YYYY-MM-DD)
 function getYesterday() {
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  return yesterday.toISOString().split('T')[0];
-}
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 2);
+    return yesterday.toISOString().split('T')[0];
+  }
+  
 
 // Fetch and display the information
 getCommitsYesterday();
