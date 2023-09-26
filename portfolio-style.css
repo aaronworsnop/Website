@@ -485,6 +485,10 @@ input[type="checkbox"].toggle:checked + label::after {
   grid-row: 4;
 }
 
+#card-webforms-mobile-image {
+  display: none;
+}
+
 #card-strafe .card-content {
   position: absolute;
   color: var(--almost-black);
@@ -535,5 +539,13 @@ input[type="checkbox"].toggle:checked + label::after {
 
   #card-welcome h1 {
     font-size: 3rem;
+  }
+
+  #card-webforms-pc-image {
+    display: none;
+  }
+
+  #card-webforms-mobile-image {
+    display: block;
   }
 }
