@@ -505,6 +505,25 @@ input[type="checkbox"].toggle:checked + label::after {
   opacity: 0;
 }
 
+#card-github {
+  background-color: #0d1117;
+}
+
+.commits {
+  display: flex;
+  gap: 0.5rem;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.commit {
+  width: 15px;
+  aspect-ratio: 1/1;
+  background-color: #39d353;
+  border-radius: 3px;
+}
+
 @media (max-width: 1200px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
