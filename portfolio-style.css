@@ -489,6 +489,26 @@ input[type="checkbox"].toggle:checked + label::after {
   display: none;
 }
 
+#card-imc-launchpad .card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+}
+
+#card-imc-launchpad h1, #card-imc-launchpad h4 {
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease-out;
+}
+
+#card-imc-launchpad h4 {
+  transition: opacity 0.3s ease-out;
+}
+
+#card-imc-launchpad:hover h4 {
+  opacity: 0;
+}
+
 #card-strafe .card-content {
   position: absolute;
   color: var(--almost-black);
