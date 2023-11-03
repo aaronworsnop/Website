@@ -391,7 +391,6 @@ input[type="checkbox"].toggle:checked + label::after {
 
 .static-image {
   padding: 0;
-  opacity: 0.8;
 
   transition: transform 0.3s cubic-bezier(.22,.38,.48,.98),
   opacity 0.3s ease-out;
