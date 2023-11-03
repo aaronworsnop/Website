@@ -2,36 +2,19 @@ const username = 'aaronworsnop';
 const accessToken = 'PLACEHOLDER';
 const apiUrl = 'https://api.github.com';
 
-async function getCommitsOnDate(date) {
-  try {
-    const response = await fetch(`${apiUrl}/search/commits?q=author:${username}+committer-date:${date}&sort=committer-date&order=desc`, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        Accept: 'application/vnd.github.cloak-preview',
-      },
-    });
+function countDaysSinceJune15() {
+  const today = new Date();
+  const june15 = new Date(2023, 5, 15); 
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
+  // To calculate the time difference of two dates
+  const timeDiff = Math.abs(today.getTime() - june15.getTime());
 
-    const data = await response.json();
-    console.log(`\nCommits on ${date}: ${data.total_count}`);
-    data.items.forEach(item => {
-      console.log(`- ${item.commit.message} in ${item.repository.full_name}`);
-    });
-  } catch (error) {
-    console.error('Error fetching commit count:', error.message);
-  }
+  // To calculate the number of days between two dates
+  const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+
+  return diffDays;
 }
 
-function getYesterday() {
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  return yesterday.toISOString().split('T')[0];
-}
-
-// Example usage:
-console.log(`Fetching commit data for user: ${username}`);
-getCommitsOnDate(getYesterday());
+// Call the function to get the number of days since June 15th
+const daysSinceJune15 = countDaysSinceJune15();
+console.log(`Number of days since June 15th: ${daysSinceJune15}`);
