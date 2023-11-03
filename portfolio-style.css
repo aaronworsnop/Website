@@ -529,12 +529,35 @@ input[type="checkbox"].toggle:checked + label::after {
   background-color: #0d1117;
 }
 
+#card-github .card-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+#github-streak {
+  font-size: 6rem;
+}
+
 .commits {
   display: flex;
   gap: 0.5rem;
 
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.commit-less {
+  width: 15px;
+  aspect-ratio: 1/1;
+  background-color: #0e4429;
+  border-radius: 3px;
+}
+
+.commit-med {
+  width: 15px;
+  aspect-ratio: 1/1;
+  background-color: #006d32;
+  border-radius: 3px;
 }
 
 .commit {

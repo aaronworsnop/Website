@@ -17,4 +17,6 @@ function countDaysSinceJune15() {
 
 // Call the function to get the number of days since June 15th
 const daysSinceJune15 = countDaysSinceJune15();
-console.log(`Number of days since June 15th: ${daysSinceJune15}`);
+
+document.getElementById('github-streak').innerText = daysSinceJune15;
+
