@@ -563,6 +563,15 @@ input[type="checkbox"].toggle:checked + label::after {
   border-radius: 3px;
 }
 
+#card-trp {
+  grid-column: 1/3;
+  grid-row: 5;
+}
+
+#card-trp-mobile-image {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -604,6 +613,14 @@ input[type="checkbox"].toggle:checked + label::after {
   }
 
   #card-webforms-mobile-image {
+    display: block;
+  }
+
+  #card-trp-pc-image {
+    display: none;
+  }
+
+  #card-trp-mobile-image {
     display: block;
   }
 }
