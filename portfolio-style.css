@@ -394,6 +394,8 @@ input[type="checkbox"].toggle:checked + label::after {
 
   transition: transform 0.3s cubic-bezier(.22,.38,.48,.98),
   opacity 0.3s ease-out;
+
+  background-color: transparent;
 }
 
 .static-image img {
@@ -570,6 +572,44 @@ input[type="checkbox"].toggle:checked + label::after {
 
 #card-trp-mobile-image {
   display: none;
+}
+
+#card-youtube {
+  border: white solid 0.2rem;
+}
+
+#card-youtube .card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+  z-index: 2;
+}
+
+#card-youtube h1, #card-youtube h4 {
+  text-shadow: 
+    0 0 2rem rgba(0, 0, 0, 1),
+    0 0 2rem rgba(0, 0, 0, 1),
+    0 0 2rem rgba(0, 0, 0, 1),
+    0 0 2rem rgba(0, 0, 0, 1);
+  transition: opacity 0.3s ease-out;
+}
+
+#card-youtube:hover h4 {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+#card-youtube img {
+  filter: blur(0.1rem);
+  opacity: 0.8;
+  transition: opacity 0.3s ease-out,
+  filter 0.3s ease-out;
+}
+
+#card-youtube:hover img {
+  filter: blur(0);
+  opacity: 1;
 }
 
 @media (max-width: 1200px) {
