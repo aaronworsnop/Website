@@ -682,4 +682,13 @@ input[type="checkbox"].toggle:checked + label::after {
   #card-trp-mobile-image {
     display: block;
   }
+
+  .commit, .commit-less, .commit-med {
+    width: 30px;
+    border-radius: 7px;
+  }
+
+  .no-mobile {
+    display: none;
+  }
 }
