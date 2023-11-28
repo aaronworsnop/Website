@@ -41,13 +41,13 @@ try {
     $mail->Port = 465;
 
     // Sender and recipient details
-    $mail->setFrom($email, $firstName . ' ' . $lastName);
-    $mail->addAddress('me@aaronworsnop.com');
+    $mail->setFrom('me@aaronworsnop.com', $firstName . ' ' . $lastName);
+    $mail->addAddress('aaronworsnopbusiness@gmail.com');
 
     // Email subject and content
     $mail->Subject = $subject;
     $mail->isHTML(true);
-    $mail->Body = '<h2>Contact Pane Message:</h2>' . '<p>' . $message . '</p>';
+    $mail->Body = '<h2>Contact Pane Message (' . $email . ')></h2>' . '<p>' . $message . '</p>';
 
     // Send the email
     $mail->send();
