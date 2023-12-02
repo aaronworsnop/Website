@@ -6,7 +6,7 @@ function onload() {
     if (storedSiteMode == "dark") {
         document.querySelector("#dark-mode").checked = true;
         document.querySelector("#dark-mode-mobile").checked = true;
-        
+
         // Dark mode
         document.querySelector(".background").style.background = "linear-gradient(to top, #150426, var(--almost-black) 65%) fixed";
         document.querySelector(".navigation").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
@@ -33,16 +33,15 @@ function doDarkMode(element) {
             background.style.opacity = "1";
         }, 301);
 
-        setCookie("siteMode", "dark", 30); 
+        setCookie("siteMode", "dark", 30);
     } else {
         // Light mode
         background.style.opacity = "0";
 
         setTimeout(() => {
-            background.style.backgroundColor = "hsla(212,100%,96%,1)";
             navigation.style.borderBottom = "1px solid rgba(255, 255, 255, 0.5)";
-            background.style.background = "radial-gradient(at 16% 84%, hsla(266,100%,78%,1) 0px, transparent 50%), radial-gradient(at 83% 0%, hsla(335,100%,68%,1) 0px, transparent 50%), radial-gradient(at 18% 9%, hsla(199,100%,70%,1) 0px, transparent 50%), radial-gradient(at 91% 72%, hsla(314,100%,84%,1) 0px, transparent 50%)"
-                    }, 300);
+            background.style.background = "linear-gradient(to top, #c9ddff, #129cff 55%) fixed"
+        }, 300);
 
         setTimeout(() => {
             background.style.opacity = "1";
@@ -50,11 +49,11 @@ function doDarkMode(element) {
             navigation.style.boxShadow = "0 0.5rem 1.5rem rgb(0, 0, 0, 0.2)";
         }, 301);
 
-        setCookie("siteMode", "light", 30); 
+        setCookie("siteMode", "light", 30);
     }
 }
 
-for(const card of document.querySelectorAll(".card")) {
+for (const card of document.querySelectorAll(".card")) {
     card.onmousemove = e => handleOnMouseMove(e);
 }
 
@@ -62,11 +61,11 @@ const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
 
     const rect = target.getBoundingClientRect(),
-    x = e.clientX - rect.left,
-    y = e.clientY - rect.top;
+        x = e.clientX - rect.left,
+        y = e.clientY - rect.top;
 
-    target.style.setProperty('--mouse-x', `${ x }px`);
-    target.style.setProperty('--mouse-y', `${ y }px`);
+    target.style.setProperty('--mouse-x', `${x}px`);
+    target.style.setProperty('--mouse-y', `${y}px`);
 }
 
 // Cookies
@@ -78,9 +77,9 @@ function setCookie(name, value, daysToExpire) {
     var cookieValue = encodeURIComponent(value) + "; expires=" + expirationDate.toUTCString();
     document.cookie = name + "=" + cookieValue;
 }
-  
+
 // get cookie
-    function getCookie(name) {
+function getCookie(name) {
     var cookieName = name + "=";
     var cookieArray = document.cookie.split(';');
     for (var i = 0; i < cookieArray.length; i++) {
