@@ -408,9 +408,9 @@ input[type="checkbox"].toggle:checked+label::after {
 }
 
 #card-welcome {
-  background: rgb(172, 25, 182);
-  background: linear-gradient(143deg, rgba(172, 25, 182, 1) 0%, rgba(58, 82, 213, 1) 100%);
-  box-shadow: rgba(113, 54, 198, .5) 0 0 1.5rem;
+  background: rgb(222, 16, 187);
+  background: linear-gradient(143deg, rgba(222, 16, 187, 1) 0%, rgba(58, 82, 213, 1) 100%);
+  box-shadow: rgba(113, 54, 198, 0.8) 0 0 1.5rem;
 
   display: flex;
   justify-content: center;
