@@ -18,12 +18,14 @@ const fetchStatistics = async () => {
 
             // Update statistics
             statisticsElement.innerHTML = `
-                <div style="display: flex; gap: 2rem;">
-                    <div style="font-weight: 700; font-size: 10rem;">${totalSolved}</div>
-                    <div style="display: flex; flex-direction: column; justify-content: center;">
-                        <h1 style="color: #00b8a3">${easySolved}</h1>
-                        <h1 style="color: #ffc01e">${mediumSolved}</h1>
-                        <h1 style="color: #ee365b">${hardSolved}</h1>
+                <div style="display: flex; gap: 1rem;">
+                    <div style="font-weight: 700; font-size: 5rem;">${totalSolved}</div>
+                    <div style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
+                        <div style="display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap;">
+                            <h1 style="color: #00b8a3; margin: 0.5rem 0 0 0.5rem; font-size: 2.5rem; line-height: 2rem">${easySolved}</h1>
+                            <h1 style="color: #ffc01e; margin: 0.5rem 0 0 0.5rem; font-size: 2.5rem; line-height: 2rem">${mediumSolved}</h1>
+                            <h1 style="color: #ee365b; margin: 0.5rem 0 0 0.5rem; font-size: 2.5rem; line-height: 2rem">${hardSolved}</h1>
+                        </div>
                     </div>
                 </div>
             `;

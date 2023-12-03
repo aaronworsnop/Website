@@ -60,13 +60,13 @@ a {
 
 h1 {
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   margin: 0;
 }
 
 h3 {
   font-weight: 400;
-  font-size: 1.05rem;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -466,8 +466,6 @@ input[type="checkbox"].toggle:checked+label::after {
 #card-gdsc:hover h4 {
   opacity: 0;
 }
-
-#card-tictactoe {}
 
 #card-webforms {
   grid-column: span 2;
