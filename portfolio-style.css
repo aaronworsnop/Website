@@ -34,8 +34,6 @@ body {
   padding: 0;
 
   min-height: 100dvh;
-
-
 }
 
 .background {
@@ -50,7 +48,7 @@ body {
 
   transition: opacity 0.3s ease-out;
 
-  background: linear-gradient(to top, #c9ddff, #129cff 55%) fixed;
+  background: linear-gradient(to top, #b9d7ed 5%, #4B40D0 85%) fixed;
 }
 
 a {

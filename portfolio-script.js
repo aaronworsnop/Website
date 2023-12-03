@@ -40,7 +40,7 @@ function doDarkMode(element) {
 
         setTimeout(() => {
             navigation.style.borderBottom = "1px solid rgba(255, 255, 255, 0.5)";
-            background.style.background = "linear-gradient(to top, #c9ddff, #129cff 55%) fixed"
+            background.style.background = "linear-gradient(to top, #b9d7ed, #4B40D0 95%) fixed"
         }, 300);
 
         setTimeout(() => {
