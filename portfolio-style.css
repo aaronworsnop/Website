@@ -264,7 +264,6 @@ input[type="checkbox"].toggle:checked+label::after {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  ;
 
   padding-top: 7rem;
   padding-bottom: 3rem;
