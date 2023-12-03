@@ -516,17 +516,18 @@ input[type="checkbox"].toggle:checked+label::after {
   background-color: #0d1117;
 }
 
-#card-github .sub-content {
+.github-subtitle {
   display: flex;
   justify-content: space-between;
 }
 
 #github-streak {
-  font-size: 6rem;
+  font-size: 5rem;
+  font-weight: 700;
 }
 
 .commit-pattern {
-  align-self: flex-end;
+  align-self: center;
 }
 
 .commits {
