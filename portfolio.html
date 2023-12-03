@@ -1,186 +1,197 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#747e8a">
-    <meta name="description" content="Aaron Worsnop's portfolio. My past design work, development work, achievements, facts and more.">
-    <title>aaronworsnop | Portfolio</title>
 
-    <!-- Links -->
-    <link rel="stylesheet" href="portfolio-style.css">
-    <link rel="stylesheet" href="cursor.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#747e8a">
+  <meta name="description"
+    content="Aaron Worsnop's portfolio. My past design work, development work, achievements, facts and more.">
+  <title>aaronworsnop | Portfolio</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <!-- Links -->
+  <link rel="stylesheet" href="portfolio-style.css">
+  <link rel="stylesheet" href="cursor.css">
 
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  </head>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 
-  <body onload="onload()">
-    <!-- Cursor -->
-    <div class="cursor"></div>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
 
-    <div class="background"></div>
-    
-    <!-- Navigation -->
-    <div class="navigation navigation-glass">
-      <div class="navigation-left">
-        <a href="/" style="cursor: none;"><h3 class="navigation-back unselectable cursor-disappear-interactable">Back</h3></a>
-        <h3 class="navigation-pc unselectable">|</h3>
-        <h3 class="navigation-title navigation-pc unselectable">Portfolio</h3>
-      </div>
+<body onload="onload()">
+  <!-- Cursor -->
+  <div class="cursor"></div>
 
-      <div class="dark-mode cursor-highlight-interactable">
-        <input type="checkbox" id="dark-mode" class="toggle" onclick="doDarkMode(this)">
-        <label for="dark-mode" class="unselectable dark-mode-label">Dark Mode</label>
-      </div>
+  <div class="background"></div>
 
-      <?xml version="1.0" encoding="UTF-8"?><svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path class="svg" d="m85.5,21.79c4.7-.88,9.56-1.34,14.52-1.34,43.26,0,78.33,35.07,78.33,78.33s-35.07,78.33-78.33,78.33c-36.53,0-67.22-25.01-75.89-58.84m0,0c10.69,11.05,25.67,17.92,42.26,17.92,32.47,0,58.79-26.32,58.79-58.79,0-25.78-16.59-47.68-39.68-55.61"/></svg>
-      <div class="dark-mode-mobile">
-        <input type="checkbox" id="dark-mode-mobile" class="toggle" onclick="doDarkMode(this)">
-        <label for="dark-mode-mobile" class="unselectable dark-mode-label"></label>
-      </div>  
+  <!-- Navigation -->
+  <div class="navigation navigation-glass">
+    <div class="navigation-left">
+      <a href="/" style="cursor: none;">
+        <h3 class="navigation-back unselectable cursor-disappear-interactable">Back</h3>
+      </a>
+      <h3 class="navigation-pc unselectable">|</h3>
+      <h3 class="navigation-title navigation-pc unselectable">Portfolio</h3>
     </div>
 
-    <!-- Portfolio Cards -->
-    <div class="card-grid">
-      <div class="card cursor-disappear-interactable" id="card-welcome">
-        <h1 class="unselectable">Welcome.</h1>
-      </div>
+    <div class="dark-mode cursor-highlight-interactable">
+      <input type="checkbox" id="dark-mode" class="toggle" onclick="doDarkMode(this)">
+      <label for="dark-mode" class="unselectable dark-mode-label">Dark Mode</label>
+    </div>
 
-      <div class="card cursor-disappear-interactable" id="card-github">
-        <div class="card-content">
-          <h1 class="card-title">GitHub</h1>
-          <div class="sub-content">
-            <div>
-              <h1 id="github-streak">...</h1>
-              <h4>Current Streak</h4>
+    <?xml version="1.0" encoding="UTF-8"?><svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 200 200">
+      <path class="svg"
+        d="m85.5,21.79c4.7-.88,9.56-1.34,14.52-1.34,43.26,0,78.33,35.07,78.33,78.33s-35.07,78.33-78.33,78.33c-36.53,0-67.22-25.01-75.89-58.84m0,0c10.69,11.05,25.67,17.92,42.26,17.92,32.47,0,58.79-26.32,58.79-58.79,0-25.78-16.59-47.68-39.68-55.61" />
+    </svg>
+    <div class="dark-mode-mobile">
+      <input type="checkbox" id="dark-mode-mobile" class="toggle" onclick="doDarkMode(this)">
+      <label for="dark-mode-mobile" class="unselectable dark-mode-label"></label>
+    </div>
+  </div>
+
+  <!-- Portfolio Cards -->
+  <div class="card-grid">
+    <div class="card cursor-disappear-interactable" id="card-welcome">
+      <h1 class="unselectable">Welcome.</h1>
+    </div>
+
+    <div class="card cursor-disappear-interactable" id="card-github">
+      <div class="card-content">
+        <h1 class="card-title">GitHub</h1>
+        <div class="sub-content">
+          <div>
+            <h1 id="github-streak">...</h1>
+            <h4>Current Streak</h4>
+          </div>
+          <div class="commit-pattern">
+            <div class="commits">
+              <div class="commit-less no-mobile"></div>
+              <div class="commit-med no-mobile"></div>
+              <div class="commit-less no-mobile"></div>
+              <div class="commit-med no-mobile"></div>
+              <div class="commit no-mobile"></div>
+              <div class="commit-med no-mobile"></div>
+              <div class="commit-med"></div>
+              <div class="commit"></div>
+              <div class="commit"></div>
+              <div class="commit-med"></div>
+              <div class="commit"></div>
+              <div class="commit"></div>
             </div>
-            <div class="commit-pattern">
-              <div class="commits">
-                <div class="commit-less no-mobile"></div>
-                <div class="commit-med no-mobile"></div>
-                <div class="commit-less no-mobile"></div>
-                <div class="commit-med no-mobile"></div>
-                <div class="commit no-mobile"></div>
-                <div class="commit-med no-mobile"></div>
-                <div class="commit-med"></div>
-                <div class="commit"></div>
-                <div class="commit"></div>
-                <div class="commit-med"></div>
-                <div class="commit"></div>
-                <div class="commit"></div>
-              </div>
-              <div class="commits">
-                <div class="commit-med no-mobile"></div>
-                <div class="commit-less no-mobile"></div>
-                <div class="commit-less no-mobile"></div>
-                <div class="commit no-mobile"></div>
-                <div class="commit-less no-mobile"></div>
-                <div class="commit-less no-mobile"></div>
-                <div class="commit-med"></div>
-                <div class="commit-med"></div>
-                <div class="commit"></div>
-                <div class="commit-less"></div>
-                <div class="commit"></div>
-                <div class="commit"></div>
-              </div>
-              <div class="commits">
-                <div class="commit-med no-mobile"></div>
-                <div class="commit no-mobile"></div>
-                <div class="commit-less no-mobile"></div>
-                <div class="commit-med no-mobile"></div>
-                <div class="commit-less no-mobile"></div>
-                <div class="commit-med no-mobile"></div>
-                <div class="commit-med"></div>
-                <div class="commit"></div>
-                <div class="commit-less"></div>
-                <div class="commit"></div>
-                <div class="commit"></div>
-                <div class="commit"></div>
-              </div>
+            <div class="commits">
+              <div class="commit-med no-mobile"></div>
+              <div class="commit-less no-mobile"></div>
+              <div class="commit-less no-mobile"></div>
+              <div class="commit no-mobile"></div>
+              <div class="commit-less no-mobile"></div>
+              <div class="commit-less no-mobile"></div>
+              <div class="commit-med"></div>
+              <div class="commit-med"></div>
+              <div class="commit"></div>
+              <div class="commit-less"></div>
+              <div class="commit"></div>
+              <div class="commit"></div>
+            </div>
+            <div class="commits">
+              <div class="commit-med no-mobile"></div>
+              <div class="commit no-mobile"></div>
+              <div class="commit-less no-mobile"></div>
+              <div class="commit-med no-mobile"></div>
+              <div class="commit-less no-mobile"></div>
+              <div class="commit-med no-mobile"></div>
+              <div class="commit-med"></div>
+              <div class="commit"></div>
+              <div class="commit-less"></div>
+              <div class="commit"></div>
+              <div class="commit"></div>
+              <div class="commit"></div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="card cursor-disappear-interactable" id="card-gdsc">
-        <div class="card-content">
-          <h1>Google-DSC</h1>
-          <h4>General Executive and Marketing Team</h4>
-        </div>
-      </div>
-
-      <div class="card static-image cursor-disappear-interactable" id="card-imc-launchpad">
-        <div class="card-content">
-          <h1 class="card-title">IMC Launchpad</h1>
-          <h4>Technology and Trading Insight Programme</h4>
-        </div>
-        <img src="img/portfolio/imc-launchpad-1.jpg" />
-      </div>
-
-      <div class="card static-image cursor-disappear-interactable" id="card-strafe">
-        <div class="card-content">
-          <h1 class="card-title">Strafe</h1>
-          <h4>3D Runner Game</h4>
-        </div>
-        <img src="img/portfolio/strafe-1.gif" />
-      </div>
-
-      <div class="card unselectable cursor-disappear-interactable" id="card-leetcode">
-        <div class="card-content">
-          <h1>LeetCode</h1>
-          <div class="test" id="leetcode-statistics"></div>
-        </div>
-      </div>
-
-      <div class="card image-card cursor-disappear-interactable" id="card-better-1">
-        <img src="img/portfolio/better-1.png" />
-      </div>
-
-      <div class="card image-card cursor-disappear-interactable" id="card-koura-3">
-        <img src="img/portfolio/koura-3.png" />
-      </div>
-
-      <div class="card static-image cursor-disappear-interactable" id="card-webforms">
-        <img src="img/portfolio/webforms-1.png" id="card-webforms-pc-image" />
-        <img src="img/portfolio/webforms-mobile-1.png" id="card-webforms-mobile-image" />
-      </div>
-
-      <div class="card video-card cursor-disappear-interactable" id="card-tictactoe">
-        <video class="video-card-video" autoplay muted loop>
-          <source src="vid/tictactoeFull.mp4" type="video/mp4">
-      </div>
-
-      <div class="card static-image cursor-disappear-interactable" id="card-trp">
-        <img src="img/portfolio/trp-2.png" id="card-trp-pc-image" />
-        <img src="img/portfolio/trp-mobile-1.jpg" id="card-trp-mobile-image" />
-      </div>
-
-      <div class="card static-image cursor-disappear-interactable" id="card-youtube">
-        <div class="card-content">
-          <h1>YouTube</h1>
-          <h4>850+ Subscribers | 120k+ views</h4>
-        </div>
-        <img src="img/portfolio/youtube-1.png" />
-      </div>
-
-      <div class="card static-image cursor-disappear-interactable" id="card-tsg">
-        <img src="img/portfolio/tsg-1.gif" />
+    <div class="card cursor-disappear-interactable" id="card-gdsc">
+      <div class="card-content">
+        <h1>Google-DSC</h1>
+        <h4>General Executive and Marketing Team</h4>
       </div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        
+    <div class="card static-image cursor-disappear-interactable" id="card-imc-launchpad">
+      <div class="card-content">
+        <h1 class="card-title">IMC Launchpad</h1>
+        <h4>Technology and Trading Insight Programme</h4>
+      </div>
+      <img src="img/portfolio/imc-launchpad-1.jpg" />
     </div>
 
-    <!-- DOM needs to load before script-->
-    <script src="leetcode-api.js"></script>
-    <script src="github-api.js"></script>
-    <script src="portfolio-script.js"></script>
-    <script src="cursor.js"></script>
-  </body>
-</html>   
+    <div class="card static-image cursor-disappear-interactable" id="card-strafe">
+      <div class="card-content">
+        <h1 class="card-title">Strafe</h1>
+        <h4>3D Runner Game</h4>
+      </div>
+      <img src="img/portfolio/strafe-1.gif" />
+    </div>
+
+    <div class="card unselectable cursor-disappear-interactable" id="card-leetcode">
+      <div class="card-content">
+        <h1>LeetCode</h1>
+        <div class="test" id="leetcode-statistics"></div>
+      </div>
+    </div>
+
+    <div class="card image-card cursor-disappear-interactable" id="card-better-1">
+      <img src="img/portfolio/better-1.png" />
+    </div>
+
+    <div class="card image-card cursor-disappear-interactable" id="card-koura-3">
+      <img src="img/portfolio/koura-3.png" />
+    </div>
+
+    <div class="card video-card cursor-disappear-interactable" id="card-tictactoe">
+      <video class="video-card-video" autoplay muted loop>
+        <source src="vid/tictactoeFull.mp4" type="video/mp4">
+    </div>
+
+    <div class="card static-image cursor-disappear-interactable" id="card-webforms">
+      <img src="img/portfolio/webforms-1.png" id="card-webforms-pc-image" />
+      <img src="img/portfolio/webforms-mobile-1.png" id="card-webforms-mobile-image" />
+    </div>
+
+    <div class="card static-image cursor-disappear-interactable" id="card-trp">
+      <img src="img/portfolio/trp-2.png" id="card-trp-pc-image" />
+      <img src="img/portfolio/trp-mobile-1.jpg" id="card-trp-mobile-image" />
+    </div>
+
+    <div class="card static-image cursor-disappear-interactable" id="card-youtube">
+      <div class="card-content">
+        <h1>YouTube</h1>
+        <h4>850+ Subscribers | 120k+ views</h4>
+      </div>
+      <img src="img/portfolio/youtube-1.png" />
+    </div>
+
+    <div class="card static-image cursor-disappear-interactable" id="card-tsg">
+      <img src="img/portfolio/tsg-1.gif" />
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+
+  </div>
+
+  <!-- DOM needs to load before script-->
+  <script src="leetcode-api.js"></script>
+  <script src="github-api.js"></script>
+  <script src="portfolio-script.js"></script>
+  <script src="cursor.js"></script>
+</body>
+
+</html>
