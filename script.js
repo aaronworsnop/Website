@@ -1,11 +1,11 @@
 var leftScrollCount = 0;
-    
+
 function onload() {
     // User uses dark mode
     if (storedSiteMode == "dark") {
         document.querySelector("#dark-mode").checked = true;
         document.querySelector("#dark-mode-mobile").checked = true;
-        
+
         // Dark mode
         document.querySelector("body").style.backgroundColor = "black";
         document.querySelector("#background-video").style.opacity = "0";
@@ -24,24 +24,42 @@ function onload() {
 
 // Keyboard listners
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
         closeContactPane()
     }
 });
 
+const emailInput = document.getElementById('email');
+const emailText = document.getElementById('email-label');
+const emailUnderline = document.getElementById('email-underline');
+
+emailInput.addEventListener('input', () => {
+    console.log(emailText.classList);
+    if (emailInput.value) {
+        console.log("What?");
+        emailText.classList.add('email-entered-but-invalid');
+        emailUnderline.classList.add('email-entered-but-invalid-underline');
+        emailUnderline.classList.remove('contact-content-input-underline');
+    } else {
+        emailText.classList.remove('email-entered-but-invalid');
+        emailUnderline.classList.remove('email-entered-but-invalid-underline');
+        emailUnderline.classList.add('contact-content-input-underline');
+    }
+});
+
 // Tooltip animation
 
-document.querySelector('.tooltip').addEventListener('animationend', function(event) {
+document.querySelector('.tooltip').addEventListener('animationend', function (event) {
     if (event.animationName === 'animate-tooltip') {
         if (leftScrollCount > 10) {
             document.querySelector(".tooltip").style.animation = "animate-tooltip-out 0.3s ease-out forwards";
         } else {
             // Reset the animation by temporarily setting it to "none"
             document.querySelector(".tooltip").style.animation = "none";
-      
+
             // Delay the reapplication of the animation by a short duration
-            setTimeout(function() {
+            setTimeout(function () {
                 document.querySelector(".tooltip").style.animation = "animate-tooltip 2.5s ease-in-out forwards";
             }, 10);
         }
@@ -84,7 +102,7 @@ function leftScroll() {
         com.classList.remove("in-focus");
         gmail.classList.remove("in-focus");
         businessGmail.classList.remove("in-focus");
-        
+
     } else if (linkedin.getBoundingClientRect().top >= middle.getBoundingClientRect().top - 50) {
         linkedin.classList.add("in-focus");
         youtube.classList.remove("in-focus");
@@ -106,7 +124,7 @@ function leftScroll() {
 
     // User knows how to scroll domains cookie
     leftScrollCount++;
-    
+
     if (storedHasUsedDomains == "true" && leftScrollCount > 10) {
     } else if (storedHasUsedDomains != "true" && leftScrollCount > 10) {
         setCookie("hasUsedDomains", "true", 30);
@@ -170,7 +188,7 @@ function rightScroll() {
     } else {
         document.querySelector(".current-domain").href = "mailto:aaronworsnop" + document.querySelector(".in-focus").innerHTML + "?subject=&body=Hey%20Aaron%2C";
     }
-}   
+}
 
 // Domains scrollable via mouse drag
 
@@ -226,22 +244,22 @@ function mouseUp(e) {
     function scrollToNearestElement(scrollableElement, elements) {
         var closestDistance = Infinity;
         var closestElement;
-      
+
         // Get the vertical center of the scrollableElement
         var scrollableCenter = scrollableElement.scrollTop + scrollableElement.clientHeight / 2;
-      
+
         // Iterate through each element and calculate its distance from the scrollable center
-        elements.forEach(function(element) {
+        elements.forEach(function (element) {
             var distance = Math.abs(element.offsetTop + element.clientHeight / 2 - scrollableCenter);
             if (distance < closestDistance) {
                 closestDistance = distance;
                 closestElement = element;
             }
         });
-      
+
         // Calculate the desired scroll position to center the closest element
         var scrollPosition = closestElement.offsetTop - scrollableElement.clientHeight / 2 + closestElement.clientHeight / 2;
-      
+
         // Scroll to the desired position
         scrollableElement.scrollTo({
             top: scrollPosition,
@@ -249,12 +267,12 @@ function mouseUp(e) {
         });
 
         // 0.5s after scrolling to desired position, reset scroll-snap
-        setTimeout(function() {
+        setTimeout(function () {
             scrollAreaLeft.style.scrollSnapType = "y mandatory";
             scrollAreaRight.style.scrollSnapType = "y mandatory";
         }, 175);
     }
-      
+
 
     // Resetting the cursor
     scrollAreaLeft.classList.remove("cursor-pressed-interactable");
@@ -272,22 +290,22 @@ function mouseLeave(e) {
     function scrollToNearestElement(scrollableElement, elements) {
         var closestDistance = Infinity;
         var closestElement;
-      
+
         // Get the vertical center of the scrollableElement
         var scrollableCenter = scrollableElement.scrollTop + scrollableElement.clientHeight / 2;
-      
+
         // Iterate through each element and calculate its distance from the scrollable center
-        elements.forEach(function(element) {
+        elements.forEach(function (element) {
             var distance = Math.abs(element.offsetTop + element.clientHeight / 2 - scrollableCenter);
             if (distance < closestDistance) {
                 closestDistance = distance;
                 closestElement = element;
             }
         });
-      
+
         // Calculate the desired scroll position to center the closest element
         var scrollPosition = closestElement.offsetTop - scrollableElement.clientHeight / 2 + closestElement.clientHeight / 2;
-      
+
         // Scroll to the desired position
         scrollableElement.scrollTo({
             top: scrollPosition,
@@ -295,7 +313,7 @@ function mouseLeave(e) {
         });
 
         // After scrolling to desired position, reset scroll-snap
-        setTimeout(function() {
+        setTimeout(function () {
             scrollAreaLeft.style.scrollSnapType = "y mandatory";
             scrollAreaRight.style.scrollSnapType = "y mandatory";
         }, 175);
@@ -324,7 +342,7 @@ function mouseMoveRight(e) {
         const walkY = (y - startY) * 1;
         scrollAreaRight.scrollTop = scrollTop - walkY;
     }
-} 
+}
 
 function closeContactPane() {
     const contactForm = document.querySelector(".contact-glass");
@@ -351,18 +369,18 @@ function openContactPane(element) {
 function darken() {
     document.querySelector("#background-video").src = "vid/Dark Background.mp4";
     document.querySelector("#background-video").style.opacity = "0.6";
-    setCookie("siteMode", "dark", 30); 
+    setCookie("siteMode", "dark", 30);
 }
 
 function lighten() {
     const video = document.querySelector("#background-video");
     video.src = "vid/Background.mp4";
 
-    video.addEventListener("canplaythrough", function() {
+    video.addEventListener("canplaythrough", function () {
         video.style.opacity = "1";
     }, { once: true });
 
-    setCookie("siteMode", "light", 30); 
+    setCookie("siteMode", "light", 30);
 }
 
 function doDarkMode(element) {
@@ -406,7 +424,7 @@ function toggleLinks() {
         title.classList.remove("title-up");
         title.classList.add("title-down");
     }
-    
+
 }
 
 // Cookies
@@ -418,9 +436,9 @@ function setCookie(name, value, daysToExpire) {
     var cookieValue = encodeURIComponent(value) + "; expires=" + expirationDate.toUTCString();
     document.cookie = name + "=" + cookieValue;
 }
-  
+
 // get cookie
-    function getCookie(name) {
+function getCookie(name) {
     var cookieName = name + "=";
     var cookieArray = document.cookie.split(';');
     for (var i = 0; i < cookieArray.length; i++) {

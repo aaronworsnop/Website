@@ -1,243 +1,326 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#747e8a">
-    <meta name="description" content="Discover the Aaron Worsnop website. Explore my past work experience, contact me, and find everything you need in one convenient place.">
-    <title>aaronworsnop</title>
 
-    <!-- Links -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cursor.css">
-    <link rel="manifest" href="manifest.json">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#747e8a">
+  <meta name="description"
+    content="Discover the Aaron Worsnop website. Explore my past work experience, contact me, and find everything you need in one convenient place.">
+  <title>aaronworsnop</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <!-- Links -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cursor.css">
+  <link rel="manifest" href="manifest.json">
 
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  </head>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 
-  <body onload="onload(), leftScroll(), rightScroll()">
-    <!-- Cursor -->
-    <div class="cursor"></div>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
 
-    <!-- Menu -->
-    <div class="menu">
-      <a class="unselectable"><h3 class="menu-item cursor-disappear-interactable" onclick="openContactPane(this)">Contact</h3></a>
-      <h3 class="unselectable">/ /</h3>
-      <a class="unselectable" href="portfolio" target="_blank"><h3 class="menu-item cursor-disappear-interactable">Portfolio</h3></a>
-      <h3 class="unselectable">/ /</h3>
-      <a class="unselectable" href="coming-soon" target="_blank"><h3 class="menu-item cursor-disappear-interactable">Experience</h3></a>
-      <h3 class="unselectable">/ /</h3>
-      <a class="unselectable" href="resume" target="_blank"><h3 class="menu-item cursor-disappear-interactable">Résumé</h3></a>
-      <h2 class="unselectable hero glitch layers" data-text="近設計"><span>近設計</span></h2>
+<body onload="onload(), leftScroll(), rightScroll()">
+  <!-- Cursor -->
+  <div class="cursor"></div>
 
-      <div class="dark-mode cursor-highlight-interactable">
-        <input type="checkbox" id="dark-mode" class="toggle" onclick="doDarkMode(this)">
-        <label for="dark-mode" class="unselectable dark-mode-label">Dark Mode</label>
-      </div>
-
-      <?xml version="1.0" encoding="UTF-8"?><svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path class="svg" d="m85.5,21.79c4.7-.88,9.56-1.34,14.52-1.34,43.26,0,78.33,35.07,78.33,78.33s-35.07,78.33-78.33,78.33c-36.53,0-67.22-25.01-75.89-58.84m0,0c10.69,11.05,25.67,17.92,42.26,17.92,32.47,0,58.79-26.32,58.79-58.79,0-25.78-16.59-47.68-39.68-55.61"/></svg>
-      <div class="dark-mode-mobile">
-        <input type="checkbox" id="dark-mode-mobile" class="toggle" onclick="doDarkMode(this)">
-        <label for="dark-mode-mobile" class="unselectable dark-mode-label"></label>
-      </div>
-    </div>
-
-    <!-- Left dots -->
-    <div class="dot-triangle-left"></div>
-
-    <div class="dots">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-
-    <!-- Background -->
-    <div class="landing-screen">
-      <video playsinline autoplay muted loop preload="auto" id="background-video">
-        <source class="landing-video" src="vid/Background.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
-      <h1 class="landing-screen-title unselectable">aaronworsnop</h1>
-    </div>
-
-    <!-- Domains -->
-    <div class="landing-text unselectable">
-      <div class="landing-domains-left cursor-enlarge-interactable" onscroll="leftScroll()">
-        <h1>&nbsp;</h1>
-        <h1>&nbsp;</h1>
-        <h1 class="desktop github">github.com/</h1>
-        <h1 class="desktop linkedin">linkedin.com/in/</h1>
-        <h1 class="desktop youtube">youtube.com/</h1>
-        <h1>&nbsp;</h1>
-        <h1>&nbsp;</h1>
-      </div>
-      <div>
-        <h1 style="opacity: 0; position: relative;" class="landing-screen-title">aaronworsnop</h1>
-      </div>
-      <div class="landing-domains-right cursor-enlarge-interactable" onscroll="rightScroll()">
-        <h1>&nbsp;</h1>
-        <h1>&nbsp;</h1>
-        <h1 class="desktop in-focus com">.com</h1>
-        <h1 class="desktop gmail">@gmail.com</h1>
-        <h1 class="desktop business-gmail">business@gm...</h1>
-        <h1>&nbsp;</h1>
-        <h1>&nbsp;</h1>
-      </div>
-    </div>
-
-    <div class="tooltip"><?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" style="width: 3rem"><line class="svg" x1="100" y1="179.04" x2="57.56" y2="136.6"/><line class="svg" x1="100" y1="20.96" x2="100" y2="179.04"/><line class="svg" x1="142.44" y1="136.6" x2="100" y2="179.04"/></svg></div>
-
-    <a href="aaronworsnop.com" target="_blank" class="current-domain cursor-disappear-interactable">
-      <h3 class="current-domain-link">Take me there</h3>
-      <?xml version="1.0" encoding="UTF-8"?><svg class="link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:13px;}</style></defs><path class="svg" d="m154.12,95.91v62.15c0,10.25-8.31,18.57-18.57,18.57H41.94c-10.25,0-18.57-8.31-18.57-18.57v-93.61c0-10.25,8.31-18.57,18.57-18.57h62.15"/><line class="svg" x1="176.62" y1="23.38" x2="176.62" y2="73.4"/><line class="svg" x1="83.47" y1="116.53" x2="176.62" y2="23.38"/><line class="svg" x1="126.6" y1="23.38" x2="176.62" y2="23.38"/></svg>
+  <!-- Menu -->
+  <div class="menu">
+    <a class="unselectable">
+      <h3 class="menu-item cursor-disappear-interactable" onclick="openContactPane(this)">Contact</h3>
     </a>
+    <h3 class="unselectable">/ /</h3>
+    <a class="unselectable" href="portfolio" target="_blank">
+      <h3 class="menu-item cursor-disappear-interactable">Portfolio</h3>
+    </a>
+    <h3 class="unselectable">/ /</h3>
+    <a class="unselectable" href="coming-soon" target="_blank">
+      <h3 class="menu-item cursor-disappear-interactable">Experience</h3>
+    </a>
+    <h3 class="unselectable">/ /</h3>
+    <a class="unselectable" href="resume" target="_blank">
+      <h3 class="menu-item cursor-disappear-interactable">Résumé</h3>
+    </a>
+    <h2 class="unselectable hero glitch layers" data-text="近設計"><span>近設計</span></h2>
 
-    <!-- Right dots -->
-    <div class="dots-right">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
+    <div class="dark-mode cursor-highlight-interactable">
+      <input type="checkbox" id="dark-mode" class="toggle" onclick="doDarkMode(this)">
+      <label for="dark-mode" class="unselectable dark-mode-label">Dark Mode</label>
     </div>
 
-    <div class="dot-triangle-right"></div>
+    <?xml version="1.0" encoding="UTF-8"?><svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 200 200">
+      <path class="svg"
+        d="m85.5,21.79c4.7-.88,9.56-1.34,14.52-1.34,43.26,0,78.33,35.07,78.33,78.33s-35.07,78.33-78.33,78.33c-36.53,0-67.22-25.01-75.89-58.84m0,0c10.69,11.05,25.67,17.92,42.26,17.92,32.47,0,58.79-26.32,58.79-58.79,0-25.78-16.59-47.68-39.68-55.61" />
+    </svg>
+    <div class="dark-mode-mobile">
+      <input type="checkbox" id="dark-mode-mobile" class="toggle" onclick="doDarkMode(this)">
+      <label for="dark-mode-mobile" class="unselectable dark-mode-label"></label>
+    </div>
+  </div>
 
-    <!-- Contact pane -->
-    <div class="contact-background" onclick="closeContactPane()"></div>
+  <!-- Left dots -->
+  <div class="dot-triangle-left"></div>
 
-    <div class="contact-glass">
-      <div class="contact-close-button cursor-disappear-interactable" onclick="closeContactPane()"></div>
-      <div class="contact-title">Contact Pane</div>
-      <div class="contact-title-bar"></div>
+  <div class="dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
 
-      <div class="contact-content">
-        <div class="contact-content-title">
-          <h1>Let's connect.</h1>
+  <!-- Background -->
+  <div class="landing-screen">
+    <video playsinline autoplay muted loop preload="auto" id="background-video">
+      <source class="landing-video" src="vid/Background.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <h1 class="landing-screen-title unselectable">aaronworsnop</h1>
+  </div>
+
+  <!-- Domains -->
+  <div class="landing-text unselectable">
+    <div class="landing-domains-left cursor-enlarge-interactable" onscroll="leftScroll()">
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+      <h1 class="desktop github">github.com/</h1>
+      <h1 class="desktop linkedin">linkedin.com/in/</h1>
+      <h1 class="desktop youtube">youtube.com/</h1>
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+    </div>
+    <div>
+      <h1 style="opacity: 0; position: relative;" class="landing-screen-title">aaronworsnop</h1>
+    </div>
+    <div class="landing-domains-right cursor-enlarge-interactable" onscroll="rightScroll()">
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+      <h1 class="desktop in-focus com">.com</h1>
+      <h1 class="desktop gmail">@gmail.com</h1>
+      <h1 class="desktop business-gmail">business@gm...</h1>
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+    </div>
+  </div>
+
+  <div class="tooltip">
+    <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+      style="width: 3rem">
+      <line class="svg" x1="100" y1="179.04" x2="57.56" y2="136.6" />
+      <line class="svg" x1="100" y1="20.96" x2="100" y2="179.04" />
+      <line class="svg" x1="142.44" y1="136.6" x2="100" y2="179.04" />
+    </svg>
+  </div>
+
+  <a href="aaronworsnop.com" target="_blank" class="current-domain cursor-disappear-interactable">
+    <h3 class="current-domain-link">Take me there</h3>
+    <?xml version="1.0" encoding="UTF-8"?><svg class="link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: none;
+            stroke: #fff;
+            stroke-linecap: round;
+            stroke-miterlimit: 10;
+            stroke-width: 13px;
+          }
+        </style>
+      </defs>
+      <path class="svg"
+        d="m154.12,95.91v62.15c0,10.25-8.31,18.57-18.57,18.57H41.94c-10.25,0-18.57-8.31-18.57-18.57v-93.61c0-10.25,8.31-18.57,18.57-18.57h62.15" />
+      <line class="svg" x1="176.62" y1="23.38" x2="176.62" y2="73.4" />
+      <line class="svg" x1="83.47" y1="116.53" x2="176.62" y2="23.38" />
+      <line class="svg" x1="126.6" y1="23.38" x2="176.62" y2="23.38" />
+    </svg>
+  </a>
+
+  <!-- Right dots -->
+  <div class="dots-right">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <div class="dot-triangle-right"></div>
+
+  <!-- Contact pane -->
+  <div class="contact-background" onclick="closeContactPane()"></div>
+
+  <div class="contact-glass">
+    <div class="contact-close-button cursor-disappear-interactable" onclick="closeContactPane()"></div>
+    <div class="contact-title">Contact Pane</div>
+    <div class="contact-title-bar"></div>
+
+    <div class="contact-content">
+      <div class="contact-content-title">
+        <h1>Let's connect.</h1>
+      </div>
+
+      <form id="contact-form" action="mail.php" method="POST">
+
+        <!--First & Last Name-->
+        <div class="contact-content-row">
+          <div class="contact-content-input cursor-caret-interactable">
+            <input name="firstName" type="text" required>
+            <div class="contact-content-input-underline"></div>
+            <label class="unselectable">First Name</label>
+          </div>
+          <div class="contact-content-input cursor-caret-interactable">
+            <input name="lastName" type="text" required>
+            <div class="contact-content-input-underline"></div>
+            <label class="unselectable">Last Name</label>
+          </div>
         </div>
 
-        <form id="contact-form" action="mail.php" method="POST">
-
-          <!--First & Last Name-->
-          <div class="contact-content-row">
-            <div class="contact-content-input cursor-caret-interactable">
-              <input name="firstName" type="text" required>
-              <div class="contact-content-input-underline"></div>
-              <label class="unselectable">First Name</label>
-            </div>
-            <div class="contact-content-input cursor-caret-interactable">
-              <input name="lastName" type="text" required>
-              <div class="contact-content-input-underline"></div>
-              <label class="unselectable">Last Name</label>
-            </div>
+        <!--Email & Subject-->
+        <div class="contact-content-row">
+          <div class="contact-content-input cursor-caret-interactable">
+            <input name="email" type="email" id="email" required autocomplete="off">
+            <div id="email-underline" class="contact-content-input-underline"></div>
+            <label id="email-label" class="unselectable">Email Address</label>
           </div>
-
-          <!--Email & Subject-->
-          <div class="contact-content-row">
-            <div class="contact-content-input cursor-caret-interactable">
-              <input name="email" type="Email text" id="email" required autocomplete="off">
-              <div class="contact-content-input-underline"></div>
-              <label class="unselectable">Email Address</label>
-            </div>
-            <div class="contact-content-input cursor-caret-interactable">
-              <input name="subject" type="text" required>
-              <div class="contact-content-input-underline"></div>
-              <label class="unselectable">Subject</label>
-            </div>
+          <div class="contact-content-input cursor-caret-interactable">
+            <input name="subject" type="text" required>
+            <div class="contact-content-input-underline"></div>
+            <label class="unselectable">Subject</label>
           </div>
-
-          <!--Message Area-->
-          <div class="contact-content-row contact-content-textarea textarea-margin">
-            <div class="contact-content-input cursor-caret-interactable">
-              <textarea name="message" required placeholder="Say hello, ask a question or just let me know you're dropping by. I'm all ears so let's get the conversation started."></textarea>
-              <div class="contact-content-input-underline"></div>
-              <label class="unselectable">Message</label>
-            </div>
-          </div>
-
-          <!--Submit button-->
-          <div class="contact-content-row" >
-            <div class="contact-content-input contact-content-input-submit">
-              <button class="contact-content-submit-button cursor-disappear-interactable" type="submit">
-                Send
-                <?xml version="1.0" encoding="UTF-8"?><svg class="contact-send" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs></defs><path class="svg" d="m34.25,115.37l-16.33,33.91c-5.76,11.97,6.29,24.73,18.57,19.66l139.49-57.58c10.14-4.19,10.14-18.54,0-22.73L36.48,31.05c-12.28-5.07-24.33,7.69-18.57,19.66l19.46,35.31c3.05,5.54,8.71,9.16,15.02,9.61l61.37,4.37"/></svg>
-              </button>
-            </div>
-          </div>
-        </form>
-        
-        <!--Mobile email link-->
-        <div class="contact-content-email-links">
-          <a href="mailto:aaronworsnopbusiness@gmail.com">Or email me directly</a>
         </div>
+
+        <!--Message Area-->
+        <div class="contact-content-row contact-content-textarea textarea-margin">
+          <div class="contact-content-input cursor-caret-interactable">
+            <textarea name="message" required
+              placeholder="Say hello, ask a question or just let me know you're dropping by. I'm all ears, so let's get the conversation started!"></textarea>
+            <div class="contact-content-input-underline"></div>
+            <label class="unselectable">Message</label>
+          </div>
+        </div>
+
+        <!--Submit button-->
+        <div class="contact-content-row">
+          <div class="contact-content-input contact-content-input-submit">
+            <button class="contact-content-submit-button cursor-disappear-interactable" type="submit">
+              Send
+              <?xml version="1.0" encoding="UTF-8"?><svg class="contact-send" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 200 200">
+                <defs></defs>
+                <path class="svg"
+                  d="m34.25,115.37l-16.33,33.91c-5.76,11.97,6.29,24.73,18.57,19.66l139.49-57.58c10.14-4.19,10.14-18.54,0-22.73L36.48,31.05c-12.28-5.07-24.33,7.69-18.57,19.66l19.46,35.31c3.05,5.54,8.71,9.16,15.02,9.61l61.37,4.37" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!--Mobile email link-->
+      <div class="contact-content-email-links">
+        <a href="mailto:aaronworsnopbusiness@gmail.com">Or email me directly</a>
       </div>
     </div>
+  </div>
 
-    <!-- Mobile links -->
-    <div class="mobile-links">
-      <a class="mobile-link link-git" href="https://github.com/aaronworsnop"><?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs></defs><path class="mobile-link-icon" d="m100,16.65C52.78,16.65,14.54,54.89,14.54,102.11c0,37.81,24.46,69.75,58.43,81.08,4.27.75,5.88-1.82,5.88-4.06,0-2.03-.11-8.76-.11-15.92-21.47,3.95-27.03-5.23-28.74-10.04-.96-2.46-5.13-10.04-8.76-12.07-2.99-1.6-7.26-5.55-.11-5.66,6.73-.11,11.54,6.2,13.14,8.76,7.69,12.93,19.98,9.29,24.89,7.05.75-5.55,2.99-9.29,5.45-11.43-19.01-2.14-38.88-9.51-38.88-42.19,0-9.29,3.31-16.98,8.76-22.97-.85-2.14-3.85-10.9.85-22.65,0,0,7.16-2.24,23.5,8.76,6.84-1.92,14.1-2.88,21.36-2.88s14.53.96,21.36,2.88c16.34-11.11,23.5-8.76,23.5-8.76,4.7,11.75,1.71,20.51.85,22.65,5.45,5.98,8.76,13.57,8.76,22.97,0,32.79-19.98,40.06-38.99,42.19,3.1,2.67,5.77,7.8,5.77,15.81,0,11.43-.11,20.62-.11,23.5,0,2.24,1.6,4.91,5.88,4.06,33.76-11.32,58.22-43.37,58.22-81.08,0-47.22-38.24-85.46-85.46-85.46Z"/></svg></a>
-      <a class="mobile-link link-in" href="https://www.linkedin.com/in/aaronworsnop/"><?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path class="mobile-link-icon" d="m146.29,16.65H53.7c-20.46,0-37.05,16.59-37.05,37.05v92.59c0,20.46,16.59,37.05,37.05,37.05h92.59c20.46,0,37.06-16.59,37.06-37.05V53.7c0-20.46-16.6-37.05-37.06-37.05Zm-75.54,130.92h-22.34v-71.75h22.34v71.75Zm-11.36-80.52c-7.07,0-11.64-4.93-11.61-11.14-.03-6.38,4.65-11.17,11.8-11.17s11.71,4.76,11.79,11.17c.03,6.21-4.57,11.14-11.99,11.14Zm97.29,80.52h-22.34v-39.77c0-9.24-3.3-15.57-11.35-15.57-6.14,0-9.77,4.31-11.32,8.43-.57,1.4-.78,3.52-.78,5.52v41.4h-22.33v-48.83c0-8.93.31-16.76,0-23.19h19.82l-.03,10.21h.47c2.89-4.63,10.19-11.56,22.17-11.56,14.64,0,25.68,9.77,25.68,30.89v42.47Z"/></svg></a>
-      <a class="mobile-link link-tube" href="https://www.youtube.com/aaronworsnop"><?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path class="mobile-link-icon" d="m181.66,58.95c-1.99-7.36-7.73-13.13-15.1-15.1-9.89-3.82-105.68-5.69-133.47.11-7.36,1.99-13.13,7.73-15.1,15.1-4.46,19.58-4.8,61.92.11,81.94,1.99,7.36,7.73,13.13,15.1,15.1,19.58,4.51,112.68,5.14,133.47,0,7.36-1.99,13.13-7.73,15.1-15.1,4.76-21.33,5.1-61.04-.11-82.05Zm-98.24,66.62v-51.2l44.63,25.6-44.63,25.6Z"/></svg></a>
-    </div>
+  <!-- Mobile links -->
+  <div class="mobile-links">
+    <a class="mobile-link link-git" href="https://github.com/aaronworsnop">
+      <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <defs></defs>
+        <path class="mobile-link-icon"
+          d="m100,16.65C52.78,16.65,14.54,54.89,14.54,102.11c0,37.81,24.46,69.75,58.43,81.08,4.27.75,5.88-1.82,5.88-4.06,0-2.03-.11-8.76-.11-15.92-21.47,3.95-27.03-5.23-28.74-10.04-.96-2.46-5.13-10.04-8.76-12.07-2.99-1.6-7.26-5.55-.11-5.66,6.73-.11,11.54,6.2,13.14,8.76,7.69,12.93,19.98,9.29,24.89,7.05.75-5.55,2.99-9.29,5.45-11.43-19.01-2.14-38.88-9.51-38.88-42.19,0-9.29,3.31-16.98,8.76-22.97-.85-2.14-3.85-10.9.85-22.65,0,0,7.16-2.24,23.5,8.76,6.84-1.92,14.1-2.88,21.36-2.88s14.53.96,21.36,2.88c16.34-11.11,23.5-8.76,23.5-8.76,4.7,11.75,1.71,20.51.85,22.65,5.45,5.98,8.76,13.57,8.76,22.97,0,32.79-19.98,40.06-38.99,42.19,3.1,2.67,5.77,7.8,5.77,15.81,0,11.43-.11,20.62-.11,23.5,0,2.24,1.6,4.91,5.88,4.06,33.76-11.32,58.22-43.37,58.22-81.08,0-47.22-38.24-85.46-85.46-85.46Z" />
+      </svg>
+    </a>
+    <a class="mobile-link link-in" href="https://www.linkedin.com/in/aaronworsnop/">
+      <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <path class="mobile-link-icon"
+          d="m146.29,16.65H53.7c-20.46,0-37.05,16.59-37.05,37.05v92.59c0,20.46,16.59,37.05,37.05,37.05h92.59c20.46,0,37.06-16.59,37.06-37.05V53.7c0-20.46-16.6-37.05-37.06-37.05Zm-75.54,130.92h-22.34v-71.75h22.34v71.75Zm-11.36-80.52c-7.07,0-11.64-4.93-11.61-11.14-.03-6.38,4.65-11.17,11.8-11.17s11.71,4.76,11.79,11.17c.03,6.21-4.57,11.14-11.99,11.14Zm97.29,80.52h-22.34v-39.77c0-9.24-3.3-15.57-11.35-15.57-6.14,0-9.77,4.31-11.32,8.43-.57,1.4-.78,3.52-.78,5.52v41.4h-22.33v-48.83c0-8.93.31-16.76,0-23.19h19.82l-.03,10.21h.47c2.89-4.63,10.19-11.56,22.17-11.56,14.64,0,25.68,9.77,25.68,30.89v42.47Z" />
+      </svg>
+    </a>
+    <a class="mobile-link link-tube" href="https://www.youtube.com/aaronworsnop">
+      <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <path class="mobile-link-icon"
+          d="m181.66,58.95c-1.99-7.36-7.73-13.13-15.1-15.1-9.89-3.82-105.68-5.69-133.47.11-7.36,1.99-13.13,7.73-15.1,15.1-4.46,19.58-4.8,61.92.11,81.94,1.99,7.36,7.73,13.13,15.1,15.1,19.58,4.51,112.68,5.14,133.47,0,7.36-1.99,13.13-7.73,15.1-15.1,4.76-21.33,5.1-61.04-.11-82.05Zm-98.24,66.62v-51.2l44.63,25.6-44.63,25.6Z" />
+      </svg>
+    </a>
+  </div>
 
-    <!-- Mobile navigation -->
-    <div class="nav">
-      <a class="nav-item nav-resume" href="resume.html" target="_blank">
-        <?xml version="1.0" encoding="UTF-8"?><svg class="nav-resume-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs></defs><circle class="svg" cx="68.04" cy="43.02" r="21.37"/><path class="svg" d="m32.43,100c0-19.67,15.94-35.61,35.61-35.61s35.61,15.94,35.61,35.61"/><path class="svg" d="m32.43,124v42.24c0,6.69,5.42,12.11,12.11,12.11h110.92c6.69,0,12.11-5.42,12.11-12.11V33.76c0-6.69-5.42-12.11-12.11-12.11h-44.63"/><line class="svg" x1="55.78" y1="150.48" x2="141.61" y2="150.48"/><line class="svg" x1="55.78" y1="124" x2="141.61" y2="124"/></svg>
-        resume
-      </a>
-      <a class="nav-item nav-links" onclick="toggleLinks()">
-        <?xml version="1.0" encoding="UTF-8"?><svg class="nav-resume-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs></defs><path class="svg" d="m110.24,89.76c-13.49-13.49-35.35-13.49-48.84,0l-27.43,27.43c-13.49,13.49-13.49,35.35,0,48.84,13.49,13.49,35.35,13.49,48.84,0l22.24-22.24"/><path class="svg" d="m89.76,110.24c13.49,13.49,35.35,13.49,48.84,0l27.43-27.43c13.49-13.49,13.49-35.35,0-48.84-13.49-13.49-35.35-13.49-48.84,0l-22.24,22.24"/></svg>
-        links
-      </a>
-      <a class="nav-item nav-contact" onclick="openContactPane(this)">
-        <?xml version="1.0" encoding="UTF-8"?><svg class="nav-resume-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs></defs><path class="svg" d="m34.25,115.37l-16.33,33.91c-5.76,11.97,6.29,24.73,18.57,19.66l139.49-57.58c10.14-4.19,10.14-18.54,0-22.73L36.48,31.05c-12.28-5.07-24.33,7.69-18.57,19.66l19.46,35.31c3.05,5.54,8.71,9.16,15.02,9.61l61.37,4.37"/></svg>
-        contact
-      </a>
-    </div>
+  <!-- Mobile navigation -->
+  <div class="nav">
+    <a class="nav-item nav-resume" href="resume.html" target="_blank">
+      <?xml version="1.0" encoding="UTF-8"?><svg class="nav-resume-icon" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 200 200">
+        <defs></defs>
+        <circle class="svg" cx="68.04" cy="43.02" r="21.37" />
+        <path class="svg" d="m32.43,100c0-19.67,15.94-35.61,35.61-35.61s35.61,15.94,35.61,35.61" />
+        <path class="svg"
+          d="m32.43,124v42.24c0,6.69,5.42,12.11,12.11,12.11h110.92c6.69,0,12.11-5.42,12.11-12.11V33.76c0-6.69-5.42-12.11-12.11-12.11h-44.63" />
+        <line class="svg" x1="55.78" y1="150.48" x2="141.61" y2="150.48" />
+        <line class="svg" x1="55.78" y1="124" x2="141.61" y2="124" />
+      </svg>
+      resume
+    </a>
+    <a class="nav-item nav-links" onclick="toggleLinks()">
+      <?xml version="1.0" encoding="UTF-8"?><svg class="nav-resume-icon" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 200 200">
+        <defs></defs>
+        <path class="svg"
+          d="m110.24,89.76c-13.49-13.49-35.35-13.49-48.84,0l-27.43,27.43c-13.49,13.49-13.49,35.35,0,48.84,13.49,13.49,35.35,13.49,48.84,0l22.24-22.24" />
+        <path class="svg"
+          d="m89.76,110.24c13.49,13.49,35.35,13.49,48.84,0l27.43-27.43c13.49-13.49,13.49-35.35,0-48.84-13.49-13.49-35.35-13.49-48.84,0l-22.24,22.24" />
+      </svg>
+      links
+    </a>
+    <a class="nav-item nav-contact" onclick="openContactPane(this)">
+      <?xml version="1.0" encoding="UTF-8"?><svg class="nav-resume-icon" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 200 200">
+        <defs></defs>
+        <path class="svg"
+          d="m34.25,115.37l-16.33,33.91c-5.76,11.97,6.29,24.73,18.57,19.66l139.49-57.58c10.14-4.19,10.14-18.54,0-22.73L36.48,31.05c-12.28-5.07-24.33,7.69-18.57,19.66l19.46,35.31c3.05,5.54,8.71,9.16,15.02,9.61l61.37,4.37" />
+      </svg>
+      contact
+    </a>
+  </div>
 
-    <!-- DOM to load before script-->
-    <script src="script.js"></script>
-    <script src="mail.js"></script>
-    <script src="cursor.js"></script>
-  </body>
+  <!-- DOM to load before script-->
+  <script src="script.js"></script>
+  <script src="mail.js"></script>
+  <script src="cursor.js"></script>
+</body>
 
 </html>
