@@ -63,25 +63,11 @@ document.querySelector('.tooltip').addEventListener('animationend', function (ev
         } else {
             // Reset the animation by temporarily setting it to "none"
             document.querySelector(".tooltip").style.animation = "none";
+            document.querySelector(".tooltip-drag").style.animation = "none";
 
             // Delay the reapplication of the animation by a short duration
             setTimeout(function () {
                 document.querySelector(".tooltip").style.animation = "animate-tooltip 2.5s ease-in-out forwards";
-            }, 10);
-        }
-    }
-});
-
-document.querySelector('.tooltip-drag').addEventListener('animationend', function (event) {
-    if (event.animationName === 'animate-tooltip-drag') {
-        if (leftScrollCount > 10) {
-            document.querySelector(".tooltip-drag").style.animation = "none";
-        } else {
-            // Reset the animation by temporarily setting it to "none"
-            document.querySelector(".tooltip-drag").style.animation = "none";
-
-            // Delay the reapplication of the animation by a short duration
-            setTimeout(function () {
                 document.querySelector(".tooltip-drag").style.animation = "animate-tooltip-drag 2.5s ease-in-out forwards";
             }, 10);
         }
