@@ -14,15 +14,15 @@ function onload() {
 
     // User hasn't scrolled before
     if (storedHasUsedDomains === null) {
-        document.querySelector(".tooltip").style.display = "flex";
-        const top = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom + 15;
-        const left = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.7 - document.querySelector(".tooltip").clientWidth / 2;
-        document.querySelector(".tooltip").style.top = top + "px";
-        document.querySelector(".tooltip").style.left = left + "px";
+        // document.querySelector(".tooltip").style.display = "flex";
+        // const top = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom + 15;
+        // const left = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.7 - document.querySelector(".tooltip").clientWidth / 2;
+        // document.querySelector(".tooltip").style.top = top + "px";
+        // document.querySelector(".tooltip").style.left = left + "px";
 
         document.querySelector(".tooltip-drag").style.display = "flex";
         const topDrag = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom - 100;
-        const leftDrag = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.7 - document.querySelector(".tooltip-drag").clientWidth / 2;
+        const leftDrag = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.6 - document.querySelector(".tooltip-drag").clientWidth / 2;
         document.querySelector(".tooltip-drag").style.top = topDrag + "px";
         document.querySelector(".tooltip-drag").style.left = leftDrag + "px";
     }
@@ -54,20 +54,21 @@ emailInput.addEventListener('input', () => {
     }
 });
 
-// Tooltip animation
+// Tooltip animation (change first querySelector between tooltip-drag/tooltip depending on which one you want to animate)
+// Make sure to uncomment all related code to do with tooltip-drag/tooltip in case of switching
 
-document.querySelector('.tooltip').addEventListener('animationend', function (event) {
-    if (event.animationName === 'animate-tooltip') {
+document.querySelector('.tooltip-drag').addEventListener('animationend', function (event) {
+    if (event.animationName === 'animate-tooltip-drag') {
         if (leftScrollCount > 10) {
-            document.querySelector(".tooltip").style.animation = "animate-tooltip-out 0.3s ease-out forwards";
+            // document.querySelector(".tooltip").style.animation = "animate-tooltip-out 0.3s ease-out forwards";
         } else {
             // Reset the animation by temporarily setting it to "none"
-            document.querySelector(".tooltip").style.animation = "none";
+            // document.querySelector(".tooltip").style.animation = "none";
             document.querySelector(".tooltip-drag").style.animation = "none";
 
             // Delay the reapplication of the animation by a short duration
             setTimeout(function () {
-                document.querySelector(".tooltip").style.animation = "animate-tooltip 2.5s ease-in-out forwards";
+                // document.querySelector(".tooltip").style.animation = "animate-tooltip 2.5s ease-in-out forwards";
                 document.querySelector(".tooltip-drag").style.animation = "animate-tooltip-drag 2.5s ease-in-out forwards";
             }, 10);
         }
