@@ -332,6 +332,59 @@ input[type="checkbox"].toggle:checked+label::after {
   }
 }
 
+.tooltip-drag {
+  display: none;
+
+  position: fixed;
+  background: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  z-index: 1000;
+
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+
+  transition: transform 0.1s cubic-bezier(.22, .38, .48, .98),
+    opacity 0.1s cubic-bezier(.22, .38, .48, .98),
+    width 0.1s cubic-bezier(.22, .38, .48, .98);
+
+  animation: animate-tooltip-drag 2.5s ease-in-out forwards;
+}
+
+@keyframes animate-tooltip-drag {
+  0% {
+    transform: translateY(0) scale(1.5);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translateY(0) scale(1.5);
+    opacity: 0;
+  }
+
+  35% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+
+  65% {
+    transform: translateY(-400%) scale(1);
+    opacity: 0.6;
+  }
+
+  90% {
+    transform: translateY(-400%) scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-400%) scale(1.5);
+    opacity: 0;
+  }
+}
+
 .desktop {
   scroll-snap-align: center;
   color: white;

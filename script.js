@@ -19,6 +19,12 @@ function onload() {
         const left = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.7 - document.querySelector(".tooltip").clientWidth / 2;
         document.querySelector(".tooltip").style.top = top + "px";
         document.querySelector(".tooltip").style.left = left + "px";
+
+        document.querySelector(".tooltip-drag").style.display = "flex";
+        const topDrag = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom - 100;
+        const leftDrag = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.7 - document.querySelector(".tooltip-drag").clientWidth / 2;
+        document.querySelector(".tooltip-drag").style.top = topDrag + "px";
+        document.querySelector(".tooltip-drag").style.left = leftDrag + "px";
     }
 }
 
@@ -66,8 +72,21 @@ document.querySelector('.tooltip').addEventListener('animationend', function (ev
     }
 });
 
+document.querySelector('.tooltip-drag').addEventListener('animationend', function (event) {
+    if (event.animationName === 'animate-tooltip-drag') {
+        if (leftScrollCount > 10) {
+            document.querySelector(".tooltip-drag").style.animation = "none";
+        } else {
+            // Reset the animation by temporarily setting it to "none"
+            document.querySelector(".tooltip-drag").style.animation = "none";
 
-
+            // Delay the reapplication of the animation by a short duration
+            setTimeout(function () {
+                document.querySelector(".tooltip-drag").style.animation = "animate-tooltip-drag 2.5s ease-in-out forwards";
+            }, 10);
+        }
+    }
+});
 
 // Left and right domains scrolling
 
