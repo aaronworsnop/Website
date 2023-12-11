@@ -16,7 +16,7 @@ function onload() {
     if (storedHasUsedDomains === null) {
         document.querySelector(".tooltip").style.display = "flex";
         const top = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom + 15;
-        const left = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.75;
+        const left = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.7 - document.querySelector(".tooltip").clientWidth / 2;
         document.querySelector(".tooltip").style.top = top + "px";
         document.querySelector(".tooltip").style.left = left + "px";
     }
@@ -65,6 +65,8 @@ document.querySelector('.tooltip').addEventListener('animationend', function (ev
         }
     }
 });
+
+
 
 
 // Left and right domains scrolling
