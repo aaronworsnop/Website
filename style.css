@@ -332,6 +332,27 @@ input[type="checkbox"].toggle:checked+label::after {
   }
 }
 
+.tooltip-text {
+  display: none;
+  opacity: 0;
+
+  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.7rem 0.95rem;
+  border-radius: 7px;
+
+  position: fixed;
+  z-index: 100;
+  top: 200px;
+  left: 100px;
+  color: white;
+
+  transition: opacity 0.3s cubic-bezier(.22, .38, .48, .98);
+}
+
 .tooltip-drag {
   display: none;
 

@@ -20,6 +20,12 @@ function onload() {
         // document.querySelector(".tooltip").style.top = top + "px";
         // document.querySelector(".tooltip").style.left = left + "px";
 
+        document.querySelector(".tooltip-text").style.display = "flex";
+        const topText = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom + 15;
+        const leftText = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.6 - document.querySelector(".tooltip-text").clientWidth / 2;
+        document.querySelector(".tooltip-text").style.top = topText + "px";
+        document.querySelector(".tooltip-text").style.left = leftText + "px";
+
         document.querySelector(".tooltip-drag").style.display = "flex";
         const topDrag = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom - 100;
         const leftDrag = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.6 - document.querySelector(".tooltip-drag").clientWidth / 2;
@@ -43,7 +49,6 @@ const emailUnderline = document.getElementById('email-underline');
 emailInput.addEventListener('input', () => {
     console.log(emailText.classList);
     if (emailInput.value) {
-        console.log("What?");
         emailText.classList.add('email-entered-but-invalid');
         emailUnderline.classList.add('email-entered-but-invalid-underline');
         emailUnderline.classList.remove('contact-content-input-underline');
@@ -61,6 +66,7 @@ document.querySelector('.tooltip-drag').addEventListener('animationend', functio
     if (event.animationName === 'animate-tooltip-drag') {
         if (leftScrollCount > 10) {
             // document.querySelector(".tooltip").style.animation = "animate-tooltip-out 0.3s ease-out forwards";
+
         } else {
             // Reset the animation by temporarily setting it to "none"
             // document.querySelector(".tooltip").style.animation = "none";
@@ -211,6 +217,8 @@ scrollAreaLeft.addEventListener("mousedown", (e) => mouseIsDownLeft(e));
 scrollAreaLeft.addEventListener("mouseup", (e) => mouseUp(e));
 scrollAreaLeft.addEventListener("mouseleave", (e) => mouseLeave(e));
 scrollAreaLeft.addEventListener("mousemove", (e) => mouseMoveLeft(e));
+scrollAreaLeft.addEventListener("mouseover", (e) => mouseOverLeftDomains(e));
+scrollAreaLeft.addEventListener("mouseout", (e) => mouseLeaveLeftDomains(e));
 
 scrollAreaRight.addEventListener("mousedown", (e) => mouseIsDownRight(e));
 scrollAreaRight.addEventListener("mouseup", (e) => mouseUp(e));
@@ -351,6 +359,23 @@ function mouseMoveRight(e) {
         scrollAreaRight.scrollTop = scrollTop - walkY;
     }
 }
+
+function mouseOverLeftDomains(e) {
+    document.querySelector(".tooltip-text").style.opacity = "1";
+}
+
+function mouseLeaveLeftDomains(e) {
+    if (leftScrollCount > 10) {
+        document.querySelector(".tooltip-text").style.opacity = "0";
+        setTimeout(function () {
+            document.querySelector(".tooltip-text").style.display = "none";
+        }, 300);
+    } else {
+        document.querySelector(".tooltip-text").style.opacity = "0";
+    }
+}
+
+// Contact pane
 
 function closeContactPane() {
     const contactForm = document.querySelector(".contact-glass");
