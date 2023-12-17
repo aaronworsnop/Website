@@ -269,6 +269,41 @@ input[type="checkbox"].toggle:checked+label::after {
   gap: 3.5rem;
 }
 
+#loading-card-grid {
+  pointer-events: visible;
+  z-index: 20;
+
+  background-color: #F2F3F5;
+
+  padding-left: 6rem;
+  padding-right: 6rem;
+
+  position: fixed;
+  top: 0;
+  left: -6rem;
+
+  width: calc(100% - 12rem);
+}
+
+.loading-card {
+  padding: 2rem;
+
+  position: relative;
+
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: grey 0 0 1.5rem;
+
+  transition: transform 0.3s cubic-bezier(.22, .38, .48, .98);
+}
+
+.loading-card:hover {
+  transform: scale(1.08);
+  transition: transform 0.3s cubic-bezier(.22, .38, .48, .98);
+
+  z-index: 2;
+}
+
 .card {
   padding: 2rem;
 
@@ -688,4 +723,31 @@ input[type="checkbox"].toggle:checked+label::after {
   .no-mobile {
     display: none;
   }
+}
+
+.skeleton {
+  opacity: 0.8;
+  animation: skeleton-loading 1s ease-in-out infinite alternate;
+}
+
+.skeleton-text {
+  width: 80%;
+  height: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.skeleton-text:last-child {
+  width: 50%;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #F0F2F5;
+  }
+
+  100% {
+    background-color: #CCCED3;
+  }
+
 }
