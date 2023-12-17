@@ -410,7 +410,7 @@ input[type="checkbox"].toggle:checked+label::after {
   scroll-snap-align: center;
   color: white;
 
-  opacity: 0.4;
+  opacity: 0.25;
   transition: opacity 0.4s;
   transition: scale 0.3s ease-in-out;
   scale: 0.8;
