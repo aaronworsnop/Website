@@ -743,11 +743,11 @@ input[type="checkbox"].toggle:checked+label::after {
 
 @keyframes skeleton-loading {
   0% {
-    background-color: #F0F2F5;
+    background-color: #e6e8ed;
   }
 
   100% {
-    background-color: #CCCED3;
+    background-color: #d5d8de;
   }
 
 }
