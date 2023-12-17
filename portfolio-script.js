@@ -12,13 +12,9 @@ function onload() {
         document.querySelector(".navigation").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
         document.querySelector(".navigation").style.borderBottom = "1px solid rgba(255, 255, 255, 0.3)";
     }
-}
 
-// Remove the loading screen
-window.onload = function () {
     onFinishLoadCards();
-};
-
+}
 
 function onFinishLoadCards() {
     document.querySelector("#loading-card-grid").style.opacity = "0";
