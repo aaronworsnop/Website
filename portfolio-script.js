@@ -14,6 +14,21 @@ function onload() {
     }
 }
 
+// Remove the loading screen
+window.onload = function () {
+    onFinishLoadCards();
+};
+
+
+function onFinishLoadCards() {
+    document.querySelector("#loading-card-grid").style.opacity = "0";
+    document.querySelector("#loading-card-grid").style.pointerEvents = "none";
+    setTimeout(() => {
+        document.querySelector("#loading-card-grid").style.display = "none";
+    }, 500);
+}
+
+// Dark mode
 function doDarkMode(element) {
     const isChecked = element.checked;
     const background = document.querySelector(".background");
