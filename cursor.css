@@ -1,19 +1,21 @@
-html, body {
+html,
+body {
   cursor: none;
 }
 
 .cursor {
   position: fixed;
+  right: 0;
   background: white;
   width: 20px;
   height: 20px;
   border-radius: 100%;
   z-index: 1000;
 
-  transition: transform 0.1s cubic-bezier(.22,.38,.48,.98),
-  opacity 0.1s cubic-bezier(.22,.38,.48,.98),
-  width 0.1s cubic-bezier(.22,.38,.48,.98);
-  
+  transition: transform 0.1s cubic-bezier(.22, .38, .48, .98),
+    opacity 0.1s cubic-bezier(.22, .38, .48, .98),
+    width 0.1s cubic-bezier(.22, .38, .48, .98);
+
   user-select: none;
   pointer-events: none;
   opacity: 0.6;
