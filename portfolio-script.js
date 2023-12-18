@@ -17,6 +17,7 @@ function onload() {
 }
 
 function onFinishLoadCards() {
+    document.querySelector("body").style.overflowY = "scroll";
     document.querySelector("#loading-card-grid").style.opacity = "0";
     document.querySelector("#loading-card-grid").style.pointerEvents = "none";
     setTimeout(() => {
