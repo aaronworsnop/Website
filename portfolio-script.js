@@ -102,13 +102,3 @@ function getCookie(name) {
     }
     return null;
 }
-
-/**
- * Radial blur ipadOs mouse effect looks cut off on image-card s because the img is expanding, not the card. Need
- * to find a way for the card to expand
- * 
- * Tune hover animation
- * Might need more exciting background and look since home page is so epic
- * 
- * Could use mix-blend-mode: soft-light; for the radial gradient on the cards
- */
