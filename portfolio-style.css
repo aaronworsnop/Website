@@ -284,6 +284,7 @@ input[type="checkbox"].toggle:checked+label::after {
   left: -6rem;
 
   width: calc(100% - 12rem);
+  min-height: 100vh;
 
   transition: all 0.5s cubic-bezier(.22, .38, .48, .98);
 }
