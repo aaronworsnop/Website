@@ -47,7 +47,6 @@ const emailText = document.getElementById('email-label');
 const emailUnderline = document.getElementById('email-underline');
 
 emailInput.addEventListener('input', () => {
-    console.log(emailText.classList);
     if (emailInput.value) {
         emailText.classList.add('email-entered-but-invalid');
         emailUnderline.classList.add('email-entered-but-invalid-underline');
@@ -235,6 +234,14 @@ function mouseIsDownLeft(e) {
 
     // set cursor to grabbing
     scrollAreaLeft.classList.add("cursor-pressed-interactable");
+
+    if (document.querySelector(".tooltip-text").style.display == "flex") {
+        document.querySelector(".tooltip-text").classList.add("bounce-animation");
+        setTimeout(function () {
+            document.querySelector(".tooltip-text").classList.remove("bounce-animation");
+        }, 600);
+
+    }
 }
 
 function mouseIsDownRight(e) {

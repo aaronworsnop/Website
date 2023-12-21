@@ -406,6 +406,25 @@ input[type="checkbox"].toggle:checked+label::after {
   }
 }
 
+.bounce-animation {
+  animation: bounce 0.3s ease;
+  animation-iteration-count: 2;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.125);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .desktop {
   scroll-snap-align: center;
   color: white;
