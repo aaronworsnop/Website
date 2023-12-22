@@ -14,11 +14,11 @@ function onload() {
 
     // User hasn't scrolled before
     if (storedHasUsedDomains === null) {
-        // document.querySelector(".tooltip").style.display = "flex";
-        // const top = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom + 15;
-        // const left = document.querySelector(".landing-domains-left").getBoundingClientRect().right / 1.7 - document.querySelector(".tooltip").clientWidth / 2;
-        // document.querySelector(".tooltip").style.top = top + "px";
-        // document.querySelector(".tooltip").style.left = left + "px";
+        document.querySelector(".tooltip").style.display = "flex";
+        const top = document.querySelector(".current-domain-link").getBoundingClientRect().top - 105;
+        const left = document.querySelector("body").getBoundingClientRect().right / 2 - document.querySelector(".tooltip").clientWidth / 2;
+        document.querySelector(".tooltip").style.top = top + "px";
+        document.querySelector(".tooltip").style.left = left + "px";
 
         document.querySelector(".tooltip-text").style.display = "flex";
         const topText = document.querySelector(".landing-domains-left").getBoundingClientRect().bottom + 15;
@@ -64,16 +64,15 @@ emailInput.addEventListener('input', () => {
 document.querySelector('.tooltip-drag').addEventListener('animationend', function (event) {
     if (event.animationName === 'animate-tooltip-drag') {
         if (leftScrollCount > 10) {
-            // document.querySelector(".tooltip").style.animation = "animate-tooltip-out 0.3s ease-out forwards";
-
+            document.querySelector(".tooltip").style.animation = "animate-tooltip-out 0.3s ease-out forwards";
         } else {
             // Reset the animation by temporarily setting it to "none"
-            // document.querySelector(".tooltip").style.animation = "none";
+            document.querySelector(".tooltip").style.animation = "none";
             document.querySelector(".tooltip-drag").style.animation = "none";
 
             // Delay the reapplication of the animation by a short duration
             setTimeout(function () {
-                // document.querySelector(".tooltip").style.animation = "animate-tooltip 2.5s ease-in-out forwards";
+                document.querySelector(".tooltip").style.animation = "animate-tooltip 2.5s ease-in-out forwards";
                 document.querySelector(".tooltip-drag").style.animation = "animate-tooltip-drag 2.5s ease-in-out forwards";
             }, 10);
         }
