@@ -672,6 +672,15 @@ input[type="checkbox"].toggle:checked+label::after {
 }
 
 @media (max-width: 1000px) {
+  #loading-card-grid {
+    width: calc(100% - 6rem);
+  }
+
+  .loading-card {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
   .card-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
