@@ -1139,7 +1139,7 @@ input[type="checkbox"].toggle:checked+label::after {
   gap: 8vw;
 
   position: fixed;
-  top: 50%;
+  top: 51.5%;
   left: 50%;
   transform: translate(-50%, 0);
 }
