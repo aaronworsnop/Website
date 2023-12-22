@@ -304,6 +304,8 @@ input[type="checkbox"].toggle:checked+label::after {
   top: 0;
   left: 0;
 
+  transition: opacity 0.3s cubic-bezier(.22, .38, .48, .98);
+
   opacity: 0.5;
 }
 

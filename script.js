@@ -89,7 +89,7 @@ document.querySelector('.tooltip').addEventListener('animationend', function (ev
             // Delay the reapplication of the animation by a short duration
             setTimeout(function () {
                 document.querySelector(".tooltip").style.animation = "animate-tooltip 2s ease-in-out forwards";
-            }, 10);
+            }, 1);
         }
     }
 });
@@ -159,7 +159,10 @@ function leftScroll() {
     if (storedHasUsedDomains == "true" && leftScrollCount > 10) {
     } else if (storedHasUsedDomains != "true" && leftScrollCount > 10) {
         setCookie("hasUsedDomains", "true", 30);
-        document.querySelector(".tooltip").style.animation = "animate-tooltip 2s ease-in-out forwards";
+        document.querySelector(".tooltip").style.opacity = "0.5";
+        setTimeout(function () {
+            document.querySelector(".tooltip").style.animation = "animate-tooltip 2s ease-in-out forwards";
+        }, 300);
     }
 }
 
