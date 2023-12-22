@@ -1,4 +1,5 @@
 var leftScrollCount = 0;
+var hasTravelledDomain = false;
 
 function onload() {
     // User uses dark mode
@@ -80,7 +81,7 @@ document.querySelector('.tooltip-drag').addEventListener('animationend', functio
 
 document.querySelector('.tooltip').addEventListener('animationend', function (event) {
     if (event.animationName === 'animate-tooltip') {
-        if (hasTravelledDomain == "true") {
+        if (hasTravelledDomain == true) {
             document.querySelector(".tooltip").style.animation = "animate-tooltip-out 0.3s ease-out forwards";
         } else {
             // Reset the animation by temporarily setting it to "none"
@@ -515,8 +516,6 @@ function getCookie(name) {
 // retrieve the values from cookies
 var storedSiteMode = getCookie("siteMode");
 var storedHasUsedDomains = getCookie("hasUsedDomains");
-
-var hasTravelledDomain = false;
 
 /* Currently working on:
  * - When submitting contact form, custom cursor (as well as whole site) freezes, so the user can't
