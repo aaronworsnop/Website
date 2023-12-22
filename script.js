@@ -462,32 +462,85 @@ function doDarkMode(element) {
 }
 
 function toggleLinks() {
-    const resume = document.querySelector(".link-git");
-    const contact = document.querySelector(".link-in");
-    const links = document.querySelector(".link-tube");
+    const mobileGithub = document.querySelector(".link-git");
+    const mobileLinkedin = document.querySelector(".link-in");
+    const mobileYoutube = document.querySelector(".link-tube");
 
     const title = document.querySelector(".landing-screen-title");
 
-    if (resume.classList.contains("link-appear")) {
-        resume.classList.remove("link-appear");
-        resume.classList.add("link-disappear");
-        contact.classList.remove("link-appear");
-        contact.classList.add("link-disappear");
-        links.classList.remove("link-appear");
-        links.classList.add("link-disappear");
+    if (title.classList.contains("title-down") && document.querySelector(".link-folio").classList.contains("link-appear")) {
+        document.querySelector(".link-folio").classList.remove("link-appear");
+        document.querySelector(".link-folio").classList.add("link-disappear");
+        document.querySelector(".link-script").classList.remove("link-appear");
+        document.querySelector(".link-script").classList.add("link-disappear");
+        document.querySelector(".link-resume").classList.remove("link-appear");
+        document.querySelector(".link-resume").classList.add("link-disappear");
+        mobileGithub.classList.remove("link-disappear");
+        mobileGithub.classList.add("link-appear");
+        mobileLinkedin.classList.remove("link-disappear");
+        mobileLinkedin.classList.add("link-appear");
+        mobileYoutube.classList.remove("link-disappear");
+        mobileYoutube.classList.add("link-appear");
+    } else if (mobileGithub.classList.contains("link-appear")) {
+        mobileGithub.classList.remove("link-appear");
+        mobileGithub.classList.add("link-disappear");
+        mobileLinkedin.classList.remove("link-appear");
+        mobileLinkedin.classList.add("link-disappear");
+        mobileYoutube.classList.remove("link-appear");
+        mobileYoutube.classList.add("link-disappear");
         title.classList.remove("title-down");
         title.classList.add("title-up");
     } else {
-        resume.classList.remove("link-disappear");
-        resume.classList.add("link-appear");
-        contact.classList.remove("link-disappear");
-        contact.classList.add("link-appear");
-        links.classList.remove("link-disappear");
-        links.classList.add("link-appear");
+        mobileGithub.classList.remove("link-disappear");
+        mobileGithub.classList.add("link-appear");
+        mobileLinkedin.classList.remove("link-disappear");
+        mobileLinkedin.classList.add("link-appear");
+        mobileYoutube.classList.remove("link-disappear");
+        mobileYoutube.classList.add("link-appear");
         title.classList.remove("title-up");
         title.classList.add("title-down");
     }
+}
 
+function toggleLinksMe() {
+    const mobilePortfolio = document.querySelector(".link-folio");
+    const mobileTranscript = document.querySelector(".link-script");
+    const mobileResume = document.querySelector(".link-resume");
+
+    const title = document.querySelector(".landing-screen-title");
+
+    if (title.classList.contains("title-down") && document.querySelector(".link-git").classList.contains("link-appear")) {
+        document.querySelector(".link-git").classList.remove("link-appear");
+        document.querySelector(".link-git").classList.add("link-disappear");
+        document.querySelector(".link-in").classList.remove("link-appear");
+        document.querySelector(".link-in").classList.add("link-disappear");
+        document.querySelector(".link-tube").classList.remove("link-appear");
+        document.querySelector(".link-tube").classList.add("link-disappear");
+        mobilePortfolio.classList.remove("link-disappear");
+        mobilePortfolio.classList.add("link-appear");
+        mobileTranscript.classList.remove("link-disappear");
+        mobileTranscript.classList.add("link-appear");
+        mobileResume.classList.remove("link-disappear");
+        mobileResume.classList.add("link-appear");
+    } else if (mobilePortfolio.classList.contains("link-appear")) {
+        mobilePortfolio.classList.remove("link-appear");
+        mobilePortfolio.classList.add("link-disappear");
+        mobileTranscript.classList.remove("link-appear");
+        mobileTranscript.classList.add("link-disappear");
+        mobileResume.classList.remove("link-appear");
+        mobileResume.classList.add("link-disappear");
+        title.classList.remove("title-down");
+        title.classList.add("title-up");
+    } else {
+        mobilePortfolio.classList.remove("link-disappear");
+        mobilePortfolio.classList.add("link-appear");
+        mobileTranscript.classList.remove("link-disappear");
+        mobileTranscript.classList.add("link-appear");
+        mobileResume.classList.remove("link-disappear");
+        mobileResume.classList.add("link-appear");
+        title.classList.remove("title-up");
+        title.classList.add("title-down");
+    }
 }
 
 // Cookies

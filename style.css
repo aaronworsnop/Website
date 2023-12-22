@@ -1134,6 +1134,16 @@ input[type="checkbox"].toggle:checked+label::after {
   transform: translate(-50%, 0);
 }
 
+.mobile-links-me {
+  display: flex;
+  gap: 8vw;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
 .mobile-link {
   width: 13vw;
   opacity: 0;
