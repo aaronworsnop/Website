@@ -15,6 +15,7 @@ function onload() {
     // User hasn't scrolled before
     if (storedHasUsedDomains === null) {
         document.querySelector(".tooltip").style.display = "flex";
+        document.querySelector(".tooltip").style.opacity = "0";
         const top = document.querySelector(".current-domain-link").getBoundingClientRect().top - 105;
         const left = document.querySelector("body").getBoundingClientRect().right / 2 - document.querySelector(".tooltip").clientWidth / 2;
         document.querySelector(".tooltip").style.top = top + "px";
@@ -64,19 +65,37 @@ emailInput.addEventListener('input', () => {
 document.querySelector('.tooltip-drag').addEventListener('animationend', function (event) {
     if (event.animationName === 'animate-tooltip-drag') {
         if (leftScrollCount > 10) {
-            document.querySelector(".tooltip").style.animation = "animate-tooltip-out 0.3s ease-out forwards";
+            document.querySelector(".tooltip").style.display = "flex";
         } else {
             // Reset the animation by temporarily setting it to "none"
-            document.querySelector(".tooltip").style.animation = "none";
             document.querySelector(".tooltip-drag").style.animation = "none";
 
             // Delay the reapplication of the animation by a short duration
             setTimeout(function () {
-                document.querySelector(".tooltip").style.animation = "animate-tooltip 2.5s ease-in-out forwards";
                 document.querySelector(".tooltip-drag").style.animation = "animate-tooltip-drag 2.5s ease-in-out forwards";
             }, 10);
         }
     }
+});
+
+document.querySelector('.tooltip').addEventListener('animationend', function (event) {
+    if (event.animationName === 'animate-tooltip') {
+        if (hasTravelledDomain == "true") {
+            document.querySelector(".tooltip").style.animation = "animate-tooltip-out 0.3s ease-out forwards";
+        } else {
+            // Reset the animation by temporarily setting it to "none"
+            document.querySelector(".tooltip").style.animation = "none";
+
+            // Delay the reapplication of the animation by a short duration
+            setTimeout(function () {
+                document.querySelector(".tooltip").style.animation = "animate-tooltip 2s ease-in-out forwards";
+            }, 10);
+        }
+    }
+});
+
+document.querySelector('.current-domain-link').addEventListener('click', function (event) {
+    hasTravelledDomain = true;
 });
 
 // Left and right domains scrolling
@@ -140,6 +159,7 @@ function leftScroll() {
     if (storedHasUsedDomains == "true" && leftScrollCount > 10) {
     } else if (storedHasUsedDomains != "true" && leftScrollCount > 10) {
         setCookie("hasUsedDomains", "true", 30);
+        document.querySelector(".tooltip").style.animation = "animate-tooltip 2s ease-in-out forwards";
     }
 }
 
@@ -492,6 +512,8 @@ function getCookie(name) {
 // retrieve the values from cookies
 var storedSiteMode = getCookie("siteMode");
 var storedHasUsedDomains = getCookie("hasUsedDomains");
+
+var hasTravelledDomain = false;
 
 /* Currently working on:
  * - When submitting contact form, custom cursor (as well as whole site) freezes, so the user can't
