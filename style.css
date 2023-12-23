@@ -1163,6 +1163,10 @@ input[type="checkbox"].toggle:checked+label::after {
     display: none;
   }
 
+  .mobile-links-me {
+    display: none;
+  }
+
   .mobile-link {
     display: none;
   }
