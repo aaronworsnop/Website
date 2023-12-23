@@ -158,7 +158,7 @@ function leftScroll() {
     leftScrollCount++;
 
     if (storedHasUsedDomains == "true" && leftScrollCount > 10) {
-    } else if (storedHasUsedDomains != "true" && leftScrollCount > 10) {
+    } else if (storedHasUsedDomains != "true" && leftScrollCount > 10 && hasTravelledDomain == false) {
         setCookie("hasUsedDomains", "true", 30);
         document.querySelector(".tooltip").style.opacity = "0.5";
         setTimeout(function () {
