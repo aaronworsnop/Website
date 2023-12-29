@@ -490,6 +490,17 @@ input[type="checkbox"].toggle:checked+label::after {
     opacity 0.3s ease-out;
 }
 
+@media (max-width: 1000px) {
+  .card-link {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 20%;
+  }
+
+  .card-link img {
+    opacity: 1;
+  }
+}
+
 #card-welcome {
   background: rgb(222, 16, 187);
   background: linear-gradient(143deg, rgba(222, 16, 187, 1) 0%, rgba(58, 82, 213, 1) 100%);
