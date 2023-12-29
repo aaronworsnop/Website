@@ -666,6 +666,10 @@ input[type="checkbox"].toggle:checked+label::after {
   opacity: 1;
 }
 
+#card-tsg {
+  grid-column: span 2;
+}
+
 #card-tsg .card-content {
   position: absolute;
   top: 0;
