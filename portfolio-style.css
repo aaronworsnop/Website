@@ -512,6 +512,14 @@ input[type="checkbox"].toggle:checked+label::after {
   margin: 2rem;
 }
 
+#card-pmsa h1 {
+  text-shadow:
+    0 0 2rem rgba(255, 255, 255, 1),
+    0 0 2rem rgba(255, 255, 255, 1),
+    0 0 2rem rgba(255, 255, 255, 1),
+    0 0 2rem rgba(255, 255, 255, 1);
+}
+
 #card-webforms {
   grid-column: span 2;
 }
