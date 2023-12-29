@@ -54,3 +54,21 @@ body {
     display: none;
   }
 }
+
+.mini-cursor {
+  position: fixed;
+  left: -100px;
+  background: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  z-index: 1000;
+
+  mix-blend-mode: difference;
+
+  user-select: none;
+  pointer-events: none;
+  opacity: 1;
+
+  transition: opacity 0.1s cubic-bezier(.22, .38, .48, .98);
+}

@@ -1,4 +1,5 @@
 const cursor = document.querySelector(".cursor");
+const miniCursor = document.querySelector(".mini-cursor");
 
 var posX = 0;
 var posY = 0;
@@ -15,10 +16,21 @@ document.addEventListener("mousemove", (e) => {
 
     // Update the cursor mode
     updateCursorMode();
+
+    // Update the mini cursor position if it exists
+    if (miniCursor) {
+        miniCursor.style.left = mouseX - 5 + "px";
+        miniCursor.style.top = mouseY - 5 + "px";
+        if (!cursor.classList.contains("cursor-disappear")) {
+            miniCursor.style.opacity = 0;
+        } else {
+            miniCursor.style.opacity = 1;
+        }
+    }
 });
 
 // Cursor disappears when leaving the window
-document.onmouseout = function() {
+document.onmouseout = function () {
     cursor.classList.add("cursor-disappear");
 };
 
