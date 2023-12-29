@@ -375,7 +375,7 @@ input[type="checkbox"].toggle:checked+label::after {
   height: 15%;
   width: 15%;
 
-  top: 35%;
+  top: 40%;
   right: 0;
 
   background-color: rgba(0, 0, 0, 0.5);
@@ -390,17 +390,39 @@ input[type="checkbox"].toggle:checked+label::after {
   cursor: none;
 }
 
+.card-link-white {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-link-span {
+  width: 8%;
+}
+
 .card-link img {
-  opacity: 0.5;
+  opacity: 0.6;
   max-width: 2rem;
   max-height: 2rem;
+
+  border-radius: 0 !important;
 
   transition: opacity 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
+.card-link-white img {
+  opacity: 1;
+}
+
 .card-link:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 20%;
+}
+
+.card-link-white:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-link-span:hover {
+  width: 10%;
 }
 
 .card-link:hover img {
@@ -496,8 +518,16 @@ input[type="checkbox"].toggle:checked+label::after {
     width: 20%;
   }
 
+  .card-link-white {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
   .card-link img {
     opacity: 1;
+  }
+
+  .card-link-span {
+    width: 20% !important;
   }
 }
 
