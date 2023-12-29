@@ -334,7 +334,7 @@ input[type="checkbox"].toggle:checked+label::after {
   left: 0;
 
   background: 800px, radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.175), transparent 40%);
-  mix-blend-mode: overlay;
+  mix-blend-mode: hard-light;
   opacity: 0;
 
   border-radius: inherit;
