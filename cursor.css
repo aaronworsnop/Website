@@ -72,3 +72,9 @@ body {
 
   transition: opacity 0.1s cubic-bezier(.22, .38, .48, .98);
 }
+
+@media (max-width: 1000px) {
+  .mini-cursor {
+    display: none;
+  }
+}
