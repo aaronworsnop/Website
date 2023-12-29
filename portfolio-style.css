@@ -504,6 +504,14 @@ input[type="checkbox"].toggle:checked+label::after {
   opacity: 0;
 }
 
+#card-pmsa .card-content {
+  position: absolute;
+  color: var(--almost-black);
+  top: 0;
+  left: 0;
+  margin: 2rem;
+}
+
 #card-webforms {
   grid-column: span 2;
 }
