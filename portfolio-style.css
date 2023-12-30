@@ -779,6 +779,10 @@ input[type="checkbox"].toggle:checked+label::after {
   grid-column: span 2;
 }
 
+#card-tsg-mobile-image {
+  display: none;
+}
+
 #card-tsg .card-content {
   position: absolute;
   top: 0;
