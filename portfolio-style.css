@@ -786,6 +786,12 @@ input[type="checkbox"].toggle:checked+label::after {
   margin: 2rem;
 }
 
+#card-tsg h1,
+#card-tsg h4 {
+  text-shadow: 0 0 0.75rem rgba(0, 0, 0, 1);
+  transition: opacity 0.3s ease-out;
+}
+
 #card-tsg h4 {
   transition: opacity 0.3s ease-out;
 }
@@ -852,6 +858,14 @@ input[type="checkbox"].toggle:checked+label::after {
   }
 
   #card-trp-mobile-image {
+    display: block;
+  }
+
+  #card-tsg-pc-image {
+    display: none;
+  }
+
+  #card-tsg-mobile-image {
     display: block;
   }
 
