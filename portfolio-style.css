@@ -753,6 +753,28 @@ input[type="checkbox"].toggle:checked+label::after {
   opacity: 1;
 }
 
+#card-tictactoe .card-content {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+}
+
+#card-tictactoe h1,
+#card-tictactoe h4 {
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+  transition: opacity 0.3s ease-out;
+}
+
+#card-tictactoe h4 {
+  transition: opacity 0.3s ease-out;
+}
+
+#card-tictactoe:hover h4 {
+  opacity: 0;
+}
+
 #card-tsg {
   grid-column: span 2;
 }
