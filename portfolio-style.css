@@ -565,8 +565,9 @@ input[type="checkbox"].toggle:checked+label::after {
 }
 
 #card-gdsc {
-  background-image: url(img/portfolio/gdsc-1.jpg);
+  background-image: url(img/portfolio/gdsc-2.jpg);
   background-size: cover;
+  background-position: center;
 
 
   position: relative;
@@ -605,6 +606,23 @@ input[type="checkbox"].toggle:checked+label::after {
     0 0 2rem rgba(255, 255, 255, 1),
     0 0 2rem rgba(255, 255, 255, 1),
     0 0 2rem rgba(255, 255, 255, 1);
+}
+
+#card-deans .card-content {
+  color: var(--almost-black);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+}
+
+#card-deans h4 {
+  transition: opacity 0.3s ease-out;
+  font-weight: 600;
+}
+
+#card-deans:hover h4 {
+  opacity: 0;
 }
 
 #card-webforms {
