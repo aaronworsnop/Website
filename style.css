@@ -361,7 +361,7 @@ input[type="checkbox"].toggle:checked+label::after {
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  z-index: 1000;
+  z-index: 100;
 
   user-select: none;
   pointer-events: none;
@@ -648,6 +648,8 @@ input[type="checkbox"].toggle:checked+label::after {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 0;
+
+  z-index: 200;
 }
 
 .animate-glass-out {
