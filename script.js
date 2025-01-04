@@ -36,6 +36,14 @@ function onload() {
     }
 }
 
+// Add this function at the end of your script.js file
+document.addEventListener('DOMContentLoaded', function () {
+    var video = document.getElementById('background-video');
+    video.addEventListener('canplay', function () {
+        video.poster = '';
+    });
+});
+
 // Keyboard listners
 
 document.addEventListener("keydown", function (event) {
