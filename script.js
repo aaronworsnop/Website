@@ -265,6 +265,7 @@ function mouseIsDownLeft(e) {
 
     // set cursor to grabbing
     scrollAreaLeft.classList.add("cursor-pressed-interactable");
+    cursor.classList.add("cursor-enlarge-pressed");
 
     if (document.querySelector(".tooltip-text").style.display == "flex") {
         document.querySelector(".tooltip-text").classList.add("bounce-animation");
@@ -285,10 +286,13 @@ function mouseIsDownRight(e) {
 
     // set cursor to grabbing
     scrollAreaRight.classList.add("cursor-pressed-interactable");
+    cursor.classList.add("cursor-enlarge-pressed");
 }
 
 function mouseUp(e) {
     isDown = false;
+
+    cursor.classList.remove("cursor-enlarge-pressed");
 
     var elements = document.querySelectorAll('.desktop');
 
@@ -320,7 +324,7 @@ function mouseUp(e) {
             behavior: "smooth"
         });
 
-        // 0.5s after scrolling to desired position, reset scroll-snap
+        // After scrolling to desired position, reset scroll-snap
         setTimeout(function () {
             scrollAreaLeft.style.scrollSnapType = "y mandatory";
             scrollAreaRight.style.scrollSnapType = "y mandatory";
