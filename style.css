@@ -964,7 +964,14 @@ input[type="checkbox"].toggle:checked+label::after {
     transform: translate(-50%, 150vh);
 
     border-radius: 3.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-right: 4px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 4px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .contact-title-bar {
+    height: 4px;
   }
 
   .contact-content {
