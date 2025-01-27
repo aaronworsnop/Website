@@ -23,7 +23,7 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 
-<body onload="onload()">
+<body onload="onload()" onscroll="scroll()">
     <!-- Cursor -->
     <div class="cursor"></div>
 
@@ -63,37 +63,61 @@
     <div id="experience-list">
         <div class="experience-item">
             <div class="experience-dot"></div>
-            <div class="experience-panel">
-                a panel will go here
-                </br>
-                It'll have some stuff
+            <div class="experience-panel experience-panel-expanded">
+                <h1>Serato</h1>
+                <h2>Software Engineer Intern</h2>
+
+                <div class="experience-panel-tag-container">
+                    <div class="experience-panel-tag">C++</div>
+                    <div class="experience-panel-tag">HID</div>
+                    <div class="experience-panel-tag">MIDI</div>
+                </div>
             </div>
         </div>
         
         <div class="experience-item">
             <div class="experience-dot"></div>
-            <div class="experience-panel">
-                a panel will go here
-                </br>
-                It'll have some stuff
+            <div class="experience-panel experience-panel-expanded">
+                <h1>Tidy International</h1>
+                <h2>Software Engineer Intern</h2>
+
+                <div class="experience-panel-tag-container">
+                    <div class="experience-panel-tag">C#</div>
+                    <div class="experience-panel-tag">Angular</div>
+                    <div class="experience-panel-tag">Typescript</div>
+                    <div class="experience-panel-tag">.NET</div>
+                    <div class="experience-panel-tag">Docker</div>
+                </div> 
             </div>
         </div>
 
         <div class="experience-item">
             <div class="experience-dot"></div>
             <div class="experience-panel">
-                a panel will go here
-                </br>
-                It'll have some stuff
+                <h1>Retirement Planning Ltd</h1>
+                <h2>Full Stack Web Developer</h2>
+
+                <div class="experience-panel-tag-container">
+                    <div class="experience-panel-tag">HTML</div>
+                    <div class="experience-panel-tag">CSS</div>
+                    <div class="experience-panel-tag">JavaScript</div>
+                    <div class="experience-panel-tag">PHP</div>
+                    <div class="experience-panel-tag">WordPress</div>
+                </div> 
             </div>
         </div>
 
         <div class="experience-item">
             <div class="experience-dot"></div>
             <div class="experience-panel">
-                a panel will go here
-                </br>
-                It'll have some stuff
+                <h1>Finergy</h1>
+                <h2>Digital Designer</h2>
+
+                <div class="experience-panel-tag-container">
+                    <div class="experience-panel-tag">Graphics Design</div>
+                    <div class="experience-panel-tag">Illustrator</div>
+                    <div class="experience-panel-tag">After Effects</div>
+                </div> 
             </div>
         </div>
     </div>
@@ -106,7 +130,7 @@
 
     <!-- DOM needs to load before script-->
     <script src="cursor.js"></script>
-    <script src="portfolio-script.js"></script>
+    <script src="experience-script.js"></script>
 </body>
 
 </html>

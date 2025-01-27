@@ -1,3 +1,7 @@
+body {
+  overflow: auto;
+}
+
 #timeline {
   display: block;
   background-color: white;
@@ -18,12 +22,11 @@
   box-sizing: border-box;
 
   width: calc(88dvw + 8px);
-  height: 200dvh;
 
   position: absolute;
   left: calc(12dvw - 8px);
 
-  padding: 7rem 11dvw 3rem 2rem;
+  padding: clamp(7rem, 35dvh, 50dvh) 11dvw clamp(3rem, 35dvh, 50dvh) 2rem;
 
   overflow-x: hidden;
 }
@@ -32,8 +35,6 @@
   display: flex;
 
   align-items: center;
-
-  transition: transform 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
 .experience-dot {
@@ -48,14 +49,60 @@
 }
 
 .experience-panel {
+  flex: 1;
+  
   background-color: black;
 
-  flex: 1;
+  display: flex;
+  flex-direction: column;
   
   padding: 2rem;
 
   border-radius: 1.5rem;
   box-shadow: black 0 0 1.5rem;
+
+  transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
+}
+
+.experience-panel:hover {
+  transform: scale(1.03);
+  transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
+
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 1.5rem;
+
+  z-index: 2;
+}
+
+.experience-panel h1 {
+  margin: 0;
+}
+
+.experience-panel h2 {
+  margin: 0;
+  font-weight: 400;
+
+  transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
+}
+
+.experience-panel-expanded h2 {
+  margin-top: 1rem;
+}
+
+.experience-panel-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0rem 1rem;
+}
+
+.experience-panel-tag {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+
+  margin-top: 1rem;
+  padding: 0.3rem 0.6rem;
+  font-weight: 500;
+
+  border-radius: 0.5rem;
 }
 
 @media (max-width: 1000px) {
