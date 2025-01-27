@@ -1,5 +1,5 @@
 body {
-  overflow: auto;
+  overflow: overlay;
 }
 
 #timeline {
@@ -17,22 +17,26 @@ body {
 #experience-list {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 2rem;
 
   box-sizing: border-box;
 
   width: calc(88dvw + 8px);
+  height: 100dvh;
 
   position: absolute;
   left: calc(12dvw - 8px);
 
-  padding: clamp(7rem, 35dvh, 50dvh) 11dvw clamp(3rem, 35dvh, 50dvh) 2rem;
+  padding: clamp(7rem, 40dvh, 50dvh) 11dvw clamp(3rem, 50dvh, 50dvh) 2rem;
 
-  overflow-x: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .experience-item {
   display: flex;
+
+  scroll-snap-align: center;
 
   align-items: center;
 }
@@ -75,14 +79,14 @@ body {
   transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
-.experience-panel:hover {
+/* .experience-panel:hover {
   transform: scale(1.03);
   transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 2rem;
 
   z-index: 2;
-}
+} */
 
 .experience-panel-image {
   position: absolute;
@@ -97,11 +101,6 @@ body {
   filter: blur(0.3rem);
   opacity: 0;
 
-  transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
-}
-
-.experience-panel:hover .experience-panel-image {
-  opacity: 0.3;
   transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
@@ -134,14 +133,36 @@ body {
   transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
-.experience-panel-expanded h2 {
-  margin-top: 1rem;
+.experience-panel-expanded {
+  transform: scale(1.03);
+  transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 2rem;
+
+  z-index: 2;
+}
+
+.experience-panel-expanded .experience-panel-image {
+  opacity: 0.3;
+  transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
 .experience-panel-tag-container {
   display: flex;
   flex-wrap: wrap;
   gap: 0rem 1rem;
+}
+
+.experience-panel-content {
+  height: 0;
+  opacity: 0;
+
+  transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
+}
+
+.experience-panel-expanded .experience-panel-content {
+  height: 200px;
+  opacity: 1;
 }
 
 .experience-panel-tag {
@@ -166,8 +187,6 @@ body {
 
     padding-left: 3rem;
     padding-right: 3rem;
-
-    gap: 2rem;
   }
 
   .experience-dot {

@@ -14,9 +14,7 @@ function onload() {
     }
 }
 
-function scroll() {
-    console.log("we scrolling boy");
-
+function onScroll() {
     const viewportHeight = window.innerHeight;
 
     // Expand the middle panel
@@ -31,10 +29,6 @@ function scroll() {
             panel.classList.remove("experience-panel-expanded");
         }
     });
-
-    // Snap to the closest panel in the middle
-    
-    
 }
 
 // Dark mode

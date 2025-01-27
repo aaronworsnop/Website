@@ -23,7 +23,7 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 
-<body onload="onload()" onscroll="scroll()">
+<body onload="onload()">
     <!-- Cursor -->
     <div class="cursor"></div>
 
@@ -60,13 +60,19 @@
     <!-- Experience Cards -->
     <div id="timeline"></div>
 
-    <div id="experience-list">
+    <div id="experience-list" onscroll="onScroll()">
         <div class="experience-item">
             <div class="experience-dot"></div>
             <div class="experience-panel experience-panel-expanded">
                 <div class="experience-panel-image image-serato"></div>
                 <h1>Serato</h1>
                 <h2>Software Engineer Intern</h2>
+
+                <div class="experience-panel-content">
+                    <p>Developed a new feature for Serato DJ Pro, a leading DJ software application. The feature allows users to control the software using a MIDI controller, and was developed using C++ and the Windows HID API.</p>
+                    <p>Worked on a project to improve the performance of the software's library management system. This involved refactoring the existing codebase, and implementing a new system to handle the loading and unloading of tracks.</p>
+                    <p>Developed a new feature for Serato Studio, a music production application. The feature allows users to control the software using a MIDI controller, and was developed using C++ and the Windows HID API.</p>
+                </div>
 
                 <div class="experience-panel-tag-container">
                     <div class="experience-panel-tag">C++</div>
