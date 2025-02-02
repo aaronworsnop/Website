@@ -31,6 +31,18 @@ function onScroll() {
     });
 }
 
+function panelClick(panel) {
+    if (!panel.classList.contains("experience-panel-expanded")) {
+        const experienceList = document.querySelector("#experience-list");
+        const scrollPosition = panel.offsetTop - experienceList.offsetTop + (panel.offsetHeight - experienceList.clientHeight) / 2;
+
+        experienceList.scrollTo({
+            top: scrollPosition,
+            behavior: "smooth"
+        });
+    }
+}
+
 // Dark mode
 function doDarkMode(element) {
     const isChecked = element.checked;
