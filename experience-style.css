@@ -79,15 +79,6 @@ body {
   transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
-/* .experience-panel:hover {
-  transform: scale(1.03);
-  transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
-
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 2rem;
-
-  z-index: 2;
-} */
-
 .experience-panel-image {
   position: absolute;
   top: 0;
