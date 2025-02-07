@@ -74,7 +74,7 @@ body {
   display: flex;
   flex-direction: column;
   
-  padding: 2rem;
+  padding: 2rem 2.5rem;
 
   transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 }
@@ -145,14 +145,18 @@ body {
 }
 
 .experience-panel-content {
-  height: 0;
+  max-height: 0px;
   opacity: 0;
 
   transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
+.experience-panel-content p:first-child {
+  font-style: italic;
+}
+
 .experience-panel-expanded .experience-panel-content {
-  height: 200px;
+  max-height: 300px;
   opacity: 1;
 }
 
@@ -188,5 +192,9 @@ body {
     border: 3px solid rgba(255, 255, 255, 0.5);
     border-right: 3px solid rgba(255, 255, 255, 0.2);
     border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .experience-panel-expanded .experience-panel-content {
+    display: none;
   }
 }

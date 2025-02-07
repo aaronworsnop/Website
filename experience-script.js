@@ -23,7 +23,7 @@ function onScroll() {
         const panelTop = panel.getBoundingClientRect().top;
         const panelBottom = panel.getBoundingClientRect().bottom;
 
-        if (panelTop < viewportHeight / 2 && panelBottom > viewportHeight / 2) {
+        if (panelTop - 7 < viewportHeight / 2 && panelBottom + 7 > viewportHeight / 2) {
             panel.classList.add("experience-panel-expanded");
         } else {
             panel.classList.remove("experience-panel-expanded");
