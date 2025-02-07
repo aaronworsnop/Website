@@ -507,7 +507,7 @@ input[type="checkbox"].toggle:checked+label::after {
 @media (max-width: 1000px) {
   .landing-screen-title {
     font-size: 10vw;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 5vh;
     left: 50%;
     top: 50%;
