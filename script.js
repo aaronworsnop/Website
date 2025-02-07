@@ -483,6 +483,8 @@ function toggleLinks() {
     if (title.classList.contains("title-down") && document.querySelector(".link-folio").classList.contains("link-appear")) {
         document.querySelector(".link-folio").classList.remove("link-appear");
         document.querySelector(".link-folio").classList.add("link-disappear");
+        document.querySelector(".link-perience").classList.remove("link-appear");
+        document.querySelector(".link-perience").classList.add("link-disappear");
         document.querySelector(".link-script").classList.remove("link-appear");
         document.querySelector(".link-script").classList.add("link-disappear");
         document.querySelector(".link-resume").classList.remove("link-appear");
@@ -516,6 +518,7 @@ function toggleLinks() {
 
 function toggleLinksMe() {
     const mobilePortfolio = document.querySelector(".link-folio");
+    const mobileExperience = document.querySelector(".link-perience");
     const mobileTranscript = document.querySelector(".link-script");
     const mobileResume = document.querySelector(".link-resume");
 
@@ -530,6 +533,8 @@ function toggleLinksMe() {
         document.querySelector(".link-tube").classList.add("link-disappear");
         mobilePortfolio.classList.remove("link-disappear");
         mobilePortfolio.classList.add("link-appear");
+        mobileExperience.classList.remove("link-disappear");
+        mobileExperience.classList.add("link-appear");
         mobileTranscript.classList.remove("link-disappear");
         mobileTranscript.classList.add("link-appear");
         mobileResume.classList.remove("link-disappear");
@@ -537,6 +542,8 @@ function toggleLinksMe() {
     } else if (mobilePortfolio.classList.contains("link-appear")) {
         mobilePortfolio.classList.remove("link-appear");
         mobilePortfolio.classList.add("link-disappear");
+        mobileExperience.classList.remove("link-appear");
+        mobileExperience.classList.add("link-disappear");
         mobileTranscript.classList.remove("link-appear");
         mobileTranscript.classList.add("link-disappear");
         mobileResume.classList.remove("link-appear");
@@ -546,6 +553,8 @@ function toggleLinksMe() {
     } else {
         mobilePortfolio.classList.remove("link-disappear");
         mobilePortfolio.classList.add("link-appear");
+        mobileExperience.classList.remove("link-disappear");
+        mobileExperience.classList.add("link-appear");
         mobileTranscript.classList.remove("link-disappear");
         mobileTranscript.classList.add("link-appear");
         mobileResume.classList.remove("link-disappear");
