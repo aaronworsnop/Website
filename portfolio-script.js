@@ -8,7 +8,7 @@ function onload() {
         document.querySelector("#dark-mode-mobile").checked = true;
 
         // Dark mode
-        document.querySelector(".background").style.background = "linear-gradient(to top, #150426, var(--almost-black) 65%) fixed";
+        document.querySelector(".background").style.background = "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(22,0,94,1) 65%, rgba(37,0,50,1) 100%)";
         document.querySelector(".navigation").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
         document.querySelector(".navigation").style.borderBottom = "1px solid rgba(255, 255, 255, 0.3)";
     }
@@ -38,7 +38,7 @@ function doDarkMode(element) {
         navigation.style.borderBottom = "1px solid rgba(255, 255, 255, 0.3)";
 
         setTimeout(() => {
-            background.style.background = "linear-gradient(to top, #150426, var(--almost-black) 65%) fixed";
+            background.style.background = "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(22,0,94,1) 65%, rgba(37,0,50,1) 100%)";
         }, 300);
 
         setTimeout(() => {
