@@ -41,6 +41,31 @@ body {
   align-items: center;
 }
 
+.experience-affix {
+  opacity: 0.6;
+  flex: 1;
+  overflow: hidden;
+  z-index: 1;
+
+  padding: 1rem;
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-affix h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.experience-affix svg {
+  height: 2rem;
+  width: 2rem;
+  fill: white;
+}
+
 .experience-dot {
   position: relative;
   left: calc(-2rem);
