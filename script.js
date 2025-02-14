@@ -34,9 +34,6 @@ function onload() {
         document.querySelector(".tooltip-drag").style.top = topDrag + "px";
         document.querySelector(".tooltip-drag").style.left = leftDrag + "px";
     }
-
-    // Ensure the background video is playing
-    document.getElementById('#background-video').play();
 }
 
 // Add this function at the end of your script.js file
