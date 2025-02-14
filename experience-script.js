@@ -12,6 +12,9 @@ function onload() {
         document.querySelector(".navigation").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
         document.querySelector(".navigation").style.borderBottom = "1px solid rgba(255, 255, 255, 0.3)";
     }
+
+    // Simulate a click in the experience list to enable arrow key navigation
+    document.querySelector("#experience-list").focus();
 }
 
 function onScroll() {
