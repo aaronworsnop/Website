@@ -34,6 +34,9 @@ function onload() {
         document.querySelector(".tooltip-drag").style.top = topDrag + "px";
         document.querySelector(".tooltip-drag").style.left = leftDrag + "px";
     }
+
+    // Ensure the background video is playing
+    document.getElementById('#background-video').play();
 }
 
 // Add this function at the end of your script.js file
@@ -600,12 +603,8 @@ var storedHasUsedDomains = getCookie("hasUsedDomains");
  * - Create custom and clean (apple like) scrollbar for contact form text
  * 
  * - Animations for the domains need to be more smooth (tuning)
- * - Loading screen
  * 
  * - Maybe change to no blur for performance
- * - On high end machines (laptop) when gpu renders things the domain names go ugly. This
- *   is not too much of a problem, except that they go back to looking nice when the mix-
- *   blend-mode of the custom cursor hover is set.
  * -
  * - Separate scripts for domains, general functions (this file) and cookies
 */
