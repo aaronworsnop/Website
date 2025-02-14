@@ -430,14 +430,19 @@ input[type="checkbox"].toggle:checked+label::after {
   color: white;
 
   opacity: 0.25;
-  transition: opacity 0.4s;
-  transition: scale 0.3s ease-in-out;
+  filter: blur(0.1rem);
   scale: 0.8;
+
+  transition: opacity 0.4s;
+  transition: opacity 0.4s ease-in-out, scale 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
 .in-focus {
   opacity: 1;
+  filter: blur(0);
   scale: 1;
+
+  transition: opacity 0.4s ease-in-out, scale 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
 .current-domain {
