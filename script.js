@@ -590,18 +590,3 @@ function getCookie(name) {
 // retrieve the values from cookies
 var storedSiteMode = getCookie("siteMode");
 var storedHasUsedDomains = getCookie("hasUsedDomains");
-
-/* Currently working on:
- * - When submitting contact form, custom cursor (as well as whole site) freezes, so the user can't
-
- * - keep track of mobile device with bool then load videos accordingly for performance
-    (capture once onload)
- * 
- * - Create custom and clean (apple like) scrollbar for contact form text
- * 
- * - Animations for the domains need to be more smooth (tuning)
- * 
- * - Maybe change to no blur for performance
- * -
- * - Separate scripts for domains, general functions (this file) and cookies
-*/
