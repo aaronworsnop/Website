@@ -16,7 +16,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     xhr.onload = function() {
         if (xhr.status === 200) {
             // Success and clear form
-            alert('Email sent successfully!');
+            openModal('Email sent successfully!');
             document.getElementById('contact-form').reset();
         } else {
             var errorMessage = 'An error occurred with the contact pane. Please email me directly instead.';
@@ -26,7 +26,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
                 errorMessage = 'Bad request. Please check the contact pane and ensure you entered your details correctly.';
             }
             // Display error message to the user
-            alert(errorMessage);
+            openModal(errorMessage);
         }
         // re-enable submit button
         submitButton.disabled = false;
@@ -36,3 +36,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     // Send AJAX request with form data
     xhr.send(formData);
 });
+
+function openModal(message) {
+    const modalText = document.querySelector('.modal-text');
+    const modalContent = document.querySelector('.modal-content');
+    const modal = document.getElementById('modal');
+    modalText.textContent = message;
+    modalContent.style.animation = "modal-enter 0.3s ease-in-out";
+    modal.classList.remove('hidden');
+}

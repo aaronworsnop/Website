@@ -107,6 +107,21 @@ document.querySelector('.current-domain-link').addEventListener('click', functio
     hasTravelledDomain = true;
 });
 
+// Modal functionality
+function closeModal() {
+    const modalArea = document.getElementById('modal');
+    const modalContent = modalArea.querySelector('.modal-content');
+
+    // Play exit animation
+    modalContent.style.animation = "modal-exit 0.3s ease-in-out";
+    
+    setTimeout(() => {
+        modalArea.classList.add('hidden');
+        modalContent.style.animation = ""; // Reset animation
+        modalContent.querySelector('.modal-text').textContent = ''; // Clear message
+    }, 300); // Match the animation duration
+}
+
 // Left and right domains scrolling
 
 function leftScroll() {
@@ -422,7 +437,9 @@ function mouseLeaveLeftDomains(e) {
 function closeContactPane() {
     const contactForm = document.querySelector(".contact-glass");
     const contactBackground = document.querySelector(".contact-background");
-    contactForm.classList.add("animate-glass-out");
+    if (contactForm.classList.contains("animate-glass-in")) {
+        contactForm.classList.add("animate-glass-out");
+    }
     contactForm.classList.remove("animate-glass-in");
     contactBackground.style.display = "none";
 }
