@@ -277,6 +277,7 @@ input[type="checkbox"].toggle:checked+label::after {
   
   /* make modal not be too small on smaller screens */
   .modal-content {
+    margin-top: 6rem;
     scale: 1.75;
   }
 }

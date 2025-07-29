@@ -15,3 +15,4 @@ This is my personal website. I wanted to create something to test my technical s
 
 ![Thumbnail](https://github.com/aaronworsnop/Website/assets/15990400/49c2ef14-c9a5-470f-aee6-94edd46f7ca6)
 
+> Note: I made this a long time ago—the code is pretty 🫥😦 by now...
