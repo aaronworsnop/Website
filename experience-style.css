@@ -120,6 +120,11 @@ body {
   transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
+.image-deloitte {
+  background-image: url('img/experience/deloitte-1.png');
+  background-position: bottom;
+}
+
 .image-serato {
   background-image: url('img/experience/serato-1.jpg');
 }
