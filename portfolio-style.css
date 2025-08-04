@@ -7,7 +7,7 @@
   padding-top: 7rem;
   padding-bottom: 3rem;
   margin: 0 6rem;
-  gap: 3.5rem;
+  gap: 2.25rem;
 }
 
 #loading-card-grid {
@@ -331,6 +331,13 @@
   opacity: 0;
 }
 
+#card-pmsa {
+  aspect-ratio: 1/1;
+  background-image: url(img/portfolio/pmsa-1.png);
+  background-size: cover;
+  background-position: center;
+}
+
 #card-pmsa .card-content {
   position: absolute;
   color: var(--almost-black);
@@ -362,6 +369,61 @@
 
 #card-deans:hover h4 {
   opacity: 0;
+}
+
+#card-devfest {
+  grid-column: span 2;
+}
+
+#card-devfest .card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+}
+
+#card-devfest h1 {
+  text-shadow:
+    0 0 2rem rgba(0, 0, 0, 1),
+    0 0 2rem rgba(0, 0, 0, 1),
+    0 0 2rem rgba(0, 0, 0, 1),
+    0 0 2rem rgba(0, 0, 0, 1);
+}
+
+#card-hackathon {
+  grid-column: span 2;
+}
+
+#card-hackathon .card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+}
+
+#card-rendezvous {
+  grid-column: span 2;
+}
+
+#card-rendezvous-mobile-image {
+  display: none;
+}
+
+#card-rendezvous .card-content {
+  color: var(--almost-black);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+}
+
+#card-rendezvous h1,
+#card-rendezvous h4 {
+  text-shadow:
+    0 0 2rem rgba(255, 255, 255, 1),
+    0 0 2rem rgba(255, 255, 255, 1),
+    0 0 2rem rgba(255, 255, 255, 1),
+    0 0 2rem rgba(255, 255, 255, 1);
 }
 
 #card-webforms {
@@ -604,6 +666,14 @@
 
   #card-welcome h1 {
     font-size: 3rem;
+  }
+
+  #card-rendezvous-pc-image {
+    display: none;
+  }
+
+  #card-rendezvous-mobile-image {
+    display: block;
   }
 
   #card-webforms-pc-image {
