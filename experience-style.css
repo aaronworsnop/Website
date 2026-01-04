@@ -120,6 +120,10 @@ body {
   transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
+.image-ttd {
+  background-image: url('img/experience/ttd-1.jpg')
+}
+
 .image-deloitte {
   background-image: url('img/experience/deloitte-1.png');
   background-position: bottom;
