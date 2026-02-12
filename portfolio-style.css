@@ -48,22 +48,76 @@
 }
 
 .card {
+  will-change: transform;
+  
   padding: 2rem;
 
   position: relative;
 
   background-color: var(--my-grey);
   border-radius: 1.5rem;
-  box-shadow: black 0 0 1.5rem;
 
-  transition: transform 0.3s cubic-bezier(.22, .38, .48, .98);
+  box-shadow: 0, 0, 40px rgba(125, 125, 125, 0);
+
+  transition: transform 0.3s cubic-bezier(.22, .38, .48, .98),
+    box-shadow 0.5s cubic-bezier(.22, .38, .48, .98),
+    outline-width 0.3s;
+
+  outline: solid white 0.3rem;
 }
 
 .card:hover {
   transform: scale(1.05);
-  transition: transform 0.3s cubic-bezier(.22, .38, .48, .98);
+  transition: transform 0.3s cubic-bezier(.22, .38, .48, .98),
+    box-shadow 0.5s cubic-bezier(.22, .38, .48, .98),
+    outline-width 0.3s;
 
   z-index: 2;
+
+  box-shadow:
+    0 0 40px 10px rgba(113, 54, 198, 0.8),
+    0 0 80px 20px rgba(222, 16, 187, 0.5),
+    0 0 120px 40px rgba(58, 82, 213, 0.4);
+
+  outline: solid white 0.1rem;
+}
+
+.card .card-background-image {
+  opacity: 0.6;
+  transition: opacity 0.3s cubic-bezier(.22, .38, .48, .98);
+  z-index: 1;
+}
+
+.card:hover .card-background-image {
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(.22, .38, .48, .98);
+}
+
+/* Shared class for cards with background overlays */
+.card-background-overlay {
+  overflow: hidden;
+}
+
+.card-background-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  transition: opacity 0.3s cubic-bezier(.22, .38, .48, .98);
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.card-background-overlay:hover::after {
+  opacity: 1;
+}
+
+.card-title, .card .card-content {
+  position: relative;
+  z-index: 2; 
 }
 
 .card::before {
@@ -72,16 +126,18 @@
   top: 0;
   left: 0;
 
-  background: 800px, radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.175), transparent 40%);
-  mix-blend-mode: hard-light;
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.2), transparent 50%);
+  mix-blend-mode: screen;
   opacity: 0;
 
   border-radius: inherit;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  pointer-events: none;
 
   transition: opacity 0.3s ease-out;
+
+  z-index: 10;
 }
 
 .card:hover::before {
@@ -169,18 +225,30 @@
 }
 
 .image-card {
+  will-change: transform;
+  
+  padding: 2rem;
+
+  position: relative;
+
+  border-radius: 1.5rem;
+
+  box-shadow: 0, 0, 40px rgba(125, 125, 125, 0);
+
   background-color: transparent;
 
   box-shadow: none;
 
   padding: 0;
   height: 200px;
+  max-height: 200px;
   z-index: 2;
   transition: transform 0.3s cubic-bezier(.22, .38, .48, .98), z-index 0.3s 0.3s;
 }
 
 .image-card:hover {
   z-index: 3;
+  transform: scale(1.05);
 }
 
 .image-card:hover::before {
@@ -191,7 +259,7 @@
 .image-card img {
   width: 100%;
   max-height: 200px;
-  opacity: 0.8;
+  opacity: 0.6;
 
   object-fit: cover;
   border-radius: inherit;
@@ -226,15 +294,25 @@
   box-shadow: black 0 0 1.5rem;
   z-index: 0;
   border-radius: inherit;
+  opacity: 0.6;
+  transition: opacity 0.3s cubic-bezier(.22, .38, .48, .98);
+}
+
+.video-card:hover .video-card-video {
+  opacity: 1;
 }
 
 .static-image {
   padding: 0;
 
-  transition: transform 0.3s cubic-bezier(.22, .38, .48, .98),
-    opacity 0.3s ease-out;
-
   background-color: transparent;
+}
+
+.static-image .card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2rem;
 }
 
 .static-image img {
@@ -242,13 +320,6 @@
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
-}
-
-.static-image:hover {
-  opacity: 1;
-
-  transition: transform 0.3s cubic-bezier(.22, .38, .48, .98),
-    opacity 0.3s ease-out;
 }
 
 @media (max-width: 1000px) {
@@ -287,6 +358,8 @@
 #card-welcome h1 {
   font-size: 6cqw;
   mix-blend-mode: overlay;
+  position: relative;
+  z-index: 1;
 
   transition: transform 0.3s ease-out;
 }
@@ -295,30 +368,12 @@
   transform: scale(1.07);
 }
 
-#card-leetcode {
+#card-leetcode::after {
   background-color: #1a1a1a;
 }
 
 #card-leetcode h1 {
   color: #ffa116;
-}
-
-#card-gdgc {
-  background-image: url(img/portfolio/gdsc-2.jpg);
-  background-size: cover;
-  background-position: center;
-
-
-  position: relative;
-
-  aspect-ratio: 1/1;
-
-  border: solid white 0.2rem;
-  box-shadow:
-    0 10px 1rem -10px rgb(50, 163, 80),
-    0 -10px 1rem -10px red,
-    10px 0 1rem -10px rgb(28, 115, 255),
-    -10px 0 1rem -10px rgb(243, 182, 5);
 }
 
 #card-gdgc h1,
@@ -333,6 +388,9 @@
 
 #card-pmsa {
   aspect-ratio: 1/1;
+}
+
+#card-pmsa::after {
   background-image: url(img/portfolio/pmsa-1.png);
   background-size: cover;
   background-position: center;
@@ -356,10 +414,6 @@
 
 #card-deans .card-content {
   color: var(--almost-black);
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 2rem;
 }
 
 #card-deans h4 {
@@ -375,13 +429,6 @@
   grid-column: span 2;
 }
 
-#card-devfest .card-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 2rem;
-}
-
 #card-devfest h1 {
   text-shadow:
     0 0 2rem rgba(0, 0, 0, 1),
@@ -393,14 +440,6 @@
 #card-hackathon {
   grid-column: span 2;
 }
-
-#card-hackathon .card-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 2rem;
-}
-
 #card-rendezvous {
   grid-column: span 2;
 }
@@ -411,10 +450,6 @@
 
 #card-rendezvous .card-content {
   color: var(--almost-black);
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 2rem;
 }
 
 #card-rendezvous h1,
@@ -426,19 +461,28 @@
     0 0 2rem rgba(255, 255, 255, 1);
 }
 
+#card-rendezvous h4 {
+  transition: opacity 0.3s ease-out;
+}
+
+#card-rendezvous:hover h4 {
+  opacity: 0;
+}
+
+#card-research h1 {
+  text-shadow:
+    0 0 2rem rgba(0, 0, 0, 0.5),
+    0 0 2rem rgba(0, 0, 0, 0.5),
+    0 0 2rem rgba(0, 0, 0, 0.5),
+    0 0 2rem rgba(0, 0, 0, 0.5);
+}
+
 #card-webforms {
   grid-column: span 2;
 }
 
 #card-webforms-mobile-image {
   display: none;
-}
-
-#card-imc-launchpad .card-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 2rem;
 }
 
 #card-imc-launchpad h1,
@@ -471,7 +515,7 @@
   opacity: 0;
 }
 
-#card-github {
+#card-github::after {
   background-color: #0d1117;
 }
 
@@ -533,18 +577,6 @@
   display: none;
 }
 
-#card-youtube {
-  border: white solid 0.2rem;
-}
-
-#card-youtube .card-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 2rem;
-  z-index: 2;
-}
-
 #card-youtube h1,
 #card-youtube h4 {
   text-shadow:
@@ -558,18 +590,6 @@
 #card-youtube:hover h4 {
   opacity: 0;
   transition: opacity 0.3s ease-out;
-}
-
-#card-youtube img {
-  filter: blur(0.1rem);
-  opacity: 0.8;
-  transition: opacity 0.3s ease-out,
-    filter 0.3s ease-out;
-}
-
-#card-youtube:hover img {
-  filter: blur(0);
-  opacity: 1;
 }
 
 #card-tictactoe .card-content {
@@ -600,13 +620,6 @@
 
 #card-tsg-mobile-image {
   display: none;
-}
-
-#card-tsg .card-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 2rem;
 }
 
 #card-tsg h1,
@@ -710,6 +723,28 @@
   .no-mobile {
     display: none;
   }
+
+  /* Full opacity backgrounds on mobile */
+  .card .card-background-image,
+  .video-card-video {
+    opacity: 1 !important;
+  }
+
+  .card-background-overlay::after {
+    opacity: 1 !important;
+  }
+
+  #card-welcome::after {
+    background: linear-gradient(143deg, rgba(222, 16, 187, 1) 0%, rgba(58, 82, 213, 1) 100%) !important;
+  }
+
+  #card-github::after {
+    background-color: rgba(13, 17, 23, 1) !important;
+  }
+
+  #card-pmsa::after {
+    opacity: 1 !important;
+  }
 }
 
 .skeleton {
@@ -723,18 +758,24 @@
   margin-bottom: 1rem;
   border-radius: 0.5rem;
 }
-
-.skeleton-text:last-child {
-  width: 50%;
-}
-
 @keyframes skeleton-loading {
   0% {
     background-color: #e6e8ed;
   }
 
-  100% {
-    background-color: #d0d3d9;
-  }
+}
 
+@keyframes card-glow {
+  0% {
+    box-shadow:
+      0 0 40px 10px rgba(113, 54, 198, 0.8),
+      0 0 80px 20px rgba(222, 16, 187, 0.5),
+      0 0 120px 40px rgba(58, 82, 213, 0.4);
+  }
+  100% {
+    box-shadow:
+      0 0 60px 20px rgba(222, 16, 187, 0.8),
+      0 0 100px 30px rgba(113, 54, 198, 0.5),
+      0 0 140px 60px rgba(58, 82, 213, 0.6);
+  }
 }
