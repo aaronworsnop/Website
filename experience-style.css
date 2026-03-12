@@ -120,6 +120,10 @@ body {
   transition: all 0.3s cubic-bezier(.22, .38, .48, .98);
 }
 
+.image-apple {
+  background-image: url('img/experience/apple-6.png');
+}
+
 .image-ttd {
   background-image: url('img/experience/ttd-1.jpg')
 }
@@ -212,6 +216,10 @@ body {
 }
 
 @media (max-width: 1000px) {
+  .image-apple {
+    background-image: url('img/experience/apple-5.png');
+  }
+
   #timeline {
     height: 100vh;
     display: none;
