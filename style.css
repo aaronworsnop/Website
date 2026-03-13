@@ -1195,13 +1195,23 @@ input[type="checkbox"].toggle:checked+label::after {
   width: calc(100% - 10rem);
   padding: 3rem 0;
   margin: 5rem;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+  -moz-filter-backdrop-filter: blur(1rem);
+  -o-filter-backdrop-filter: blur(1rem);
+  -ms-filter-backdrop-filter: blur(1rem);
+
   border-radius: 3rem;
+  box-shadow: 0 0 2rem rgb(0, 0, 0, 0.125);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-right: 3px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0;
 
   box-shadow: 0 0 2rem rgb(0, 0, 0, 0.2);
 
   font-size: 2rem;
-
-  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .nav-item {
